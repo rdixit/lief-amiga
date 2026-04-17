@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LiefAAC - Augmentative Communication Prototype</title>
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="page-header">
+      <h1>LiefAAC</h1>
+      <p class="subtitle">AI-Powered Augmentative &amp; Alternative Communication</p>
+    </header>
+
+    <div class="ipad-frame">
+      <div class="ipad-notch"></div>
+      <div class="ipad-screen">
+        <!-- Sentence bar -->
+        <div class="sentence-bar">
+          <div class="sentence-display" id="sentenceDisplay">
+            <span class="placeholder">Tap symbols below to build a sentence...</span>
+          </div>
+          <div class="sentence-controls">
+            <button class="btn-speak" id="btnSpeak" title="Speak sentence">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.08" stroke-linecap="round"/>
+              </svg>
+            </button>
+            <button class="btn-clear" id="btnClear" title="Clear sentence">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Selected symbols strip -->
+        <div class="selected-strip" id="selectedStrip"></div>
+
+        <!-- Symbol grid -->
+        <div class="symbol-grid" id="symbolGrid"></div>
+      </div>
+      <div class="ipad-home-bar"></div>
+    </div>
+
+    <!-- Controls below iPad -->
+    <div class="controls-panel">
+      <div class="control-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="autoSpeak"> Auto-speak sentences
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="showSuggestions" checked> Highlight suggested symbols
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="reorderSymbols" checked> Reorder symbols by likelihood
+        </label>
+      </div>
+      <div class="control-group">
+        <label class="slider-label">
+          Confidence threshold: <span id="confidenceValue">70%</span>
+          <input type="range" id="confidenceThreshold" min="30" max="95" value="70" step="5" class="confidence-slider">
+          <span class="slider-hint">Lower = guesses sooner · Higher = waits for more symbols</span>
+        </label>
+      </div>
+      <!-- API key is pre-configured for this demo -->
+      <p class="footer-note">
+        NIH-funded research prototype. Uses AI to predict intended sentences from symbol selections.
+        <br>Without an API key, a built-in prediction engine is used.
+      </p>
+    </div>
+  </div>
+
+  <script src="app.js?v=6"></script>
+</body>
+</html>
