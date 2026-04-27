@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiefAAC - Augmentative Communication Prototype</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <div class="page-wrapper">
@@ -12,6 +12,17 @@
       <h1>LiefAAC</h1>
       <p class="subtitle">AI-Powered Augmentative &amp; Alternative Communication</p>
     </header>
+
+    <div class="lief-affect-bar">
+      <div id="lief-affect-widget" class="lief-affect-widget">
+        <span class="affect-emoji" id="affectEmoji">😐</span>
+        <span class="affect-label" id="affectLabel">Neutral</span>
+        <span class="affect-source" id="affectSource">(simulated)</span>
+      </div>
+      <button id="liefConnectBtn" class="lief-connect-btn" type="button">
+        🫀 Connect Lief
+      </button>
+    </div>
 
     <div class="ipad-frame">
       <div class="ipad-notch"></div>
@@ -60,6 +71,13 @@
       </div>
       <div class="control-group">
         <label class="slider-label">
+          <span>Simulated affect: <span id="mockValenceLabel">0.50 — 😐</span></span>
+          <input type="range" id="mockValenceSlider" min="0" max="100" value="50" step="5" class="confidence-slider">
+          <span class="slider-hint">Simulated affect — replaced by live Lief device data when connected.</span>
+        </label>
+      </div>
+      <div class="control-group">
+        <label class="slider-label">
           Confidence threshold: <span id="confidenceValue">70%</span>
           <input type="range" id="confidenceThreshold" min="30" max="95" value="70" step="5" class="confidence-slider">
           <span class="slider-hint">Lower = guesses sooner · Higher = waits for more symbols</span>
@@ -73,6 +91,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=8"></script>
 </body>
 </html>

@@ -149,6 +149,16 @@ body {
 }
 .btn-speak:hover { background: #3a7bc8; transform: scale(1.05); }
 .btn-speak:active { transform: scale(0.95); }
+.btn-speak.speaking {
+  background: #ef4444;
+  animation: pulse-speak 1.5s ease-in-out infinite;
+}
+.btn-speak.speaking:hover { background: #dc2626; }
+
+@keyframes pulse-speak {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 0 7px rgba(239, 68, 68, 0); }
+}
 
 .btn-clear {
   background: #f1f5f9;
@@ -411,6 +421,72 @@ body {
   to { transform: rotate(360deg); }
 }
 
+/* Lief affect widget (Sub-Phase 0) */
+.lief-affect-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  width: 100%;
+  max-width: 860px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+}
+
+.lief-affect-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  color: white;
+}
+
+.lief-affect-widget .affect-emoji {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lief-affect-widget .affect-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.lief-affect-widget .affect-source {
+  font-size: 12px;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.lief-affect-widget .affect-source.live {
+  color: #86efac;
+  opacity: 0.9;
+  font-style: normal;
+}
+
+.lief-connect-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.lief-connect-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lief-connect-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .ipad-frame { border-radius: 24px; padding: 10px; }
@@ -418,4 +494,14 @@ body {
   .symbol-grid { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); gap: 6px; padding: 8px; }
   .sentence-display { font-size: 17px; }
   .page-header h1 { font-size: 22px; }
+
+  .lief-affect-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+  .lief-affect-widget .affect-emoji { font-size: 22px; }
+  .lief-affect-widget .affect-label { font-size: 12px; }
+  .lief-affect-widget .affect-source { font-size: 11px; }
+  .lief-connect-btn { font-size: 12px; padding: 6px 10px; }
 }
