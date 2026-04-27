@@ -83,6 +83,7 @@ body {
   flex-direction: column;
   min-height: 560px;
   max-height: 70vh;
+  position: relative;
 }
 
 .ipad-home-bar {
@@ -487,6 +488,102 @@ body {
   cursor: not-allowed;
 }
 
+/* Break button (persistent, bottom-right of iPad screen) */
+.btn-break {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border: 2px solid #7dd3fc;
+  border-radius: 14px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btn-break:hover {
+  background: #bae6fd;
+  transform: scale(1.05);
+}
+
+.btn-break:active {
+  transform: scale(0.95);
+}
+
+/* Break modal (fullscreen overlay inside iPad screen) */
+.break-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #e0f2fe 0%, #f0f9ff 40%, #fef3c7 100%);
+  border-radius: 20px;
+}
+
+.break-modal.hidden {
+  display: none;
+}
+
+.break-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 32px;
+}
+
+.break-modal-icon {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.break-modal-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e3a5f;
+  margin: 0;
+}
+
+.break-modal-subtitle {
+  font-size: 18px;
+  color: #64748b;
+  margin: 0;
+}
+
+.break-modal-btn {
+  margin-top: 16px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 14px 32px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.break-modal-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+.break-modal-btn:active {
+  transform: scale(0.95);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .ipad-frame { border-radius: 24px; padding: 10px; }
@@ -504,4 +601,9 @@ body {
   .lief-affect-widget .affect-label { font-size: 12px; }
   .lief-affect-widget .affect-source { font-size: 11px; }
   .lief-connect-btn { font-size: 12px; padding: 6px 10px; }
+  .btn-break { padding: 6px 10px; font-size: 11px; }
+  .break-modal-icon { font-size: 48px; }
+  .break-modal-title { font-size: 24px; }
+  .break-modal-subtitle { font-size: 15px; }
+  .break-modal-btn { font-size: 16px; padding: 12px 24px; }
 }

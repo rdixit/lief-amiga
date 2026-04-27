@@ -262,8 +262,8 @@ const NEXT_WORD_MAP = {
 let liefState = {
   hrv: null,
   hrv_baseline_z: null,
-  quintile: null,
-  valence: 0.5,
+  quintile: 1,
+  valence: 0.9,
   arousal: 0.5,
   confidence: 0.0,
   source: 'mock',
@@ -272,18 +272,25 @@ let liefState = {
   lastUpdated: null,
 };
 
-const QUINTILE_TO_VALENCE = { 0: 0.1, 1: 0.3, 2: 0.5, 3: 0.7, 4: 0.9 };
-
-const VALENCE_EMOJIS = [
-  { threshold: 0.2, emoji: '😫', label: 'High stress' },
-  { threshold: 0.4, emoji: '😟', label: 'Stressed' },
-  { threshold: 0.6, emoji: '😐', label: 'Neutral' },
-  { threshold: 0.8, emoji: '🙂', label: 'Calm' },
-  { threshold: 1.1, emoji: '😊', label: 'Very calm' },
+const STRESS_ZONES = [
+  null,
+  { zone: 1, emoji: '😊', label: 'No stress',       valence: 0.9 },
+  { zone: 2, emoji: '🙂', label: 'Low stress',      valence: 0.7 },
+  { zone: 3, emoji: '😐', label: 'Medium stress',   valence: 0.5 },
+  { zone: 4, emoji: '😟', label: 'High stress',     valence: 0.3 },
+  { zone: 5, emoji: '😫', label: 'Extreme stress',  valence: 0.1 },
 ];
 
-function getValenceEmoji(valence) {
-  return VALENCE_EMOJIS.find(v => valence < v.threshold) ?? VALENCE_EMOJIS[4];
+function getStressZone(zoneIndex) {
+  return STRESS_ZONES[zoneIndex] ?? STRESS_ZONES[3];
+}
+
+function getStressZoneFromValence(valence) {
+  if (valence >= 0.8) return STRESS_ZONES[1];
+  if (valence >= 0.6) return STRESS_ZONES[2];
+  if (valence >= 0.4) return STRESS_ZONES[3];
+  if (valence >= 0.2) return STRESS_ZONES[4];
+  return STRESS_ZONES[5];
 }
 
 // --- App State ---
@@ -311,12 +318,15 @@ const affectSourceEl = document.getElementById('affectSource');
 const liefConnectBtn = document.getElementById('liefConnectBtn');
 const mockValenceSlider = document.getElementById('mockValenceSlider');
 const mockValenceLabel = document.getElementById('mockValenceLabel');
+const btnBreak = document.getElementById('btnBreak');
+const breakModal = document.getElementById('breakModal');
+const btnBreakResume = document.getElementById('btnBreakResume');
 
 // --- Initialize ---
 function renderAffectWidget() {
-  const { emoji, label } = getValenceEmoji(liefState.valence);
-  affectEmojiEl.textContent = emoji;
-  affectLabelEl.textContent = label;
+  const zone = getStressZoneFromValence(liefState.valence);
+  affectEmojiEl.textContent = zone.emoji;
+  affectLabelEl.textContent = zone.label;
 
   if (liefState.source === 'mock') {
     affectSourceEl.textContent = '(simulated)';
@@ -325,6 +335,19 @@ function renderAffectWidget() {
     affectSourceEl.textContent = '(Lief — live)';
     affectSourceEl.classList.add('live');
   }
+}
+
+// Future extension: additional preset phrases ("I'm all done", "I need space",
+// "I need to take a breath") can be added as buttons inside the break modal
+// or as a quick-tap bar above the symbol grid.
+function showBreakModal() {
+  stopSpeaking();
+  breakModal.classList.remove('hidden');
+  speakText('I need a break.');
+}
+
+function hideBreakModal() {
+  breakModal.classList.add('hidden');
 }
 
 function init() {
@@ -370,13 +393,14 @@ function setupEventListeners() {
   });
 
   mockValenceSlider.addEventListener('input', () => {
-    const valence = parseInt(mockValenceSlider.value, 10) / 100;
-    liefState.valence = valence;
+    const zoneIndex = parseInt(mockValenceSlider.value, 10);
+    const zone = getStressZone(zoneIndex);
+    liefState.valence = zone.valence;
+    liefState.quintile = zoneIndex;
     liefState.confidence = 0.6;
     liefState.lastUpdated = Date.now();
 
-    const { emoji } = getValenceEmoji(valence);
-    mockValenceLabel.textContent = `${valence.toFixed(2)} — ${emoji}`;
+    mockValenceLabel.textContent = `Zone ${zone.zone} — ${zone.label} ${zone.emoji}`;
 
     renderAffectWidget();
   });
@@ -384,6 +408,9 @@ function setupEventListeners() {
   liefConnectBtn.addEventListener('click', () => {
     alert('Live Lief device connection coming soon. Use the simulated affect slider below to explore affect-aware predictions.');
   });
+
+  btnBreak.addEventListener('click', showBreakModal);
+  btnBreakResume.addEventListener('click', hideBreakModal);
 }
 
 // --- Symbol Tap Handler ---

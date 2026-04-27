@@ -73,44 +73,68 @@ These came out of the session review. None are in the codebase yet.
 
 **Requirement:** Slider maps to 5 discrete stress zones (No / Low / Medium / High / Extreme), matching the distress thermometer 0–10 and Lief quintile scores 1–5.
 
-**Decision:** Keep the continuous slider, add a zone label that updates as you drag (e.g. "Zone 3 — Medium"). This gives the continuous feel while making the discrete states visible.
+**Decision:** Discrete 5-stop slider with zone label that updates as you drag (e.g. "Zone 3 — Medium stress").
 
-**Not yet built.**
+**Built.** See "What was built (session 2)" above.
 
 ### 2. Preset self-regulation phrases
 
-**Requirement:** Always-visible quick-tap bar above the symbol grid with four preset phrases:
-- "I need a break"
-- "I'm all done"
-- "I need space"
-- "I need to take a breath"
+**Requirement:** Always-visible quick-tap bar with preset phrases ("I need a break", "I'm all done", "I need space", "I need to take a breath").
 
-These map to the self-regulation / co-regulation vocabulary that SLPs and caregivers use. Tapping one sends it directly to the sentence output (bypassing the grammar engine).
-
-**Decision:** Always visible — not triggered by stress level. Placement: above the symbol grid, inside the iPad screen.
-
-**Not yet built.**
+**Partial:** Break button is always visible in bottom-right of iPad screen and triggers TTS "I need a break." plus a calming modal. Additional preset phrases are documented as a future extension in the code but not built.
 
 ### 3. Biofeedback placeholder (Zone 5 / Extreme only)
 
 **Requirement:** When stress is at Extreme (Zone 5, valence < 0.2), surface a pathway to a biofeedback exercise.
 
-**Decision for now:** User-triggered only — no automatic interrupt. A button or indicator appears when Zone 5 is active; tapping it shows a placeholder card ("Breathing exercise — coming soon" or similar). The actual exercise UI (breathing animation, timer) is out of scope until the feature is specified.
+**Decision for now:** User-triggered only via Break button — no automatic trigger on Zone 5. Break modal is a child-friendly placeholder. Actual breathing exercise UI is out of scope until specified.
 
-**Not yet built.**
+**Break button + modal built.** Automatic Zone 5 trigger not yet built.
 
 ---
 
-## Smoke test checklist (Task 7)
+## What was built (session 2, same day)
+
+### Stress zones 1-5 (replaces raw valence slider)
+
+Slider reframed from continuous valence (0-1) to discrete Lief stress zones (1-5):
+
+| Zone | Label | Emoji | Internal valence |
+|------|-------|-------|------------------|
+| 1 | No stress | calm | 0.9 |
+| 2 | Low stress | slightly worried | 0.7 |
+| 3 | Medium stress | neutral | 0.5 |
+| 4 | High stress | worried | 0.3 |
+| 5 | Extreme stress | distressed | 0.1 |
+
+Direction: left = calm (Zone 1), right = extreme (Zone 5). Matches Lief quintile numbering. Default is Zone 1 (no stress). Internal `liefState.valence` mapping is preserved so `buildAffectSystemPrompt()` works unchanged.
+
+### Break button + break modal
+
+- **Break button**: always visible in the bottom-right of the iPad screen. Floating, teal-ish color, labeled "Break".
+- **Break modal**: child-friendly fullscreen overlay inside the iPad screen. Shows cloud icon, "Taking a break!", "It's okay to pause.", and a green "I'm ready!" button to dismiss.
+- Tapping Break stops any in-progress speech and says "I need a break." via TTS (the child's voice).
+- "I'm ready!" dismisses the modal and returns to the AAC grid.
+
+### Future extension points (documented in code)
+
+- Additional preset phrases ("I'm all done", "I need space", "I need to take a breath") can be added as buttons inside the break modal or as a quick-tap bar.
+- Automatic break trigger on Zone 5 (Extreme stress) is not implemented yet — currently user-triggered only.
+
+---
+
+## Smoke test checklist (updated)
 
 Run in Chrome with DevTools Network tab open, filtered to `api.openai.com`:
 
-- [ ] Page loads, widget shows `😐 Neutral (simulated)` above the iPad frame
-- [ ] Tap `I, Want, Food` before touching slider — ONE message in request body (no system prompt), temperature 0.3
-- [ ] Drag slider to 0.10 — widget updates to `😫 High stress`
+- [ ] Page loads, widget shows `😊 No stress (simulated)` above the iPad frame
+- [ ] Slider shows 5 discrete stops (Zone 1 through Zone 5)
+- [ ] Drag slider to Zone 5 — widget updates to `😫 Extreme stress`, label shows `Zone 5 — Extreme stress 😫`
 - [ ] Tap `You, Give, Water` — TWO messages: system says "anxious or highly stressed...", temperature 0.3
-- [ ] Drag slider to 0.90 — widget updates to `😊 Very calm`
+- [ ] Drag slider to Zone 1 — widget updates to `😊 No stress`
 - [ ] Tap same symbols — system message says "very calm and engaged..."
 - [ ] Console: `liefState.confidence = 0.0` — tap symbols — back to ONE message (fallback)
 - [ ] Move slider to restore confidence
 - [ ] Click `🫀 Connect Lief` — placeholder alert appears
+- [ ] Click Break button — modal appears, TTS says "I need a break."
+- [ ] Click "I'm ready!" — modal dismisses, AAC grid is visible again
