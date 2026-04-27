@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LiefAAC - Augmentative Communication Prototype</title>
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <div class="page-wrapper">
@@ -41,8 +41,59 @@
 
         <!-- Symbol grid -->
         <div class="symbol-grid" id="symbolGrid"></div>
+
+        <!-- Persistent break button -->
+        <button id="btnBreak" class="btn-break" title="Take a break">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M18 6L6 18M6 6l12 12" opacity="0" />
+            <circle cx="12" cy="12" r="10"/>
+            <rect x="8" y="8" width="8" height="8" rx="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>Break</span>
+        </button>
+
+        <!-- Break modal overlay -->
+        <div id="breakModal" class="break-modal hidden">
+          <!-- Break landing screen -->
+          <div id="breakLanding" class="break-modal-content">
+            <div class="break-modal-icon">☁️</div>
+            <h2 class="break-modal-title">Taking a break!</h2>
+            <p class="break-modal-subtitle">It's okay to pause.</p>
+            <button id="btnBreakResume" class="break-modal-btn" type="button">
+              ☀️ I'm ready!
+            </button>
+            <button id="btnStartBreathe" class="break-modal-btn breathe-btn" type="button">
+              🌬️ Let's breathe
+            </button>
+          </div>
+          <!-- Breathing exercise screen -->
+          <div id="breatheScreen" class="break-modal-content hidden">
+            <div class="breathe-circle-wrapper">
+              <div class="breathe-circle" id="breatheCircle"></div>
+              <span class="breathe-instruction" id="breatheInstruction">Breathe in</span>
+            </div>
+            <div class="breathe-timer-bar">
+              <div class="breathe-timer-fill" id="breatheTimerFill"></div>
+            </div>
+            <p class="breathe-timer-label" id="breatheTimerLabel">2:00</p>
+            <button id="btnStopBreathe" class="break-modal-btn stop-breathe-btn" type="button">
+              Done
+            </button>
+          </div>
+        </div>
       </div>
       <div class="ipad-home-bar"></div>
+    </div>
+
+    <div class="lief-affect-bar">
+      <div id="lief-affect-widget" class="lief-affect-widget">
+        <span class="affect-emoji" id="affectEmoji">😊</span>
+        <span class="affect-label" id="affectLabel">No stress</span>
+        <span class="affect-source" id="affectSource">(simulated)</span>
+      </div>
+      <button id="liefConnectBtn" class="lief-connect-btn" type="button">
+        🫀 Connect Lief
+      </button>
     </div>
 
     <!-- Controls below iPad -->
@@ -60,6 +111,13 @@
       </div>
       <div class="control-group">
         <label class="slider-label">
+          <span>Simulated stress level: <span id="mockValenceLabel">Zone 1 — No stress 😊</span></span>
+          <input type="range" id="mockValenceSlider" min="1" max="5" value="1" step="1" class="confidence-slider">
+          <span class="slider-hint">Simulated stress — replaced by live Lief device data when connected.</span>
+        </label>
+      </div>
+      <div class="control-group">
+        <label class="slider-label">
           Confidence threshold: <span id="confidenceValue">70%</span>
           <input type="range" id="confidenceThreshold" min="30" max="95" value="70" step="5" class="confidence-slider">
           <span class="slider-hint">Lower = guesses sooner · Higher = waits for more symbols</span>
@@ -73,6 +131,6 @@
     </div>
   </div>
 
-  <script src="app.js?v=6"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>

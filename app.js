@@ -255,9 +255,88 @@ const NEXT_WORD_MAP = {
   'help': ['please'],
 };
 
+// ============================================================
+// Lief affect state (Sub-Phase 0 — mock-only)
+// ============================================================
+
+let liefState = {
+  hrv: null,
+  hrv_baseline_z: null,
+  quintile: 1,
+  valence: 0.9,
+  arousal: 0.5,
+  confidence: 0.6,
+  source: 'mock',
+  available_modalities: ['hrv'],
+  inferred_category_prior: null,
+  lastUpdated: null,
+};
+
+const STRESS_ZONES = [
+  null,
+  { zone: 1, emoji: '😊', label: 'No stress',       valence: 0.9 },
+  { zone: 2, emoji: '🙂', label: 'Low stress',      valence: 0.7 },
+  { zone: 3, emoji: '😐', label: 'Medium stress',   valence: 0.5 },
+  { zone: 4, emoji: '😟', label: 'High stress',     valence: 0.3 },
+  { zone: 5, emoji: '😫', label: 'Extreme stress',  valence: 0.1 },
+];
+
+function getStressZone(zoneIndex) {
+  return STRESS_ZONES[zoneIndex] ?? STRESS_ZONES[3];
+}
+
+function getStressZoneFromValence(valence) {
+  if (valence >= 0.8) return STRESS_ZONES[1];
+  if (valence >= 0.6) return STRESS_ZONES[2];
+  if (valence >= 0.4) return STRESS_ZONES[3];
+  if (valence >= 0.2) return STRESS_ZONES[4];
+  return STRESS_ZONES[5];
+}
+
+// Affect-aware suggestion overrides: when stress is high or low, reorder
+// which symbols are promoted for specific selection contexts.
+// Keys match NEXT_WORD_MAP; values are { stressed: [...], calm: [...] }.
+// Stressed = zones 4-5 (valence < 0.4), calm = zones 1-2 (valence >= 0.6).
+// Neutral zone 3 uses the default NEXT_WORD_MAP ordering.
+const AFFECT_SUGGESTIONS = {
+  '': {
+    stressed: ['help', 'stop', 'need', 'i', 'no', 'more', 'want', 'please', 'you', 'yes'],
+    calm:     ['i', 'want', 'play', 'like', 'you', 'yes', 'more', 'go', 'please', 'happy'],
+  },
+  'i': {
+    stressed: ['need', 'feel', 'help', 'stop', 'want', 'sad', 'drink', 'eat', 'go', 'sleep'],
+    calm:     ['want', 'like', 'play', 'feel', 'go', 'happy', 'look', 'eat', 'walk', 'give'],
+  },
+  'i_feel': {
+    stressed: ['sad'],
+    calm:     ['happy'],
+  },
+  'i_want': {
+    stressed: ['help', 'water', 'food', 'mom', 'dad', 'go', 'more', 'drink', 'eat', 'play'],
+    calm:     ['play', 'toy', 'book', 'go', 'food', 'more', 'mom', 'dad', 'eat', 'drink'],
+  },
+  'want': {
+    stressed: ['help', 'water', 'food', 'mom', 'dad', 'go', 'more'],
+    calm:     ['play', 'toy', 'food', 'go', 'mom', 'dad', 'more'],
+  },
+};
+
+function getAffectAwareSuggestions(key, baseSuggestions) {
+  if (liefState.confidence < 0.3) return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) };
+  const override = AFFECT_SUGGESTIONS[key];
+  if (!override) return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) };
+  let priority;
+  if (liefState.valence <= 0.3) priority = override.stressed;       // zones 4-5
+  else if (liefState.valence >= 0.8) priority = override.calm;      // zone 1 only
+  else return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) }; // zones 2-3
+  const remaining = baseSuggestions.filter(id => !priority.includes(id));
+  return { ordered: [...priority, ...remaining], highlighted: new Set(priority) };
+}
+
 // --- App State ---
 let selectedSymbols = [];
 // Demo key (obfuscated)
+// NOTE(mjp): use env var for this, anyone can still decode this key
 const _k = atob('c2stcHJvai1WbHFqVjRTLS1NajRqQWpqSVljYm96QndWTFY2SElobEIxdlNhWUFGNk5QWVRURC1wS05meHdlS3pWd0l2R09qZVhUVlNwVEVOLVQzQmxia0ZKMjJGd0ZKNldoQ1F1NkdHNnZ5RTV3RkVSN2xPdE84TDdaenczX0ZfUlFSQ3FNUTlBaGRjTHpuazhzYVpEdk55WGg1RWZNREdBa0E=');
 let apiKey = _k;
 let pendingRequest = null;
@@ -273,11 +352,129 @@ const showSuggestionsCheckbox = document.getElementById('showSuggestions');
 const reorderSymbolsCheckbox = document.getElementById('reorderSymbols');
 const confidenceSlider = document.getElementById('confidenceThreshold');
 const confidenceValueLabel = document.getElementById('confidenceValue');
+const affectEmojiEl = document.getElementById('affectEmoji');
+const affectLabelEl = document.getElementById('affectLabel');
+const affectSourceEl = document.getElementById('affectSource');
+const liefConnectBtn = document.getElementById('liefConnectBtn');
+const mockValenceSlider = document.getElementById('mockValenceSlider');
+const mockValenceLabel = document.getElementById('mockValenceLabel');
+const btnBreak = document.getElementById('btnBreak');
+const breakModal = document.getElementById('breakModal');
+const breakLanding = document.getElementById('breakLanding');
+const btnBreakResume = document.getElementById('btnBreakResume');
+const btnStartBreathe = document.getElementById('btnStartBreathe');
+const breatheScreen = document.getElementById('breatheScreen');
+const breatheCircle = document.getElementById('breatheCircle');
+const breatheInstruction = document.getElementById('breatheInstruction');
+const breatheTimerFill = document.getElementById('breatheTimerFill');
+const breatheTimerLabel = document.getElementById('breatheTimerLabel');
+const btnStopBreathe = document.getElementById('btnStopBreathe');
 
 // --- Initialize ---
+function renderAffectWidget() {
+  const zone = getStressZoneFromValence(liefState.valence);
+  affectEmojiEl.textContent = zone.emoji;
+  affectLabelEl.textContent = zone.label;
+
+  if (liefState.source === 'mock') {
+    affectSourceEl.textContent = '(simulated)';
+    affectSourceEl.classList.remove('live');
+  } else {
+    affectSourceEl.textContent = '(Lief — live)';
+    affectSourceEl.classList.add('live');
+  }
+}
+
+// Future extension: additional preset phrases ("I'm all done", "I need space",
+// "I need to take a breath") can be added as buttons inside the break modal
+// or as a quick-tap bar above the symbol grid.
+let breatheInterval = null;
+let breatheTimeout = null;
+
+function showBreakModal() {
+  stopSpeaking();
+  stopBreathingExercise();
+  breakLanding.classList.remove('hidden');
+  breatheScreen.classList.add('hidden');
+  breakModal.classList.remove('hidden');
+  speakText('I need a break.');
+}
+
+function hideBreakModal() {
+  stopBreathingExercise();
+  breakModal.classList.add('hidden');
+}
+
+function startBreathingExercise() {
+  breakLanding.classList.add('hidden');
+  breatheScreen.classList.remove('hidden');
+
+  const totalSeconds = 120;
+  const phaseSeconds = 4;
+  let elapsed = 0;
+  let isInhale = true;
+
+  breatheTimerFill.style.transition = 'none';
+  breatheTimerFill.style.width = '0%';
+  updateBreathTimer(totalSeconds);
+
+  breatheCircle.classList.remove('inhale', 'exhale');
+  void breatheCircle.offsetWidth;
+  setBreathPhase(true);
+
+  breatheInterval = setInterval(() => {
+    elapsed++;
+    const posInPhase = elapsed % phaseSeconds;
+
+    if (posInPhase === 0) {
+      isInhale = !isInhale;
+      setBreathPhase(isInhale);
+    }
+
+    const pct = Math.min((elapsed / totalSeconds) * 100, 100);
+    breatheTimerFill.style.transition = 'width 1s linear';
+    breatheTimerFill.style.width = `${pct}%`;
+
+    updateBreathTimer(totalSeconds - elapsed);
+
+    if (elapsed >= totalSeconds) {
+      stopBreathingExercise();
+      breatheInstruction.textContent = 'Great job!';
+      breatheCircle.classList.remove('inhale', 'exhale');
+    }
+  }, 1000);
+}
+
+function setBreathPhase(inhale) {
+  if (inhale) {
+    breatheCircle.classList.remove('exhale');
+    breatheCircle.classList.add('inhale');
+    breatheInstruction.textContent = 'Breathe in';
+  } else {
+    breatheCircle.classList.remove('inhale');
+    breatheCircle.classList.add('exhale');
+    breatheInstruction.textContent = 'Breathe out';
+  }
+}
+
+function updateBreathTimer(remaining) {
+  const mins = Math.floor(Math.max(0, remaining) / 60);
+  const secs = Math.max(0, remaining) % 60;
+  breatheTimerLabel.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+function stopBreathingExercise() {
+  if (breatheInterval) {
+    clearInterval(breatheInterval);
+    breatheInterval = null;
+  }
+  breatheCircle.classList.remove('inhale', 'exhale');
+}
+
 function init() {
   renderGrid();
   setupEventListeners();
+  renderAffectWidget();
   updateSuggestions();
 }
 
@@ -315,6 +512,29 @@ function setupEventListeners() {
   confidenceSlider.addEventListener('input', () => {
     confidenceValueLabel.textContent = `${confidenceSlider.value}%`;
   });
+
+  mockValenceSlider.addEventListener('input', () => {
+    const zoneIndex = parseInt(mockValenceSlider.value, 10);
+    const zone = getStressZone(zoneIndex);
+    liefState.valence = zone.valence;
+    liefState.quintile = zoneIndex;
+    liefState.confidence = 0.6;
+    liefState.lastUpdated = Date.now();
+
+    mockValenceLabel.textContent = `Zone ${zone.zone} — ${zone.label} ${zone.emoji}`;
+
+    renderAffectWidget();
+    updateSuggestions();
+  });
+
+  liefConnectBtn.addEventListener('click', () => {
+    alert('Live Lief device connection coming soon. Use the simulated affect slider below to explore affect-aware predictions.');
+  });
+
+  btnBreak.addEventListener('click', showBreakModal);
+  btnBreakResume.addEventListener('click', hideBreakModal);
+  btnStartBreathe.addEventListener('click', startBreathingExercise);
+  btnStopBreathe.addEventListener('click', hideBreakModal);
 }
 
 // --- Symbol Tap Handler ---
@@ -471,6 +691,38 @@ function buildSimpleSentence(words) {
   return sentence;
 }
 
+// ============================================================
+// Affect → prediction modulation (v1 mechanism, first implementation)
+// ============================================================
+
+function buildAffectSystemPrompt(state) {
+  if (state.valence < 0.35) {
+    return `The user appears anxious or highly stressed (HRV signal low). Prioritize short, simple, calming phrases. Avoid complex constructions. Prefer: needs, requests for comfort, simple statements.`;
+  } else if (state.valence < 0.55) {
+    return `The user shows mild stress. Prefer clear, direct sentences.`;
+  } else if (state.valence < 0.75) {
+    return `The user appears calm and regulated. Suggest natural, expressive sentences.`;
+  } else {
+    return `The user is very calm and engaged. Support rich, expressive communication.`;
+  }
+}
+
+function getAffectTemperature(state) {
+  return 0.25 + (state.valence * 0.65);
+}
+
+function applyAffectToRequest(state) {
+  if (state.confidence < 0.3) {
+    return { systemPrompt: '', temperature: 0.3 };
+  }
+  // Temperature is fixed — style modulation comes entirely from the system prompt.
+  // getAffectTemperature() is preserved if we want to re-enable valence-scaled temp.
+  return {
+    systemPrompt: buildAffectSystemPrompt(state),
+    temperature: 0.3,
+  };
+}
+
 async function predictWithAPI(words) {
   // Cancel any pending request
   if (pendingRequest) {
@@ -495,12 +747,20 @@ You must NEVER:
 - Guess what the child might mean beyond their symbols
 - Add emotional context or motivation
 
+CRITICAL RULE — "You" means a request TO another person:
+When "You" is the first symbol, the child is addressing a caregiver or helper. Treat it as a request or instruction directed AT that person, NOT a statement about what "you" want to do.
+- WRONG: "You want to give water." / "You go home."
+- RIGHT: "Can you give me water?" / "Can you help me?" / "Give me water."
+
 Examples:
 - Symbols: "I, Go, Bathroom" → "I need to go to the bathroom."
 - Symbols: "I, Feel, Sad" → "I feel sad."
 - Symbols: "I, Want" → "I want..."
 - Symbols: "Want, Water" → "I want water."
 - Symbols: "He/She, Eat, Food" → "He wants to eat food."
+- Symbols: "You, Give, Water" → "Can you give me water?"
+- Symbols: "You, Help" → "Can you help me?"
+- Symbols: "You, Stop" → "Please stop."
 
 Also rate your confidence (0-100) that the symbols form a COMPLETE thought:
 - Incomplete (missing object/subject): 20-50%
@@ -509,6 +769,14 @@ Also rate your confidence (0-100) that the symbols form a COMPLETE thought:
 Respond with ONLY a JSON object, no markdown:
 {"sentence": "the sentence", "confidence": 75}`;
 
+  const affect = applyAffectToRequest(liefState);
+  const messages = [];
+  if (affect.systemPrompt) {
+    messages.push({ role: 'system', content: affect.systemPrompt });
+  }
+  messages.push({ role: 'user', content: prompt });
+
+  // NOTE(mjp): replace with local SLM in later phases
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -517,9 +785,9 @@ Respond with ONLY a JSON object, no markdown:
     },
     body: JSON.stringify({
       model: 'gpt-4o-mini',
-      messages: [{ role: 'user', content: prompt }],
+      messages: messages,
       max_tokens: 80,
-      temperature: 0.3
+      temperature: affect.temperature
     }),
     signal: controller.signal
   });
@@ -567,11 +835,13 @@ function updateSuggestions() {
 
   if (!suggestedIds) suggestedIds = NEXT_WORD_MAP[''];
 
-  // Apply suggestions — highlight and/or reorder based on toggles
-  suggestedIds.forEach((id, index) => {
+  const { ordered, highlighted } = getAffectAwareSuggestions(key, suggestedIds);
+
+  // Apply suggestions — highlight affect-priority items, reorder all
+  ordered.forEach((id, index) => {
     const card = grid.querySelector(`[data-id="${id}"]`);
     if (card) {
-      if (showSuggestionsCheckbox.checked) {
+      if (showSuggestionsCheckbox.checked && highlighted.has(id)) {
         card.classList.add('suggested');
       }
       if (reorderSymbolsCheckbox.checked) {
@@ -583,19 +853,39 @@ function updateSuggestions() {
 
 // --- Text to Speech ---
 let currentAudio = null;
+let isSpeaking = false;
+
+const SPEAK_SVG = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+  <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+  <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.08" stroke-linecap="round"/>
+</svg>`;
+
+const STOP_SVG = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+  <rect x="5" y="5" width="14" height="14" rx="2"/>
+</svg>`;
+
+function updateSpeakButtonState(speaking) {
+  isSpeaking = speaking;
+  btnSpeak.classList.toggle('speaking', speaking);
+  btnSpeak.title = speaking ? 'Stop speaking' : 'Speak sentence';
+  btnSpeak.innerHTML = speaking ? STOP_SVG : SPEAK_SVG;
+}
 
 function speakSentence() {
-  const text = sentenceDisplay.textContent;
-  if (text && !text.includes('Tap symbols')) {
-    speakText(text);
+  if (isSpeaking) {
+    stopSpeaking();
+    return;
   }
+  // Read only the predicted sentence text, not the confidence badge
+  const predictedEl = sentenceDisplay.querySelector('.predicted-text');
+  const text = predictedEl ? predictedEl.textContent.trim() : '';
+  if (text) speakText(text);
 }
 
 async function speakText(text) {
-  // Stop any currently playing audio
   stopSpeaking();
+  updateSpeakButtonState(true);
 
-  // Use OpenAI TTS if API key is available
   if (apiKey) {
     try {
       await speakWithOpenAI(text);
@@ -605,7 +895,6 @@ async function speakText(text) {
     }
   }
 
-  // Fallback: browser speech synthesis
   speakWithBrowser(text);
 }
 
@@ -632,16 +921,27 @@ async function speakWithOpenAI(text) {
   currentAudio.addEventListener('ended', () => {
     URL.revokeObjectURL(audioUrl);
     currentAudio = null;
+    updateSpeakButtonState(false);
+  });
+  currentAudio.addEventListener('error', () => {
+    URL.revokeObjectURL(audioUrl);
+    currentAudio = null;
+    updateSpeakButtonState(false);
   });
   await currentAudio.play();
 }
 
 function speakWithBrowser(text) {
-  if (!('speechSynthesis' in window)) return;
+  if (!('speechSynthesis' in window)) {
+    updateSpeakButtonState(false);
+    return;
+  }
   window.speechSynthesis.cancel();
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.rate = 0.85;
   utterance.pitch = 1.1;
+  utterance.addEventListener('end', () => updateSpeakButtonState(false));
+  utterance.addEventListener('error', () => updateSpeakButtonState(false));
 
   const voices = window.speechSynthesis.getVoices();
   const preferred = voices.find(v => v.name.includes('Samantha') || v.name.includes('Alex') || v.name.includes('Karen'));
@@ -656,6 +956,7 @@ function stopSpeaking() {
     currentAudio = null;
   }
   window.speechSynthesis?.cancel();
+  updateSpeakButtonState(false);
 }
 
 // Preload browser voices as fallback
