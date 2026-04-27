@@ -530,7 +530,8 @@ body {
   border-radius: 20px;
 }
 
-.break-modal.hidden {
+.break-modal.hidden,
+.break-modal-content.hidden {
   display: none;
 }
 
@@ -584,6 +585,90 @@ body {
   transform: scale(0.95);
 }
 
+/* Breathing exercise */
+.breathe-btn {
+  background: #7dd3fc;
+  color: #0c4a6e;
+  box-shadow: 0 4px 12px rgba(125, 211, 252, 0.3);
+}
+
+.breathe-btn:hover {
+  background: #38bdf8;
+}
+
+.breathe-circle-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.breathe-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #bae6fd 0%, #7dd3fc 60%, #38bdf8 100%);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+  transition: transform 4s ease-in-out;
+  transform: scale(0.6);
+}
+
+.breathe-circle.inhale {
+  transform: scale(1.0);
+}
+
+.breathe-circle.exhale {
+  transform: scale(0.6);
+}
+
+.breathe-instruction {
+  position: relative;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0c4a6e;
+  text-align: center;
+  pointer-events: none;
+}
+
+.breathe-timer-bar {
+  width: 200px;
+  height: 8px;
+  background: #e0f2fe;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.breathe-timer-fill {
+  height: 100%;
+  width: 0%;
+  background: #38bdf8;
+  border-radius: 4px;
+  transition: width 1s linear;
+}
+
+.breathe-timer-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+  margin: 4px 0 0;
+}
+
+.stop-breathe-btn {
+  background: #94a3b8;
+  box-shadow: 0 4px 12px rgba(148, 163, 184, 0.3);
+  margin-top: 8px;
+  font-size: 16px;
+  padding: 10px 28px;
+}
+
+.stop-breathe-btn:hover {
+  background: #64748b;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .ipad-frame { border-radius: 24px; padding: 10px; }
@@ -606,4 +691,7 @@ body {
   .break-modal-title { font-size: 24px; }
   .break-modal-subtitle { font-size: 15px; }
   .break-modal-btn { font-size: 16px; padding: 12px 24px; }
+  .breathe-circle-wrapper { width: 120px; height: 120px; }
+  .breathe-instruction { font-size: 14px; }
+  .breathe-timer-bar { width: 160px; }
 }

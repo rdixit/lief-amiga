@@ -65,12 +65,30 @@
 
         <!-- Break modal overlay -->
         <div id="breakModal" class="break-modal hidden">
-          <div class="break-modal-content">
+          <!-- Break landing screen -->
+          <div id="breakLanding" class="break-modal-content">
             <div class="break-modal-icon">☁️</div>
             <h2 class="break-modal-title">Taking a break!</h2>
             <p class="break-modal-subtitle">It's okay to pause.</p>
             <button id="btnBreakResume" class="break-modal-btn" type="button">
               ☀️ I'm ready!
+            </button>
+            <button id="btnStartBreathe" class="break-modal-btn breathe-btn" type="button">
+              🌬️ Let's breathe
+            </button>
+          </div>
+          <!-- Breathing exercise screen -->
+          <div id="breatheScreen" class="break-modal-content hidden">
+            <div class="breathe-circle-wrapper">
+              <div class="breathe-circle" id="breatheCircle"></div>
+              <span class="breathe-instruction" id="breatheInstruction">Breathe in</span>
+            </div>
+            <div class="breathe-timer-bar">
+              <div class="breathe-timer-fill" id="breatheTimerFill"></div>
+            </div>
+            <p class="breathe-timer-label" id="breatheTimerLabel">2:00</p>
+            <button id="btnStopBreathe" class="break-modal-btn stop-breathe-btn" type="button">
+              Done
             </button>
           </div>
         </div>

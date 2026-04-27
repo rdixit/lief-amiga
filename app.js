@@ -320,7 +320,15 @@ const mockValenceSlider = document.getElementById('mockValenceSlider');
 const mockValenceLabel = document.getElementById('mockValenceLabel');
 const btnBreak = document.getElementById('btnBreak');
 const breakModal = document.getElementById('breakModal');
+const breakLanding = document.getElementById('breakLanding');
 const btnBreakResume = document.getElementById('btnBreakResume');
+const btnStartBreathe = document.getElementById('btnStartBreathe');
+const breatheScreen = document.getElementById('breatheScreen');
+const breatheCircle = document.getElementById('breatheCircle');
+const breatheInstruction = document.getElementById('breatheInstruction');
+const breatheTimerFill = document.getElementById('breatheTimerFill');
+const breatheTimerLabel = document.getElementById('breatheTimerLabel');
+const btnStopBreathe = document.getElementById('btnStopBreathe');
 
 // --- Initialize ---
 function renderAffectWidget() {
@@ -340,14 +348,87 @@ function renderAffectWidget() {
 // Future extension: additional preset phrases ("I'm all done", "I need space",
 // "I need to take a breath") can be added as buttons inside the break modal
 // or as a quick-tap bar above the symbol grid.
+let breatheInterval = null;
+let breatheTimeout = null;
+
 function showBreakModal() {
   stopSpeaking();
+  stopBreathingExercise();
+  breakLanding.classList.remove('hidden');
+  breatheScreen.classList.add('hidden');
   breakModal.classList.remove('hidden');
   speakText('I need a break.');
 }
 
 function hideBreakModal() {
+  stopBreathingExercise();
   breakModal.classList.add('hidden');
+}
+
+function startBreathingExercise() {
+  breakLanding.classList.add('hidden');
+  breatheScreen.classList.remove('hidden');
+
+  const totalSeconds = 120;
+  const phaseSeconds = 4;
+  let elapsed = 0;
+  let isInhale = true;
+
+  breatheTimerFill.style.transition = 'none';
+  breatheTimerFill.style.width = '0%';
+  updateBreathTimer(totalSeconds);
+
+  breatheCircle.classList.remove('inhale', 'exhale');
+  void breatheCircle.offsetWidth;
+  setBreathPhase(true);
+
+  breatheInterval = setInterval(() => {
+    elapsed++;
+    const posInPhase = elapsed % phaseSeconds;
+
+    if (posInPhase === 0) {
+      isInhale = !isInhale;
+      setBreathPhase(isInhale);
+    }
+
+    const pct = Math.min((elapsed / totalSeconds) * 100, 100);
+    breatheTimerFill.style.transition = 'width 1s linear';
+    breatheTimerFill.style.width = `${pct}%`;
+
+    updateBreathTimer(totalSeconds - elapsed);
+
+    if (elapsed >= totalSeconds) {
+      stopBreathingExercise();
+      breatheInstruction.textContent = 'Great job!';
+      breatheCircle.classList.remove('inhale', 'exhale');
+    }
+  }, 1000);
+}
+
+function setBreathPhase(inhale) {
+  if (inhale) {
+    breatheCircle.classList.remove('exhale');
+    breatheCircle.classList.add('inhale');
+    breatheInstruction.textContent = 'Breathe in';
+  } else {
+    breatheCircle.classList.remove('inhale');
+    breatheCircle.classList.add('exhale');
+    breatheInstruction.textContent = 'Breathe out';
+  }
+}
+
+function updateBreathTimer(remaining) {
+  const mins = Math.floor(Math.max(0, remaining) / 60);
+  const secs = Math.max(0, remaining) % 60;
+  breatheTimerLabel.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+function stopBreathingExercise() {
+  if (breatheInterval) {
+    clearInterval(breatheInterval);
+    breatheInterval = null;
+  }
+  breatheCircle.classList.remove('inhale', 'exhale');
 }
 
 function init() {
@@ -411,6 +492,8 @@ function setupEventListeners() {
 
   btnBreak.addEventListener('click', showBreakModal);
   btnBreakResume.addEventListener('click', hideBreakModal);
+  btnStartBreathe.addEventListener('click', startBreathingExercise);
+  btnStopBreathe.addEventListener('click', hideBreakModal);
 }
 
 // --- Symbol Tap Handler ---
