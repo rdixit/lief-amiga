@@ -265,7 +265,7 @@ let liefState = {
   quintile: 1,
   valence: 0.9,
   arousal: 0.5,
-  confidence: 0.0,
+  confidence: 0.6,
   source: 'mock',
   available_modalities: ['hrv'],
   inferred_category_prior: null,
@@ -291,6 +291,46 @@ function getStressZoneFromValence(valence) {
   if (valence >= 0.4) return STRESS_ZONES[3];
   if (valence >= 0.2) return STRESS_ZONES[4];
   return STRESS_ZONES[5];
+}
+
+// Affect-aware suggestion overrides: when stress is high or low, reorder
+// which symbols are promoted for specific selection contexts.
+// Keys match NEXT_WORD_MAP; values are { stressed: [...], calm: [...] }.
+// Stressed = zones 4-5 (valence < 0.4), calm = zones 1-2 (valence >= 0.6).
+// Neutral zone 3 uses the default NEXT_WORD_MAP ordering.
+const AFFECT_SUGGESTIONS = {
+  '': {
+    stressed: ['help', 'stop', 'need', 'i', 'no', 'more', 'want', 'please', 'you', 'yes'],
+    calm:     ['i', 'want', 'play', 'like', 'you', 'yes', 'more', 'go', 'please', 'happy'],
+  },
+  'i': {
+    stressed: ['need', 'feel', 'help', 'stop', 'want', 'sad', 'drink', 'eat', 'go', 'sleep'],
+    calm:     ['want', 'like', 'play', 'feel', 'go', 'happy', 'look', 'eat', 'walk', 'give'],
+  },
+  'i_feel': {
+    stressed: ['sad'],
+    calm:     ['happy'],
+  },
+  'i_want': {
+    stressed: ['help', 'water', 'food', 'mom', 'dad', 'go', 'more', 'drink', 'eat', 'play'],
+    calm:     ['play', 'toy', 'book', 'go', 'food', 'more', 'mom', 'dad', 'eat', 'drink'],
+  },
+  'want': {
+    stressed: ['help', 'water', 'food', 'mom', 'dad', 'go', 'more'],
+    calm:     ['play', 'toy', 'food', 'go', 'mom', 'dad', 'more'],
+  },
+};
+
+function getAffectAwareSuggestions(key, baseSuggestions) {
+  if (liefState.confidence < 0.3) return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) };
+  const override = AFFECT_SUGGESTIONS[key];
+  if (!override) return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) };
+  let priority;
+  if (liefState.valence <= 0.3) priority = override.stressed;       // zones 4-5
+  else if (liefState.valence >= 0.8) priority = override.calm;      // zone 1 only
+  else return { ordered: baseSuggestions, highlighted: new Set(baseSuggestions) }; // zones 2-3
+  const remaining = baseSuggestions.filter(id => !priority.includes(id));
+  return { ordered: [...priority, ...remaining], highlighted: new Set(priority) };
 }
 
 // --- App State ---
@@ -484,6 +524,7 @@ function setupEventListeners() {
     mockValenceLabel.textContent = `Zone ${zone.zone} — ${zone.label} ${zone.emoji}`;
 
     renderAffectWidget();
+    updateSuggestions();
   });
 
   liefConnectBtn.addEventListener('click', () => {
@@ -794,11 +835,13 @@ function updateSuggestions() {
 
   if (!suggestedIds) suggestedIds = NEXT_WORD_MAP[''];
 
-  // Apply suggestions — highlight and/or reorder based on toggles
-  suggestedIds.forEach((id, index) => {
+  const { ordered, highlighted } = getAffectAwareSuggestions(key, suggestedIds);
+
+  // Apply suggestions — highlight affect-priority items, reorder all
+  ordered.forEach((id, index) => {
     const card = grid.querySelector(`[data-id="${id}"]`);
     if (card) {
-      if (showSuggestionsCheckbox.checked) {
+      if (showSuggestionsCheckbox.checked && highlighted.has(id)) {
         card.classList.add('suggested');
       }
       if (reorderSymbolsCheckbox.checked) {

@@ -427,7 +427,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-top: 12px;
   width: 100%;
   max-width: 860px;
   padding: 8px 16px;
