@@ -22,7 +22,7 @@ DEFAULT_CANONICAL = Path(
         "CANONICAL_CSV",
         "/Users/mpesavento/Library/CloudStorage/GoogleDrive-mjpesavento@gmail.com/"
         "My Drive/work/Lief-AMIGA-AAC/data/"
-        "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary.csv",
+        "AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv",
     )
 )
 
