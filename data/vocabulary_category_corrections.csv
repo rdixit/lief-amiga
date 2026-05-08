@@ -1,187 +1,145 @@
-id,display_label,priority_tier,category_xls,current_ui_tab,corrected_ui_tab,reason
-# ── CORE tab: items that don't belong ──
-chips,Chips,2,Social,core,things,food item not a social word
-cookie,Cookie,2,Social,core,things,food item not a social word
-shirt,Shirt,2,Social,core,things,clothing item not a social word
-white,White,2,Social,core,more,color/descriptor not a social word
-high,high,3,Social,core,more,descriptor not a social word
-hill,hill,3,Social,core,things,place/noun not a social word
-him,him,3,Social,core,people,pronoun belongs in people
-his,his,3,Social,core,people,possessive pronoun belongs in people
-this,this,3,Social,core,more,determiner/function word
-which,which,3,Social,core,more,question word
-while,while,3,Social,core,more,conjunction/function word
-# ── ACTIONS tab: non-verbs miscategorized as actions ──
-dog,Dog,2,Actions,actions,things,noun (animal)
-doll,Doll,2,Actions,actions,things,noun (toy)
-down,Down,2,Actions,actions,more,direction/descriptor
-already,already,3,Actions,actions,more,adverb
-because,because,3,Actions,actions,more,conjunction
-doctor,doctor,3,Actions,actions,people,noun (person)
-doesnt,doesn't,3,Actions,actions,more,negation/auxiliary
-done,done,3,Actions,actions,more,state descriptor
-dont,don't,3,Actions,actions,more,negation/auxiliary
-door,door,3,Actions,actions,things,noun (object)
-great,great,3,Actions,actions,feelings,adjective/feeling descriptor
-house,house,3,Actions,actions,things,noun (place)
-ready,ready,3,Actions,actions,more,adjective/state
-together,together,3,Actions,actions,more,adverb
-gonna,gonna,3,Actions,actions,more,auxiliary/informal contraction
-# ── FEELINGS tab: non-feelings ──
-made,made,1,Feelings,feelings,actions,past tense of make - not a feeling
-# ── PEOPLE tab: non-person items ──
-airplane,Airplane,2,People/Pronouns/Possessives,people,things,vehicle/noun
-bus,Bus,2,People/Pronouns/Possessives,people,things,vehicle/noun
-tummy,Tummy,2,People/Pronouns/Possessives,people,things,body part
-bird,bird,3,People/Pronouns/Possessives,people,things,animal
-birds,birds,3,People/Pronouns/Possessives,people,things,animal
-bite,bite,3,People/Pronouns/Possessives,people,actions,verb
-came,came,3,People/Pronouns/Possessives,people,actions,verb (past tense of come)
-did,did,3,People/Pronouns/Possessives,people,more,auxiliary verb
-didnt,didn't,3,People/Pronouns/Possessives,people,more,negation/auxiliary
-fire,fire,3,People/Pronouns/Possessives,people,things,noun
-first,first,3,People/Pronouns/Possessives,people,more,ordinal/descriptor
-five,five,3,People/Pronouns/Possessives,people,more,number
-fixed,fixed,3,People/Pronouns/Possessives,people,actions,verb (past tense)
-hair,hair,3,People/Pronouns/Possessives,people,things,body part
-head,head,3,People/Pronouns/Possessives,people,things,body part
-hear,hear,3,People/Pronouns/Possessives,people,actions,verb
-here,here,3,People/Pronouns/Possessives,people,more,adverb/location
-heres,here's,3,People/Pronouns/Possessives,people,more,contraction/location
-if,if,3,People/Pronouns/Possessives,people,more,conjunction
-is,is,3,People/Pronouns/Possessives,people,more,auxiliary verb
-isnt,isn't,3,People/Pronouns/Possessives,people,more,negation/auxiliary
-just,just,3,People/Pronouns/Possessives,people,more,adverb
-lift,lift,3,People/Pronouns/Possessives,people,actions,verb
-mean,mean,3,People/Pronouns/Possessives,people,feelings,adjective/feeling
-messy,messy,3,People/Pronouns/Possessives,people,more,adjective/descriptor
-middle,middle,3,People/Pronouns/Possessives,people,more,position/descriptor
-must,must,3,People/Pronouns/Possessives,people,more,modal verb
-pick,pick,3,People/Pronouns/Possessives,people,actions,verb
-piece,piece,3,People/Pronouns/Possessives,people,things,noun
-remember,remember,3,People/Pronouns/Possessives,people,actions,verb
-said,said,3,People/Pronouns/Possessives,people,actions,verb (past tense)
-side,side,3,People/Pronouns/Possessives,people,more,position/noun
-some,some,3,People/Pronouns/Possessives,people,more,determiner
-sometimes,sometimes,3,People/Pronouns/Possessives,people,more,adverb
-still,still,3,People/Pronouns/Possessives,people,more,adverb
-then,then,3,People/Pronouns/Possessives,people,more,adverb/conjunction
-there,there,3,People/Pronouns/Possessives,people,more,adverb/location
-theres,there's,3,People/Pronouns/Possessives,people,more,contraction/location
-these,these,3,People/Pronouns/Possessives,people,more,determiner
-time,time,3,People/Pronouns/Possessives,people,more,noun (abstract)
-went,went,3,People/Pronouns/Possessives,people,actions,verb (past tense of go)
-when,when,3,People/Pronouns/Possessives,people,more,question word
-where,where,3,People/Pronouns/Possessives,people,more,question word
-wheres,where's,3,People/Pronouns/Possessives,people,more,contraction/question
-with,with,3,People/Pronouns/Possessives,people,more,preposition
-another,another,3,People/Pronouns/Possessives,people,more,determiner
-# ── THINGS tab: non-things ──
-fine,Fine,2,Descriptors,things,feelings,adjective/state (feeling)
-in,In,2,Places,things,more,preposition
-off,Off,2,Places,things,more,preposition/direction
-out,Out,2,Places,things,more,preposition/direction
-pink,Pink,2,Actions,things,more,color/descriptor
-up,Up,2,Places,things,more,direction
-about,about,3,Places,things,more,preposition
-again,again,3,Places,things,more,adverb
-being,being,3,Places,things,more,auxiliary verb
-inside,inside,3,Places,things,more,preposition/location
-kind,kind,3,Places,things,more,adjective/descriptor
-something,something,3,Places,things,more,pronoun/function word
-everything,everything,3,Places,things,more,pronoun/function word
-# ── MORE tab: concrete nouns/people that belong elsewhere ──
-balloon,Balloon,2,Preferred Items,more,things,noun (toy)
-boat,Boat,2,Vehicles,more,things,noun (vehicle)
-candy,Candy,2,Food/Drink,more,things,noun (food)
-carrot,Carrot,2,Food/Drink,more,things,noun (food)
-coat,Coat,2,Clothing,more,things,noun (clothing)
-ear,Ear,2,Body Parts,more,things,noun (body part)
-eye,Eye,2,Body Parts,more,things,noun (body part)
-fruit,Fruit,2,Food/Drink,more,things,noun (food)
-hand,Hand,2,Body Parts,more,things,noun (body part)
-hat,Hat,2,Clothing,more,things,noun (clothing)
-jacket,Jacket,2,Clothing,more,things,noun (clothing)
-juice,juice,2,Food/Drink,more,things,noun (drink)
-leg,Leg,2,Body Parts,more,things,noun (body part)
-nose,Nose,2,Body Parts,more,things,noun (body part)
-pants,Pants,2,Clothing,more,things,noun (clothing)
-popcorn,Popcorn,2,Food/Drink,more,things,noun (food)
-pretzel,Pretzel,2,Food/Drink,more,things,noun (food)
-rice,Rice,2,Food/Drink,more,things,noun (food)
-sand,Sand,2,Preferred Items,more,things,noun (material)
-shoe,Shoe,2,Clothing,more,things,noun (clothing)
-sock,Sock,2,Clothing,more,things,noun (clothing)
-stomach,stomach,2,Body Parts,more,things,noun (body part)
-ant,ant,3,Uncategorized,more,things,noun (animal)
-baby,baby,3,Uncategorized,more,people,noun (person)
-bean,bean,3,Food/Drink,more,things,noun (food)
-box,box,3,Preferred Items,more,things,noun (object)
-bugs,bugs,3,Uncategorized,more,things,noun (animal)
-chair,chair,3,Preferred Items,more,things,noun (furniture)
-corn,corn,3,Food/Drink,more,things,noun (food)
-duck,duck,3,Preferred Items,more,things,noun (animal)
-face,face,3,Body Parts,more,things,noun (body part)
-foot,foot,3,Body Parts,more,things,noun (body part)
-hands,hands,3,Body Parts,more,things,noun (body part)
-horse,horse,3,Preferred Items,more,things,noun (animal)
-lunch,lunch,3,Food/Drink,more,things,noun (meal)
-man,man,3,Uncategorized,more,people,noun (person)
-pet,pet,3,Uncategorized,more,things,noun (animal)
-toys,toys,3,Preferred Items,more,things,noun (toy)
-trees,trees,3,Uncategorized,more,things,noun (nature)
-turtles,turtles,3,Preferred Items,more,things,noun (animal)
-leaves,leaves,3,Uncategorized,more,things,noun (nature)
-fall,fall,3,Uncategorized,more,actions,verb
-fly,fly,3,Uncategorized,more,actions,verb
-found,found,3,Uncategorized,more,actions,verb (past tense of find)
-let,let,3,Uncategorized,more,actions,verb
-lets,let's,3,Uncategorized,more,actions,verb contraction
-move,move,3,Uncategorized,more,actions,verb
-saw,saw,3,Uncategorized,more,actions,verb (past tense of see)
-threw,threw,3,Uncategorized,more,actions,verb (past tense of throw)
-# ── Additional corrections (round 2) ──
-that,That,1,People/Pronouns/Possessives,people,more,determiner/function word not a person
-thats_funny,That's funny,2,People/Pronouns/Possessives,people,core,social expression belongs in core
-tummystomach,Tummy/stomach,2,People/Pronouns/Possessives,people,things,body part phrase belongs in things
-# ── Part-of-speech corrections (round 3) ──
-# Format: id, display_label, priority_tier, old_pos, current_pos_field, corrected_pos, reason
-# NOTE: These rows use the POS fields rather than ui_tab fields
-school,School,1,location/preposition,location/preposition,noun,school is a noun (place)
-goodbye,Goodbye,1,verb/action,verb/action,word,social greeting not a verb
-more,More,1,verb/action,verb/action,word,function word not a verb
-stop,stop,1,verb/action,verb/action,negation/repair,safety/negation command
-yes,Yes,1,verb/action,verb/action,word,social word not a verb
-frustrated,Frustrated,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
-nervous,Nervous,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
-sick,Sick,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
-bathroom,Bathroom,1,location/preposition,location/preposition,noun,noun (place)
-dog,Dog,2,verb/action,verb/action,noun,noun (animal)
-doll,Doll,2,verb/action,verb/action,noun,noun (toy)
-playground,Playground,2,verb/action,verb/action,noun,noun (place)
-airplane,Airplane,2,pronoun/person,pronoun/person,noun,noun (vehicle)
-bus,Bus,2,pronoun/person,pronoun/person,noun,noun (vehicle)
-tummy,Tummy,2,pronoun/person,pronoun/person,noun,noun (body part)
-classroom,Classroom,2,location/preposition,location/preposition,noun,noun (place)
-fine,Fine,2,location/preposition,location/preposition,descriptor/adjective,adjective/feeling
-gym,Gym,2,location/preposition,location/preposition,noun,noun (place)
-home,Home,2,location/preposition,location/preposition,noun,noun (place)
-mouth,Mouth,2,location/preposition,location/preposition,noun,noun (body part)
-train,Train,2,location/preposition,location/preposition,noun,noun (vehicle)
-trampoline,Trampoline,2,location/preposition,location/preposition,noun,noun (equipment)
-chips,Chips,2,word,word,noun,noun (food)
-cookie,Cookie,2,word,word,noun,noun (food)
-shirt,Shirt,2,word,word,noun,noun (clothing)
-great,great,3,verb/action,verb/action,descriptor/adjective,adjective not a verb
-mean,mean,3,pronoun/person,pronoun/person,descriptor/adjective,adjective not a pronoun
-pink,Pink,2,location/preposition,location/preposition,descriptor/adjective,color/descriptor not a preposition
-mine,Mine,1,location/preposition,location/preposition,pronoun/person,possessive pronoun
-know,know,1,negation/repair,negation/repair,verb/action,verb not negation
-good,Good,1,verb/action,verb/action,descriptor/adjective,adjective not a verb
-down,Down,2,verb/action,verb/action,location/preposition,direction/preposition not a verb
-made,made,1,descriptor/adjective,descriptor/adjective,verb/action,past tense of make
-bad,Bad,1,word,word,descriptor/adjective,adjective not a generic word
-need,need,1,word,word,verb/action,verb not a generic word
-books,Books,2,word,word,noun,noun not a generic word
-white,White,2,word,word,descriptor/adjective,color/descriptor not a generic word
-know,know,1,Negation/Repair,more,actions,verb belongs in actions tab (used in I don't know repair pattern)
+symbol_id,canonical_term,display_label,priority_tier,spreadsheet_category,spreadsheet_part_of_speech,inferred_ui_tab_from_spreadsheet_category,corrected_ui_tab,spreadsheet_part_of_speech_was,corrected_part_of_speech,change_kind,notes
+about,about,about,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+again,again,again,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+airplane,airplane,Airplane,2,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,noun,tab_and_pos,tab people → things; POS 'pronoun/person' → 'noun'
+all_done,all done,All done,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+already,already,already,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+another,another,another,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+ant,ant,ant,3,Uncategorized,word,more,things,word,word,tab,tab more → things
+baby,baby,baby,3,Uncategorized,word,more,people,word,word,tab,tab more → people
+bad,bad,Bad,1,Social,word,core,core,word,descriptor/adjective,pos,POS 'word' → 'descriptor/adjective'
+bathroom,bathroom,Bathroom,1,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+because,because,because,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+being,being,being,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+bird,bird,bird,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+birds,birds,birds,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+bite,bite,bite,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+books,books,Books,2,Social,word,core,things,word,noun,tab_and_pos,tab core → things; POS 'word' → 'noun'
+bugs,bugs,bugs,3,Uncategorized,word,more,things,word,word,tab,tab more → things
+bus,bus,Bus,2,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,noun,tab_and_pos,tab people → things; POS 'pronoun/person' → 'noun'
+came,came,came,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+chips,chips,Chips,2,Social,word,core,things,word,noun,tab_and_pos,tab core → things; POS 'word' → 'noun'
+classroom,classroom,Classroom,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+cookie,cookie,Cookie,2,Social,word,core,things,word,noun,tab_and_pos,tab core → things; POS 'word' → 'noun'
+did,did,did,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+didnt,didn't,didn't,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+doctor,doctor,doctor,3,Actions,verb/action,actions,people,verb/action,verb/action,tab,tab actions → people
+doesnt,doesn't,doesn't,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+dog,dog,Dog,2,Actions,verb/action,actions,things,verb/action,noun,tab_and_pos,tab actions → things; POS 'verb/action' → 'noun'
+doll,doll,Doll,2,Actions,verb/action,actions,things,verb/action,noun,tab_and_pos,tab actions → things; POS 'verb/action' → 'noun'
+done,done,done,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+dont,don't,don't,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+door,door,door,3,Actions,verb/action,actions,things,verb/action,verb/action,tab,tab actions → things
+down,down,Down,2,Actions,verb/action,actions,more,verb/action,location/preposition,tab_and_pos,tab actions → more; POS 'verb/action' → 'location/preposition'
+everything,everything,everything,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+fall,fall,fall,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+fine,fine,Fine,2,Places,location/preposition,things,feelings,location/preposition,descriptor/adjective,tab_and_pos,tab things → feelings; POS 'location/preposition' → 'descriptor/adjective'
+fire,fire,fire,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+first,first,first,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+five,five,five,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+fixed,fixed,fixed,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+fly,fly,fly,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+found,found,found,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+frustrated,frustrated,Frustrated,1,People/Pronouns/Possessives,pronoun/person,people,feelings,pronoun/person,descriptor/adjective,tab_and_pos,tab people → feelings; POS 'pronoun/person' → 'descriptor/adjective'
+gonna,gonna,gonna,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+good,good,Good,1,Actions,verb/action,actions,core,verb/action,descriptor/adjective,tab_and_pos,tab actions → core; POS 'verb/action' → 'descriptor/adjective'
+goodbye,goodbye,Goodbye,1,Actions,verb/action,actions,core,verb/action,word,tab_and_pos,tab actions → core; POS 'verb/action' → 'word'
+great,great,great,3,Actions,verb/action,actions,feelings,verb/action,descriptor/adjective,tab_and_pos,tab actions → feelings; POS 'verb/action' → 'descriptor/adjective'
+gym,gym,Gym,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+hair,hair,hair,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+head,head,head,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+hear,hear,hear,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+help,help,Help,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+help_me,help me,Help me,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+here,here,here,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+heres,here's,here's,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+high,high,high,3,Social,word,core,more,word,word,tab,tab core → more
+hill,hill,hill,3,Social,word,core,things,word,word,tab,tab core → things
+him,him,him,3,Social,word,core,people,word,word,tab,tab core → people
+his,his,his,3,Social,word,core,people,word,word,tab,tab core → people
+home,home,Home,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+house,house,house,3,Actions,verb/action,actions,things,verb/action,verb/action,tab,tab actions → things
+i_am_tired,i am tired,I am tired,2,Descriptors,descriptor/adjective,more,feelings,descriptor/adjective,descriptor/adjective,tab,tab more → feelings
+i_need_a_break,i need a break,I need a break,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+i_want_water,i want water,I want water,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+if,if,if,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+im_frustrated,i'm frustrated,I’m frustrated,2,People/Pronouns/Possessives,pronoun/person,people,feelings,pronoun/person,pronoun/person,tab,tab people → feelings
+in,in,In,2,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+inside,inside,inside,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+is,is,is,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+isnt,isn't,isn't,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+just,just,just,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+kind,kind,kind,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+know,know,know,1,Negation/Repair,negation/repair,more,actions,negation/repair,verb/action,tab_and_pos,tab more → actions; POS 'negation/repair' → 'verb/action'
+leaves,leaves,leaves,3,Uncategorized,word,more,things,word,word,tab,tab more → things
+let,let,let,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+lets,let's,let's,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+lift,lift,lift,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+made,made,made,1,Feelings,descriptor/adjective,feelings,actions,descriptor/adjective,verb/action,tab_and_pos,tab feelings → actions; POS 'descriptor/adjective' → 'verb/action'
+man,man,man,3,Uncategorized,word,more,people,word,word,tab,tab more → people
+mean,mean,mean,3,People/Pronouns/Possessives,pronoun/person,people,feelings,pronoun/person,descriptor/adjective,tab_and_pos,tab people → feelings; POS 'pronoun/person' → 'descriptor/adjective'
+messy,messy,messy,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+middle,middle,middle,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+mine,mine,Mine,1,Places,location/preposition,things,people,location/preposition,pronoun/person,tab_and_pos,tab things → people; POS 'location/preposition' → 'pronoun/person'
+more,more,More,1,Actions,verb/action,actions,core,verb/action,word,tab_and_pos,tab actions → core; POS 'verb/action' → 'word'
+mouth,mouth,Mouth,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+move,move,move,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+must,must,must,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+need,need,need,1,Uncategorized,word,more,core,word,verb/action,tab_and_pos,tab more → core; POS 'word' → 'verb/action'
+nervous,nervous,Nervous,1,People/Pronouns/Possessives,pronoun/person,people,feelings,pronoun/person,descriptor/adjective,tab_and_pos,tab people → feelings; POS 'pronoun/person' → 'descriptor/adjective'
+no,no,No,1,Negation/Repair,negation/repair,more,core,negation/repair,negation/repair,tab,tab more → core
+off,off,Off,2,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+out,out,Out,2,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+pet,pet,pet,3,Uncategorized,word,more,things,word,word,tab,tab more → things
+pick,pick,pick,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+piece,piece,piece,3,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+pink,pink,Pink,2,Places,location/preposition,things,more,location/preposition,descriptor/adjective,tab_and_pos,tab things → more; POS 'location/preposition' → 'descriptor/adjective'
+playground,playground,Playground,2,Actions,verb/action,actions,things,verb/action,noun,tab_and_pos,tab actions → things; POS 'verb/action' → 'noun'
+ready,ready,ready,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+remember,remember,remember,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+said,said,said,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+saw,saw,saw,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+shirt,shirt,Shirt,2,Social,word,core,things,word,noun,tab_and_pos,tab core → things; POS 'word' → 'noun'
+sick,sick,Sick,1,People/Pronouns/Possessives,pronoun/person,people,feelings,pronoun/person,descriptor/adjective,tab_and_pos,tab people → feelings; POS 'pronoun/person' → 'descriptor/adjective'
+side,side,side,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+some,some,some,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+something,something,something,3,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+sometimes,sometimes,sometimes,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+still,still,still,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+stop,stop,stop,1,Actions,verb/action,actions,core,verb/action,negation/repair,tab_and_pos,tab actions → core; POS 'verb/action' → 'negation/repair'
+that,that,That,1,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,word,tab_and_pos,tab people → more; POS 'pronoun/person' → 'word'
+thats_funny,that's funny,That’s funny,2,People/Pronouns/Possessives,pronoun/person,people,core,pronoun/person,pronoun/person,tab,tab people → core
+then,then,then,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+there,there,there,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+theres,there's,there's,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+these,these,these,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+this,this,this,3,Social,word,core,more,word,word,tab,tab core → more
+threw,threw,threw,3,Uncategorized,word,more,actions,word,word,tab,tab more → actions
+time,time,time,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+tired,tired,Tired,1,Descriptors,descriptor/adjective,more,feelings,descriptor/adjective,descriptor/adjective,tab,tab more → feelings
+together,together,together,3,Actions,verb/action,actions,more,verb/action,verb/action,tab,tab actions → more
+toygame,toy/game,Toy/Game,2,Preferred Items,noun,things,more,noun,noun,tab,tab things → more
+train,train,Train,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+trampoline,trampoline,Trampoline,2,Places,location/preposition,things,things,location/preposition,noun,pos,POS 'location/preposition' → 'noun'
+trees,trees,trees,3,Uncategorized,word,more,things,word,word,tab,tab more → things
+tummy,tummy,Tummy,2,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,noun,tab_and_pos,tab people → things; POS 'pronoun/person' → 'noun'
+tummystomach,tummy/stomach,Tummy/stomach,2,People/Pronouns/Possessives,pronoun/person,people,things,pronoun/person,pronoun/person,tab,tab people → things
+up,up,Up,2,Places,location/preposition,things,more,location/preposition,location/preposition,tab,tab things → more
+want,want,Want,1,Actions,verb/action,actions,core,verb/action,verb/action,tab,tab actions → core
+waterjuice,water/juice,Water/juice,2,Food/Drink,noun,things,more,noun,noun,tab,tab things → more
+went,went,went,3,People/Pronouns/Possessives,pronoun/person,people,actions,pronoun/person,pronoun/person,tab,tab people → actions
+what,what,what,3,Clothing,noun,things,more,noun,noun,tab,tab things → more
+whats,what's,what's,3,Clothing,noun,things,more,noun,noun,tab,tab things → more
+when,when,when,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+where,where,where,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+wheres,where's,where's,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+which,which,which,3,Social,word,core,more,word,word,tab,tab core → more
+while,while,while,3,Social,word,core,more,word,word,tab,tab core → more
+white,white,White,2,Social,word,core,more,word,descriptor/adjective,tab_and_pos,tab core → more; POS 'word' → 'descriptor/adjective'
+with,with,with,3,People/Pronouns/Possessives,pronoun/person,people,more,pronoun/person,pronoun/person,tab,tab people → more
+yes,yes,Yes,1,Actions,verb/action,actions,core,verb/action,word,tab_and_pos,tab actions → core; POS 'verb/action' → 'word'
+feel,feel,Feel,1,,,,actions,,verb/action,vocab_only_addition,Restored or added for Phase I AAC grid; add this row to the canonical spreadsheet.
+food,food,Food,1,,,,things,,noun,vocab_only_addition,Restored or added for Phase I AAC grid; add this row to the canonical spreadsheet.
+he_she,he/she,He/She,1,,,,people,,pronoun/person,vocab_only_addition,Restored or added for Phase I AAC grid; add this row to the canonical spreadsheet.
+school,school,School,1,,,,things,,noun,vocab_only_addition,Restored or added for Phase I AAC grid; add this row to the canonical spreadsheet.
+thank_you,thank you,Thank You,1,,,,core,,word,vocab_only_addition,Restored or added for Phase I AAC grid; add this row to the canonical spreadsheet.
