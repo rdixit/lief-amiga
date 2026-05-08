@@ -337,11 +337,11 @@ body {
   opacity: 0.6;
 }
 
-/* Symbol Grid */
+/* Symbol Grid — fixed 8 columns, rows sized so ~3.5 are visible */
 .symbol-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  grid-auto-rows: 92px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 88px;
   gap: 6px;
   padding: 8px 10px;
   overflow-y: auto;
@@ -398,8 +398,8 @@ body {
 }
 
 .symbol-card .symbol-icon {
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -411,10 +411,10 @@ body {
 }
 
 .symbol-card .symbol-label {
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   color: var(--text);
   text-align: center;
   line-height: 1.2;
@@ -979,7 +979,7 @@ body {
   .ipad-frame { border-radius: 24px; padding: 10px; }
   .ipad-screen { border-radius: 14px; min-height: 480px; }
   .symbol-grid {
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: 82px;
     gap: 5px;
     padding: 6px 8px;

@@ -36,8 +36,8 @@ function getSymbolSVG(sym) {
 let liefState = {
   hrv: null,
   hrv_baseline_z: null,
-  quintile: 1,
-  valence: 0.9,
+  quintile: 2,
+  valence: 0.7,
   arousal: 0.5,
   confidence: 0.6,
   source: 'mock',
