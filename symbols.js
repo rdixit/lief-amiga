@@ -182,15 +182,7 @@ export const SYMBOL_SVGS = {
   <line x1="50" y1="84" x2="50" y2="96" stroke="#6b7280" stroke-width="2.5" stroke-linecap="round"/>
 </svg>`,
 
-  "bathroom": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect x="18" y="20" width="64" height="60" rx="6" fill="#93c5fd" stroke="#3b82f6" stroke-width="2.5"/>
-  <rect x="26" y="30" width="20" height="14" rx="3" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-  <ellipse cx="56" cy="52" rx="16" ry="12" fill="white" stroke="#3b82f6" stroke-width="2"/>
-  <ellipse cx="56" cy="54" rx="12" ry="8" fill="#93c5fd" opacity="0.4"/>
-  <rect x="50" y="26" width="12" height="20" rx="3" fill="white" stroke="#3b82f6" stroke-width="1.5"/>
-  <rect x="53" y="24" width="6" height="6" rx="1" fill="#e5e7eb"/>
-  <rect x="22" y="72" width="56" height="6" rx="2" fill="#3b82f6" opacity="0.3"/>
-</svg>`,
+  "bathroom": `<svg viewBox="0 0 50 50"><rect x="14" y="8" width="22" height="28" rx="4" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/><rect x="18" y="12" width="14" height="8" rx="2" fill="white" opacity="0.5"/><ellipse cx="25" cy="28" rx="6" ry="4" fill="white" opacity="0.4"/><circle cx="25" cy="4" r="2" fill="#93c5fd"/><rect x="20" y="38" width="10" height="6" rx="2" fill="#3b82f6"/></svg>`,
 
   "be": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -542,20 +534,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">cut</text>
 </svg>`,
 
-  "dad": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect x="36" y="12" width="28" height="10" rx="5" fill="#6b7280"/>
-  <circle cx="50" cy="29" r="13" fill="#fde8d0"/>
-<circle cx="46.1" cy="25.75" r="1.3" fill="#1f2937"/>
-<circle cx="53.9" cy="25.75" r="1.3" fill="#1f2937"/>
-<circle cx="46.620000000000005" cy="25.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<circle cx="54.42" cy="25.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<path d="M45.45,31.6 Q50,34.46 54.55,31.6" stroke="#1f2937" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-  <rect x="37" y="44" width="26" height="26" rx="5" fill="#3b82f6"/>
-  <line x1="37" y1="50" x2="22" y2="60" stroke="#3b82f6" stroke-width="7.5" stroke-linecap="round"/>
-  <line x1="63" y1="50" x2="78" y2="60" stroke="#3b82f6" stroke-width="7.5" stroke-linecap="round"/>
-  <line x1="44" y1="70" x2="43" y2="88" stroke="#6b7280" stroke-width="6.5" stroke-linecap="round"/>
-  <line x1="56" y1="70" x2="57" y2="88" stroke="#6b7280" stroke-width="6.5" stroke-linecap="round"/>
-</svg>`,
+  "dad": `<svg viewBox="0 0 50 50"><circle cx="25" cy="14" r="8" fill="#3b82f6"/><circle cx="25" cy="14" r="5.5" fill="#dbeafe"/><rect x="17" y="8" width="16" height="4" rx="2" fill="#1e3a5f"/><circle cx="23" cy="13" r="1.2" fill="#333"/><circle cx="27" cy="13" r="1.2" fill="#333"/><path d="M23 17 Q25 19 27 17" stroke="#333" fill="none" stroke-width="1.2"/><path d="M14 50 V32 a11 11 0 0 1 22 0 V50" fill="#3b82f6"/></svg>`,
 
   "day": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -675,12 +654,7 @@ export const SYMBOL_SVGS = {
   <path d="M24 82 L76 82" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
 </svg>`,
 
-  "drink": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M32 20 L36 82 Q36 88 44 88 L56 88 Q64 88 64 82 L68 20 Z" fill="#93c5fd" stroke="#3b82f6" stroke-width="2.5"/>
-  <path d="M33 40 L67 40 L65 82 Q65 86 56 86 L44 86 Q35 86 35 82 Z" fill="#14b8a6" opacity="0.55"/>
-  <ellipse cx="50" cy="20" rx="18" ry="3" fill="#3b82f6" opacity="0.7"/>
-  <path d="M38 50 Q42 44 46 50 Q50 56 54 50" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7"/>
-</svg>`,
+  "drink": `<svg viewBox="0 0 50 50"><path d="M15 10 L18 42 Q18 46 22 46 L28 46 Q32 46 32 42 L35 10 Z" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/><path d="M16 18 L34 18 L32 42 Q32 46 28 46 L22 46 Q18 46 18 42 Z" fill="#93c5fd" opacity="0.6"/><ellipse cx="25" cy="10" rx="10" ry="2" fill="#3b82f6"/></svg>`,
 
   "duck": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -694,16 +668,7 @@ export const SYMBOL_SVGS = {
   <ellipse cx="50" cy="50" rx="6" ry="14" fill="#f5c5a3" opacity="0.7"/>
 </svg>`,
 
-  "eat": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="50" cy="70" rx="28" ry="16" fill="#fed7aa" stroke="#f97316" stroke-width="2.5"/>
-  <circle cx="40" cy="66" r="7" fill="#ef4444" opacity="0.85"/>
-  <circle cx="56" cy="62" r="9" fill="#f97316"/>
-  <circle cx="52" cy="74" r="6" fill="#10b981"/>
-  <path d="M50 46 L50 30" stroke="#6b7280" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M42 22 Q38 14 42 10" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M50 22 L50 14" stroke="#6b7280" stroke-width="3" stroke-linecap="round"/>
-  <path d="M58 22 Q62 14 58 10" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/>
-</svg>`,
+  "eat": `<svg viewBox="0 0 50 50"><ellipse cx="25" cy="32" rx="16" ry="10" fill="#fbbf24"/><ellipse cx="25" cy="30" rx="16" ry="10" fill="#fcd34d"/><circle cx="20" cy="28" r="3" fill="#ef4444"/><circle cx="30" cy="26" r="4" fill="#a3e635"/><circle cx="24" cy="32" r="2.5" fill="#fb923c"/><path d="M25 6 L25 18" stroke="#9ca3af" stroke-width="2"/><circle cx="22" cy="10" r="3" fill="none" stroke="#9ca3af" stroke-width="1.5"/><circle cx="28" cy="7" r="3" fill="none" stroke="#9ca3af" stroke-width="1.5"/></svg>`,
 
   "eating": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#10b981" opacity="0.18"/>
@@ -763,14 +728,7 @@ export const SYMBOL_SVGS = {
   <circle cx="72" cy="50" r="8" fill="white" opacity="0.8"/>
 </svg>`,
 
-  "feel": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="42" r="22" fill="#fbbf24" stroke="#f59e0b" stroke-width="2.5"/>
-  <circle cx="40" cy="38" r="3" fill="#1f2937"/>
-  <circle cx="60" cy="38" r="3" fill="#1f2937"/>
-  <path d="M36 50 Q50 62 64 50" stroke="#1f2937" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M24 72 Q28 84 38 84 L62 84 Q72 84 76 72" fill="#f9a8d4" stroke="#ec4899" stroke-width="2" opacity="0.8"/>
-  <path d="M38 84 L50 90 L62 84" stroke="#ec4899" stroke-width="2" fill="none"/>
-</svg>`,
+  "feel": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="16" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/><circle cx="19" cy="22" r="2" fill="#333"/><circle cx="31" cy="22" r="2" fill="#333"/><path d="M18 31 Q25 38 32 31" stroke="#333" fill="none" stroke-width="2" stroke-linecap="round"/></svg>`,
 
   "find": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#10b981" opacity="0.18"/>
@@ -820,17 +778,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">fly</text>
 </svg>`,
 
-  "food": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="50" cy="62" rx="34" ry="16" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
-  <ellipse cx="50" cy="60" rx="34" ry="16" fill="#e5e7eb"/>
-  <ellipse cx="50" cy="58" rx="30" ry="12" fill="white" stroke="#e5e7eb" stroke-width="1.5"/>
-  <circle cx="38" cy="52" r="8" fill="#ef4444" opacity="0.9"/>
-  <circle cx="55" cy="48" r="10" fill="#f97316"/>
-  <circle cx="64" cy="54" r="7" fill="#10b981"/>
-  <path d="M52 24 Q52 14 60 10" stroke="#6b7280" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <circle cx="48" cy="26" r="4" fill="none" stroke="#6b7280" stroke-width="2.5"/>
-  <circle cx="62" cy="22" r="3.5" fill="none" stroke="#6b7280" stroke-width="2.5"/>
-</svg>`,
+  "food": `<svg viewBox="0 0 50 50"><ellipse cx="25" cy="36" rx="18" ry="8" fill="#e5e7eb"/><ellipse cx="25" cy="34" rx="18" ry="8" fill="#f3f4f6"/><circle cx="18" cy="24" r="5" fill="#ef4444"/><path d="M16 24 Q18 20 20 24" fill="#22c55e"/><circle cx="32" cy="22" r="6" fill="#fbbf24"/><path d="M29 18 Q32 10 35 18" fill="#a16207" stroke-width="0"/><circle cx="25" cy="28" r="4" fill="#fb923c"/></svg>`,
 
   "foot": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -916,24 +864,9 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">girls</text>
 </svg>`,
 
-  "give": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M14 60 Q14 48 26 48 L44 48" stroke="#10b981" stroke-width="5.5" fill="none" stroke-linecap="round"/>
-  <path d="M44 38 L44 58" stroke="#10b981" stroke-width="5.5" stroke-linecap="round"/>
-  <path d="M36 46 L44 38 L52 46" stroke="#10b981" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="52" y="34" width="28" height="20" rx="5" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
-  <line x1="66" y1="34" x2="66" y2="54" stroke="#b45309" stroke-width="1.5"/>
-  <line x1="52" y1="44" x2="80" y2="44" stroke="#b45309" stroke-width="1.5"/>
-  <path d="M80 54 Q90 58 86 66" stroke="#f59e0b" stroke-width="3" fill="none" stroke-linecap="round"/>
-</svg>`,
+  "give": `<svg viewBox="0 0 50 50"><path d="M8 28 Q8 20 16 20 L26 20" stroke="#10b981" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M26 14 L26 26" stroke="#10b981" stroke-width="3" stroke-linecap="round"/><path d="M20 20 L26 14 L32 20" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="28" y="16" width="16" height="12" rx="3" fill="#fbbf24" stroke="#f59e0b" stroke-width="1.5"/><path d="M36 16 V28 M28 22 H44" stroke="#f59e0b" stroke-width="1.5"/></svg>`,
 
-  "go": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="38" cy="50" r="18" fill="#6ee7b7"/>
-  <path d="M38 50 L70 50" stroke="#10b981" stroke-width="7" stroke-linecap="round"/>
-  <path d="M58 36 L76 50 L58 64" fill="#10b981" stroke="#065f46" stroke-width="1.5" stroke-linejoin="round"/>
-  <circle cx="28" cy="62" r="5" fill="#10b981" opacity="0.5"/>
-  <circle cx="22" cy="70" r="4" fill="#10b981" opacity="0.35"/>
-  <circle cx="16" cy="78" r="3" fill="#10b981" opacity="0.2"/>
-</svg>`,
+  "go": `<svg viewBox="0 0 50 50"><path d="M10 25 L35 25" stroke="#10b981" stroke-width="4" stroke-linecap="round"/><path d="M28 16 L40 25 L28 34" fill="#10b981"/><circle cx="15" cy="38" r="3" fill="#86efac"/><circle cx="22" cy="42" r="2.5" fill="#86efac"/><circle cx="9" cy="41" r="2" fill="#86efac"/></svg>`,
 
   "goes": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#10b981" opacity="0.18"/>
@@ -1042,16 +975,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">hands</text>
 </svg>`,
 
-  "happy": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="38" fill="#fbbf24" stroke="#f59e0b" stroke-width="2.5"/>
-  <circle cx="37" cy="42" r="5" fill="#1f2937"/>
-  <circle cx="63" cy="42" r="5" fill="#1f2937"/>
-  <circle cx="38.5" cy="40.5" r="2" fill="white"/>
-  <circle cx="64.5" cy="40.5" r="2" fill="white"/>
-  <path d="M28 58 Q50 76 72 58" stroke="#1f2937" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <circle cx="30" cy="52" r="5" fill="#f43f5e" opacity="0.4"/>
-  <circle cx="70" cy="52" r="5" fill="#f43f5e" opacity="0.4"/>
-</svg>`,
+  "happy": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="18" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/><circle cx="18" cy="21" r="2.5" fill="#333"/><circle cx="32" cy="21" r="2.5" fill="#333"/><path d="M16 30 Q25 40 34 30" stroke="#333" fill="none" stroke-width="2.5" stroke-linecap="round"/></svg>`,
 
   "has": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -1092,32 +1016,7 @@ export const SYMBOL_SVGS = {
   <rect x="36" y="18" width="28" height="8" rx="4" fill="#1e40af"/>
 </svg>`,
 
-  "he_she": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="30" cy="30" r="11" fill="#fde8d0"/>
-<circle cx="26.7" cy="27.25" r="1.1" fill="#1f2937"/>
-<circle cx="33.3" cy="27.25" r="1.1" fill="#1f2937"/>
-<circle cx="27.14" cy="26.92" r="0.385" fill="white" opacity="0.8"/>
-<circle cx="33.739999999999995" cy="26.92" r="0.385" fill="white" opacity="0.8"/>
-<path d="M26.15,32.2 Q30,34.620000000000005 33.85,32.2" stroke="#1f2937" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <rect x="22" y="43" width="16" height="20" rx="4" fill="#3b82f6"/>
-  <line x1="22" y1="48" x2="12" y2="56" stroke="#3b82f6" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="38" y1="48" x2="44" y2="56" stroke="#3b82f6" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="25" y1="63" x2="24" y2="78" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <line x1="35" y1="63" x2="36" y2="78" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <rect x="24" y="20" width="14" height="5" rx="2.5" fill="#1e40af"/>
-  <circle cx="70" cy="30" r="11" fill="#fde8d0"/>
-<circle cx="66.7" cy="27.25" r="1.1" fill="#1f2937"/>
-<circle cx="73.3" cy="27.25" r="1.1" fill="#1f2937"/>
-<circle cx="67.14" cy="26.92" r="0.385" fill="white" opacity="0.8"/>
-<circle cx="73.74" cy="26.92" r="0.385" fill="white" opacity="0.8"/>
-<path d="M66.15,32.2 Q70,34.620000000000005 73.85,32.2" stroke="#1f2937" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <rect x="62" y="43" width="16" height="20" rx="4" fill="#ec4899"/>
-  <line x1="62" y1="48" x2="56" y2="56" stroke="#ec4899" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="78" y1="48" x2="88" y2="56" stroke="#ec4899" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="65" y1="63" x2="64" y2="78" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <line x1="75" y1="63" x2="76" y2="78" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <path d="M64 20 Q70 14 76 20" stroke="#ec4899" stroke-width="3" fill="none" stroke-linecap="round"/>
-</svg>`,
+  "he_she": `<svg viewBox="0 0 50 50"><circle cx="18" cy="16" r="7" fill="#60a5fa"/><circle cx="18" cy="16" r="4.5" fill="#dbeafe"/><circle cx="16.5" cy="15" r="1" fill="#333"/><circle cx="19.5" cy="15" r="1" fill="#333"/><circle cx="34" cy="16" r="7" fill="#f472b6"/><circle cx="34" cy="16" r="4.5" fill="#fce7f3"/><circle cx="32.5" cy="15" r="1" fill="#333"/><circle cx="35.5" cy="15" r="1" fill="#333"/><path d="M10 50 V34 a8 8 0 0 1 16 0 V50" fill="#60a5fa"/><path d="M26 50 V34 a8 8 0 0 1 16 0 V50" fill="#f472b6"/></svg>`,
 
   "head": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
@@ -1149,14 +1048,7 @@ export const SYMBOL_SVGS = {
   <line x1="58" y1="66" x2="60" y2="82" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
 </svg>`,
 
-  "help": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="22" r="12" fill="#10b981"/>
-  <circle cx="50" cy="22" r="8" fill="#6ee7b7"/>
-  <path d="M20 52 L38 38 L50 46 L62 38 L80 52" fill="none" stroke="#10b981" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="20" cy="52" r="6" fill="#10b981"/>
-  <circle cx="80" cy="52" r="6" fill="#10b981"/>
-  <path d="M25 70 L50 80 L75 70" stroke="#065f46" stroke-width="4" fill="none" stroke-linecap="round"/>
-</svg>`,
+  "help": `<svg viewBox="0 0 50 50"><path d="M18 38 L12 22 Q10 16 16 14 L25 10 L34 14 Q40 16 38 22 L32 38" fill="#10b981"/><path d="M18 38 Q25 44 32 38" fill="#059669"/><rect x="22" y="18" width="6" height="10" rx="3" fill="white"/><rect x="23" y="30" width="4" height="4" rx="2" fill="white"/></svg>`,
 
   "help_me": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="26" r="13" fill="#fde8d0"/>
@@ -1276,15 +1168,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">hold</text>
 </svg>`,
 
-  "home": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M50 10 L12 42 L18 42 L18 82 L82 82 L82 42 L88 42 Z" fill="#3b82f6" stroke="#1e40af" stroke-width="2.5"/>
-  <rect x="42" y="50" width="16" height="32" rx="2" fill="#f59e0b"/>
-  <circle cx="54" cy="66" r="2.5" fill="#b45309"/>
-  <rect x="24" y="52" width="14" height="12" rx="2" fill="#93c5fd" opacity="0.8"/>
-  <rect x="62" y="52" width="14" height="12" rx="2" fill="#93c5fd" opacity="0.8"/>
-  <path d="M24 55 L31 55 M24 60 L31 60 M31 52 L31 64" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-  <path d="M62 55 L69 55 M62 60 L69 60 M69 52 L69 64" stroke="#3b82f6" stroke-width="1.5" opacity="0.5"/>
-</svg>`,
+  "home": `<svg viewBox="0 0 50 50"><path d="M25 6 L5 24 L10 24 L10 44 L40 44 L40 24 L45 24 Z" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/><rect x="20" y="28" width="10" height="16" rx="1" fill="#fbbf24"/><circle cx="28" cy="36" r="1.2" fill="#92400e"/><rect x="14" y="18" width="8" height="6" rx="1" fill="#bfdbfe"/><rect x="28" y="18" width="8" height="6" rx="1" fill="#bfdbfe"/></svg>`,
 
   "horse": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -1339,21 +1223,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">hum</text>
 </svg>`,
 
-  "i": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="28" r="14" fill="#fde8d0"/>
-<circle cx="45.8" cy="24.5" r="1.4000000000000001" fill="#1f2937"/>
-<circle cx="54.2" cy="24.5" r="1.4000000000000001" fill="#1f2937"/>
-<circle cx="46.36" cy="24.08" r="0.49" fill="white" opacity="0.8"/>
-<circle cx="54.760000000000005" cy="24.08" r="0.49" fill="white" opacity="0.8"/>
-<path d="M45.1,30.8 Q50,33.88 54.9,30.8" stroke="#1f2937" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-  <rect x="39" y="44" width="22" height="26" rx="5" fill="#f59e0b"/>
-  <line x1="39" y1="50" x2="25" y2="62" stroke="#f59e0b" stroke-width="7" stroke-linecap="round"/>
-  <line x1="61" y1="50" x2="75" y2="62" stroke="#f59e0b" stroke-width="7" stroke-linecap="round"/>
-  <line x1="42" y1="70" x2="40" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <line x1="58" y1="70" x2="60" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="50" cy="93" r="4" fill="#f59e0b" opacity="0.6"/>
-  <text x="50" y="98" text-anchor="middle" font-size="6" fill="#f59e0b" font-weight="bold" opacity="0.5">ME</text>
-</svg>`,
+  "i": `<svg viewBox="0 0 50 50"><circle cx="25" cy="14" r="8" fill="#f59e0b"/><path d="M15 50 V32 a10 10 0 0 1 20 0 V50" fill="#f59e0b"/><circle cx="25" cy="14" r="5" fill="#fff3cd"/><circle cx="23" cy="13" r="1.2" fill="#333"/><circle cx="27" cy="13" r="1.2" fill="#333"/><path d="M23 17 Q25 19 27 17" stroke="#333" fill="none" stroke-width="1.2"/><line x1="25" y1="28" x2="25" y2="22" stroke="#333" stroke-width="1" stroke-dasharray="2"/></svg>`,
 
   "i_am_tired": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#c4b5fd" stroke="#8b5cf6" stroke-width="2.5"/>
@@ -1697,10 +1567,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">lift</text>
 </svg>`,
 
-  "like": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M50 80 C30 68 8 54 8 36 A18 18 0 0 1 50 28 A18 18 0 0 1 92 36 C92 54 70 68 50 80Z" fill="#ec4899" stroke="#f43f5e" stroke-width="2"/>
-  <path d="M34 44 Q32 36 38 34" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6"/>
-</svg>`,
+  "like": `<svg viewBox="0 0 50 50"><path d="M25 42 C15 34 5 26 5 18 A10 10 0 0 1 25 14 A10 10 0 0 1 45 18 C45 26 35 34 25 42Z" fill="#f472b6" stroke="#ec4899" stroke-width="1.5"/></svg>`,
 
   "little": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#93c5fd" stroke="#3b82f6" stroke-width="2.5"/>
@@ -1715,12 +1582,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">long</text>
 </svg>`,
 
-  "look": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="50" cy="50" rx="36" ry="22" fill="white" stroke="#10b981" stroke-width="4"/>
-  <circle cx="50" cy="50" r="14" fill="#10b981"/>
-  <circle cx="50" cy="50" r="7" fill="#1f2937"/>
-  <circle cx="53" cy="47" r="3" fill="white"/>
-</svg>`,
+  "look": `<svg viewBox="0 0 50 50"><ellipse cx="25" cy="25" rx="18" ry="12" fill="white" stroke="#10b981" stroke-width="2.5"/><circle cx="25" cy="25" r="7" fill="#10b981"/><circle cx="25" cy="25" r="3.5" fill="#064e3b"/><circle cx="27" cy="23" r="1.5" fill="white"/></svg>`,
 
   "look_at_me": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="72" cy="24" r="12" fill="#fde8d0"/>
@@ -1769,23 +1631,20 @@ export const SYMBOL_SVGS = {
 </svg>`,
 
   "made": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="38" fill="#ef4444" opacity="0.85" stroke="#b91c1c" stroke-width="2.5"/>
-  <circle cx="37" cy="44" r="5" fill="#1f2937"/>
-  <circle cx="63" cy="44" r="5" fill="#1f2937"/>
-  <circle cx="38.5" cy="42.5" r="2" fill="white"/>
-  <circle cx="64.5" cy="42.5" r="2" fill="white"/>
-  <path d="M28 62 Q50 50 72 62" stroke="#1f2937" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <line x1="28" y1="32" x2="46" y2="38" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
-  <line x1="72" y1="32" x2="54" y2="38" stroke="#1f2937" stroke-width="4" stroke-linecap="round"/>
+  <rect x="15" y="62" width="30" height="24" rx="3" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+  <rect x="55" y="62" width="30" height="24" rx="3" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <rect x="35" y="38" width="30" height="24" rx="3" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+  <rect x="42" y="16" width="16" height="22" rx="3" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+  <path d="M14 86 L86 86" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 10 L44 16 L56 16 Z" fill="#f59e0b" opacity="0.6"/>
 </svg>`,
 
   "make": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect x="26" y="52" width="48" height="28" rx="5" fill="#fed7aa" stroke="#f97316" stroke-width="2.5"/>
-  <rect x="22" y="46" width="56" height="12" rx="4" fill="#f97316" stroke="#b45309" stroke-width="1.5"/>
-  <rect x="32" y="26" width="14" height="20" rx="3" fill="#f59e0b"/>
-  <rect x="54" y="32" width="14" height="14" rx="3" fill="#f59e0b"/>
-  <circle cx="39" cy="20" r="8" fill="#fcd34d" stroke="#f59e0b" stroke-width="2"/>
-  <circle cx="61" cy="24" r="6" fill="#fcd34d" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="15" y="62" width="30" height="24" rx="3" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+  <rect x="55" y="62" width="30" height="24" rx="3" fill="#ef4444" stroke="#b91c1c" stroke-width="2"/>
+  <rect x="35" y="38" width="30" height="24" rx="3" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+  <rect x="42" y="16" width="16" height="22" rx="3" fill="#f59e0b" stroke="#b45309" stroke-width="2"/>
+  <path d="M14 86 L86 86" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
 </svg>`,
 
   "man": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -1862,23 +1721,7 @@ export const SYMBOL_SVGS = {
   <path d="M69 68 L73 72 L80 64" stroke="#b45309" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`,
 
-  "mom": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="50" cy="20" rx="15" ry="9" fill="#b45309"/>
-  <circle cx="50" cy="29" r="13" fill="#fde8d0"/>
-<circle cx="46.1" cy="25.75" r="1.3" fill="#1f2937"/>
-<circle cx="53.9" cy="25.75" r="1.3" fill="#1f2937"/>
-<circle cx="46.620000000000005" cy="25.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<circle cx="54.42" cy="25.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<path d="M45.45,31.6 Q50,34.46 54.55,31.6" stroke="#1f2937" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-<circle cx="44.93" cy="29.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-<circle cx="55.07" cy="29.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-  <rect x="38" y="44" width="24" height="26" rx="5" fill="#ec4899"/>
-  <line x1="38" y1="50" x2="24" y2="62" stroke="#ec4899" stroke-width="7" stroke-linecap="round"/>
-  <line x1="62" y1="50" x2="76" y2="62" stroke="#ec4899" stroke-width="7" stroke-linecap="round"/>
-  <line x1="44" y1="70" x2="43" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <line x1="56" y1="70" x2="57" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <path d="M43 70 Q50 80 57 70" fill="#f9a8d4" opacity="0.6"/>
-</svg>`,
+  "mom": `<svg viewBox="0 0 50 50"><circle cx="25" cy="14" r="8" fill="#f472b6"/><circle cx="25" cy="14" r="5.5" fill="#fce7f3"/><path d="M17 10 Q20 4 25 6 Q30 4 33 10" fill="#7c2d12" stroke="none"/><circle cx="23" cy="13" r="1.2" fill="#333"/><circle cx="27" cy="13" r="1.2" fill="#333"/><path d="M23 17 Q25 19 27 17" stroke="#333" fill="none" stroke-width="1.2"/><path d="M14 50 V32 a11 11 0 0 1 22 0 V50" fill="#f472b6"/><path d="M25 25 L25 28" stroke="#f9a8d4" stroke-width="3"/></svg>`,
 
   "mommy": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
@@ -1886,11 +1729,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">mommy</text>
 </svg>`,
 
-  "more": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="34" fill="#8b5cf6"/>
-  <line x1="50" y1="30" x2="50" y2="70" stroke="white" stroke-width="8" stroke-linecap="round"/>
-  <line x1="30" y1="50" x2="70" y2="50" stroke="white" stroke-width="8" stroke-linecap="round"/>
-</svg>`,
+  "more": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="16" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/><line x1="25" y1="16" x2="25" y2="34" stroke="white" stroke-width="4" stroke-linecap="round"/><line x1="16" y1="25" x2="34" y2="25" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>`,
 
   "most": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -1988,12 +1827,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">named</text>
 </svg>`,
 
-  "need": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="40" r="22" fill="none" stroke="#10b981" stroke-width="5"/>
-  <rect x="46" y="24" width="8" height="22" rx="4" fill="#10b981"/>
-  <rect x="46" y="50" width="8" height="8" rx="4" fill="#10b981"/>
-  <path d="M18 72 Q50 85 82 72" stroke="#065f46" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-</svg>`,
+  "need": `<svg viewBox="0 0 50 50"><circle cx="25" cy="22" r="14" fill="none" stroke="#10b981" stroke-width="3"/><text x="25" y="28" text-anchor="middle" font-size="20" font-weight="bold" fill="#10b981">!</text><path d="M20 40 L25 46 L30 40" fill="#10b981"/></svg>`,
 
   "nervous": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#fef3c7" stroke="#fbbf24" stroke-width="2.5"/>
@@ -2030,12 +1864,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">nice</text>
 </svg>`,
 
-  "no": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="38" fill="#ef4444" opacity="0.15"/>
-  <circle cx="50" cy="50" r="34" fill="#ef4444"/>
-  <line x1="30" y1="30" x2="70" y2="70" stroke="white" stroke-width="8" stroke-linecap="round"/>
-  <line x1="70" y1="30" x2="30" y2="70" stroke="white" stroke-width="8" stroke-linecap="round"/>
-</svg>`,
+  "no": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="18" fill="#ef4444" stroke="#dc2626" stroke-width="2"/><line x1="16" y1="16" x2="34" y2="34" stroke="white" stroke-width="4" stroke-linecap="round"/><line x1="34" y1="16" x2="16" y2="34" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>`,
 
   "no_i_dont_want_that": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="30" cy="24" r="12" fill="#fde8d0"/>
@@ -2219,10 +2048,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="60" text-anchor="middle" font-size="18" font-weight="bold" fill="#ec4899" font-family="Arial, sans-serif">Pink</text>
 </svg>`,
 
-  "play": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="34" fill="#8b5cf6" stroke="#c4b5fd" stroke-width="2"/>
-  <polygon points="38,32 38,68 74,50" fill="white"/>
-</svg>`,
+  "play": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="16" fill="#a78bfa" stroke="#8b5cf6" stroke-width="2"/><polygon points="20,15 38,25 20,35" fill="white"/></svg>`,
 
   "play_doh": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <rect x="26" y="44" width="48" height="38" rx="8" fill="#f97316" stroke="#b45309" stroke-width="2.5"/>
@@ -2250,22 +2076,7 @@ export const SYMBOL_SVGS = {
   <path d="M8 84 L92 84" stroke="#6ee7b7" stroke-width="5" stroke-linecap="round" opacity="0.7"/>
 </svg>`,
 
-  "please": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="26" r="13" fill="#fde8d0"/>
-<circle cx="46.1" cy="22.75" r="1.3" fill="#1f2937"/>
-<circle cx="53.9" cy="22.75" r="1.3" fill="#1f2937"/>
-<circle cx="46.620000000000005" cy="22.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<circle cx="54.42" cy="22.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<path d="M45.45,28.6 Q50,31.46 54.55,28.6" stroke="#1f2937" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-<circle cx="44.93" cy="26.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-<circle cx="55.07" cy="26.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-  <rect x="38" y="41" width="24" height="22" rx="5" fill="#ec4899"/>
-  <path d="M38 47 L24 52 M62 47 L76 52" stroke="#ec4899" stroke-width="7" stroke-linecap="round"/>
-  <path d="M30 54 Q20 62 28 70" stroke="#f9a8d4" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <circle cx="28" cy="70" r="3.5" fill="#f9a8d4"/>
-  <line x1="42" y1="63" x2="40" y2="78" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="58" y1="63" x2="60" y2="78" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-</svg>`,
+  "please": `<svg viewBox="0 0 50 50"><path d="M25 6 C15 6 8 14 8 22 C8 34 25 46 25 46 C25 46 42 34 42 22 C42 14 35 6 25 6Z" fill="#ec4899" stroke="#db2777" stroke-width="1.5"/><path d="M18 22 Q25 16 32 22 Q25 30 18 22Z" fill="white" opacity="0.4"/></svg>`,
 
   "popcorn": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <path d="M24 54 L30 84 L70 84 L76 54 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="2.5"/>
@@ -2420,18 +2231,7 @@ export const SYMBOL_SVGS = {
   <path d="M18 74 Q24 68 32 72 Q38 76 44 70" stroke="#6ee7b7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 </svg>`,
 
-  "sad": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="38" fill="#93c5fd" stroke="#3b82f6" stroke-width="2.5"/>
-  <circle cx="37" cy="42" r="5" fill="#1f2937"/>
-  <circle cx="63" cy="42" r="5" fill="#1f2937"/>
-  <circle cx="38.5" cy="40.5" r="2" fill="white"/>
-  <circle cx="64.5" cy="40.5" r="2" fill="white"/>
-  <path d="M28 66 Q50 52 72 66" stroke="#1f2937" stroke-width="5" fill="none" stroke-linecap="round"/>
-  <line x1="36" y1="34" x2="44" y2="36" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round"/>
-  <line x1="56" y1="36" x2="64" y2="34" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M32 52 L30 62" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-  <path d="M68 52 L70 62" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-</svg>`,
+  "sad": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="18" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/><circle cx="18" cy="21" r="2.5" fill="#333"/><circle cx="32" cy="21" r="2.5" fill="#333"/><path d="M16 35 Q25 27 34 35" stroke="#333" fill="none" stroke-width="2.5" stroke-linecap="round"/><path d="M18 24 L15 28" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round"/></svg>`,
 
   "said": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
@@ -2466,15 +2266,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">say</text>
 </svg>`,
 
-  "school": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect x="14" y="38" width="72" height="44" rx="4" fill="#f59e0b" stroke="#b45309" stroke-width="2.5"/>
-  <path d="M50 14 L14 38 L86 38 Z" fill="#fbbf24" stroke="#b45309" stroke-width="2.5"/>
-  <rect x="28" y="50" width="12" height="10" rx="2" fill="#93c5fd"/>
-  <rect x="60" y="50" width="12" height="10" rx="2" fill="#93c5fd"/>
-  <rect x="44" y="56" width="12" height="26" rx="2" fill="#b45309"/>
-  <rect x="48" y="24" width="4" height="12" rx="2" fill="#b45309"/>
-  <circle cx="50" cy="22" r="5" fill="#ef4444"/>
-</svg>`,
+  "school": `<svg viewBox="0 0 50 50"><rect x="8" y="20" width="34" height="24" rx="2" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/><path d="M25 6 L8 20 L42 20 Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/><rect x="21" y="30" width="8" height="14" rx="1" fill="#92400e"/><rect x="12" y="26" width="6" height="5" rx="1" fill="#bfdbfe"/><rect x="32" y="26" width="6" height="5" rx="1" fill="#bfdbfe"/><rect x="23" y="10" width="4" height="8" fill="#d97706"/><circle cx="25" cy="9" r="2.5" fill="#ef4444"/></svg>`,
 
   "see": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="50" cy="50" rx="36" ry="22" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
@@ -2554,19 +2346,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">sit</text>
 </svg>`,
 
-  "sleep": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="38" cy="40" r="18" fill="#8b5cf6"/>
-  <circle cx="38" cy="40" r="18" fill="#fde8d0"/>
-<circle cx="32.6" cy="35.5" r="1.8" fill="#1f2937"/>
-<circle cx="43.4" cy="35.5" r="1.8" fill="#1f2937"/>
-<circle cx="33.32" cy="34.96" r="0.63" fill="white" opacity="0.8"/>
-<circle cx="44.12" cy="34.96" r="0.63" fill="white" opacity="0.8"/>
-<line x1="31.7" y1="44.5" x2="44.3" y2="44.5" stroke="#1f2937" stroke-width="1.6" stroke-linecap="round"/>
-  <ellipse cx="38" cy="53" rx="10" ry="3" fill="#c4b5fd" opacity="0.5"/>
-  <text x="66" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#8b5cf6">Z</text>
-  <text x="78" y="18" text-anchor="middle" font-size="12" font-weight="bold" fill="#c4b5fd">z</text>
-  <text x="86" y="11" text-anchor="middle" font-size="9" font-weight="bold" fill="#c4b5fd" opacity="0.6">z</text>
-</svg>`,
+  "sleep": `<svg viewBox="0 0 50 50"><circle cx="22" cy="28" r="10" fill="#818cf8"/><circle cx="22" cy="28" r="7" fill="#c7d2fe"/><path d="M17 27 Q22 24 27 27" stroke="#333" stroke-width="1.5" fill="none"/><path d="M19 31 Q22 33 25 31" stroke="#333" fill="none" stroke-width="1"/><text x="34" y="18" font-size="10" font-weight="bold" fill="#818cf8">Z</text><text x="38" y="12" font-size="8" font-weight="bold" fill="#a5b4fc">Z</text><text x="42" y="8" font-size="6" font-weight="bold" fill="#c7d2fe">Z</text></svg>`,
 
   "slide": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="24" cy="22" r="8" fill="#8b5cf6"/>
@@ -2686,11 +2466,7 @@ export const SYMBOL_SVGS = {
   <path d="M30 60 Q50 72 70 60" stroke="#f5c5a3" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
 </svg>`,
 
-  "stop": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="50,8 79,21 88,52 72,81 28,81 12,52 21,21" fill="#ef4444" stroke="#b91c1c" stroke-width="2.5"/>
-  <rect x="38" y="28" width="24" height="8" rx="3" fill="white"/>
-  <rect x="38" y="40" width="24" height="22" rx="3" fill="white"/>
-</svg>`,
+  "stop": `<svg viewBox="0 0 50 50"><polygon points="25,4 43,14 43,34 25,44 7,34 7,14" fill="#ef4444" stroke="#dc2626" stroke-width="1.5"/><rect x="18" y="20" width="14" height="8" rx="2" fill="white"/></svg>`,
 
   "swing": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <line x1="20" y1="10" x2="38" y2="56" stroke="#6b7280" stroke-width="3.5" stroke-linecap="round"/>
@@ -2716,24 +2492,7 @@ export const SYMBOL_SVGS = {
   <circle cx="50" cy="52" r="8" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
 </svg>`,
 
-  "thank_you": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="26" r="13" fill="#fde8d0"/>
-<circle cx="46.1" cy="22.75" r="1.3" fill="#1f2937"/>
-<circle cx="53.9" cy="22.75" r="1.3" fill="#1f2937"/>
-<circle cx="46.620000000000005" cy="22.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<circle cx="54.42" cy="22.36" r="0.45499999999999996" fill="white" opacity="0.8"/>
-<path d="M45.45,28.6 Q50,31.46 54.55,28.6" stroke="#1f2937" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-<circle cx="44.93" cy="26.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-<circle cx="55.07" cy="26.65" r="1.95" fill="#f472b6" opacity="0.35"/>
-  <rect x="38" y="41" width="24" height="22" rx="5" fill="#ec4899"/>
-  <path d="M38 47 L24 55 M62 47 L76 55" stroke="#ec4899" stroke-width="7" stroke-linecap="round"/>
-  <path d="M24 55 Q18 65 24 72" stroke="#ec4899" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <circle cx="24" cy="72" r="4" fill="#ec4899"/>
-  <line x1="42" y1="63" x2="40" y2="80" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="58" y1="63" x2="60" y2="80" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-  <path d="M60 78 Q72 84 78 76" stroke="#ec4899" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <circle cx="78" cy="76" r="4" fill="#ec4899"/>
-</svg>`,
+  "thank_you": `<svg viewBox="0 0 50 50"><path d="M10 30 L10 18 Q10 12 16 12 L20 12" stroke="#ec4899" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M20 8 L20 22 L28 22 L28 8" stroke="#ec4899" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M28 12 L34 12 Q40 12 40 18 L40 30" stroke="#ec4899" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M8 34 Q25 46 42 34" stroke="#ec4899" stroke-width="2.5" fill="none" stroke-linecap="round"/><circle cx="25" cy="40" r="3" fill="#f9a8d4"/></svg>`,
 
   "that": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="36" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="2.5"/>
@@ -3014,19 +2773,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">top</text>
 </svg>`,
 
-  "toy": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="32" r="16" fill="#8b5cf6" stroke="#c4b5fd" stroke-width="2.5"/>
-  <circle cx="50" cy="32" r="16" fill="#fde8d0"/>
-<circle cx="45.2" cy="28.0" r="1.6" fill="#1f2937"/>
-<circle cx="54.8" cy="28.0" r="1.6" fill="#1f2937"/>
-<circle cx="45.84" cy="27.52" r="0.5599999999999999" fill="white" opacity="0.8"/>
-<circle cx="55.44" cy="27.52" r="0.5599999999999999" fill="white" opacity="0.8"/>
-<path d="M44.4,35.2 Q50,38.720000000000006 55.6,35.2" stroke="#1f2937" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-  <circle cx="50" cy="20" r="4" fill="#ec4899"/>
-  <rect x="46" y="48" width="8" height="14" rx="4" fill="#c4b5fd"/>
-  <circle cx="36" cy="56" r="6" fill="#8b5cf6"/>
-  <circle cx="64" cy="56" r="6" fill="#8b5cf6"/>
-</svg>`,
+  "toy": `<svg viewBox="0 0 50 50"><circle cx="25" cy="20" r="10" fill="#a78bfa" stroke="#8b5cf6" stroke-width="1.5"/><circle cx="22" cy="18" r="1.5" fill="#333"/><circle cx="28" cy="18" r="1.5" fill="#333"/><path d="M22 23 Q25 26 28 23" stroke="#333" fill="none" stroke-width="1.2"/><circle cx="25" cy="10" r="2.5" fill="#ec4899"/><rect x="22" y="30" width="6" height="10" rx="3" fill="#8b5cf6"/><circle cx="18" cy="35" r="3" fill="#c084fc"/><circle cx="32" cy="35" r="3" fill="#c084fc"/></svg>`,
 
   "toygame": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <rect x="14" y="26" width="72" height="52" rx="10" fill="#8b5cf6" stroke="#c4b5fd" stroke-width="2.5"/>
@@ -3187,28 +2934,9 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">wait</text>
 </svg>`,
 
-  "walk": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="14" r="9" fill="#10b981"/>
-  <circle cx="50" cy="14" r="9" fill="#fde8d0"/>
-<circle cx="47.3" cy="11.75" r="0.9" fill="#1f2937"/>
-<circle cx="52.7" cy="11.75" r="0.9" fill="#1f2937"/>
-<circle cx="47.66" cy="11.48" r="0.315" fill="white" opacity="0.8"/>
-<circle cx="53.06" cy="11.48" r="0.315" fill="white" opacity="0.8"/>
-<path d="M46.85,15.8 Q50,17.78 53.15,15.8" stroke="#1f2937" stroke-width="0.9" fill="none" stroke-linecap="round"/>
-  <line x1="50" y1="23" x2="50" y2="46" stroke="#10b981" stroke-width="7" stroke-linecap="round"/>
-  <line x1="50" y1="32" x2="34" y2="44" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
-  <line x1="50" y1="32" x2="66" y2="40" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
-  <line x1="50" y1="46" x2="38" y2="66" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
-  <line x1="50" y1="46" x2="62" y2="64" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
-  <path d="M38 66 L34 80" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-  <path d="M62 64 L68 78" stroke="#6b7280" stroke-width="5.5" stroke-linecap="round"/>
-</svg>`,
+  "walk": `<svg viewBox="0 0 50 50"><circle cx="25" cy="8" r="5" fill="#10b981"/><line x1="25" y1="13" x2="25" y2="30" stroke="#10b981" stroke-width="3" stroke-linecap="round"/><line x1="25" y1="20" x2="16" y2="26" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="20" x2="34" y2="24" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="30" x2="17" y2="44" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/><line x1="25" y1="30" x2="34" y2="42" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/></svg>`,
 
-  "want": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M25 55 L50 25 L75 55" fill="none" stroke="#10b981" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="70" r="14" fill="#10b981" opacity="0.85"/>
-  <path d="M43 70 L48 75 L57 64" stroke="white" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`,
+  "want": `<svg viewBox="0 0 50 50"><path d="M25 8 L30 20 L43 20 L32 28 L36 42 L25 34 L14 42 L18 28 L7 20 L20 20 Z" fill="#10b981" stroke="#059669" stroke-width="1.5"/><circle cx="25" cy="25" r="4" fill="#fff" opacity="0.5"/></svg>`,
 
   "want_help": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="32" cy="20" r="10" fill="#10b981"/>
@@ -3285,11 +3013,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#065f46" font-family="Arial, sans-serif">watch</text>
 </svg>`,
 
-  "water": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <path d="M50 12 Q70 36 70 54 A20 20 0 0 1 30 54 Q30 36 50 12Z" fill="#14b8a6" stroke="#99f6e4" stroke-width="2"/>
-  <path d="M38 46 Q40 38 44 42" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>
-  <ellipse cx="50" cy="68" rx="24" ry="8" fill="#14b8a6" opacity="0.3"/>
-</svg>`,
+  "water": `<svg viewBox="0 0 50 50"><path d="M25 6 Q35 22 35 30 A10 10 0 0 1 15 30 Q15 22 25 6Z" fill="#60a5fa" stroke="#3b82f6" stroke-width="1.5"/><path d="M20 28 Q22 24 24 28 Q26 32 28 28" stroke="white" stroke-width="1.5" fill="none" opacity="0.6"/></svg>`,
 
   "waterjuice": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <path d="M28 22 L32 82 Q32 88 40 88 L60 88 Q68 88 68 82 L72 22 Z" fill="#f97316" stroke="#b45309" stroke-width="2.5"/>
@@ -3306,31 +3030,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">way</text>
 </svg>`,
 
-  "we": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="32" cy="28" r="11" fill="#fde8d0"/>
-<circle cx="28.7" cy="25.25" r="1.1" fill="#1f2937"/>
-<circle cx="35.3" cy="25.25" r="1.1" fill="#1f2937"/>
-<circle cx="29.14" cy="24.92" r="0.385" fill="white" opacity="0.8"/>
-<circle cx="35.739999999999995" cy="24.92" r="0.385" fill="white" opacity="0.8"/>
-<path d="M28.15,30.2 Q32,32.62 35.85,30.2" stroke="#1f2937" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <rect x="23" y="41" width="18" height="20" rx="4" fill="#f59e0b"/>
-  <line x1="23" y1="46" x2="13" y2="55" stroke="#f59e0b" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="41" y1="46" x2="51" y2="55" stroke="#f59e0b" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="26" y1="61" x2="25" y2="75" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <line x1="38" y1="61" x2="39" y2="75" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <circle cx="68" cy="28" r="11" fill="#fde8d0"/>
-<circle cx="64.7" cy="25.25" r="1.1" fill="#1f2937"/>
-<circle cx="71.3" cy="25.25" r="1.1" fill="#1f2937"/>
-<circle cx="65.14" cy="24.92" r="0.385" fill="white" opacity="0.8"/>
-<circle cx="71.74" cy="24.92" r="0.385" fill="white" opacity="0.8"/>
-<path d="M64.15,30.2 Q68,32.62 71.85,30.2" stroke="#1f2937" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-  <rect x="59" y="41" width="18" height="20" rx="4" fill="#f97316"/>
-  <line x1="59" y1="46" x2="49" y2="55" stroke="#f97316" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="77" y1="46" x2="87" y2="55" stroke="#f97316" stroke-width="5.5" stroke-linecap="round"/>
-  <line x1="62" y1="61" x2="61" y2="75" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <line x1="74" y1="61" x2="75" y2="75" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
-  <path d="M46 52 L54 52" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
-</svg>`,
+  "we": `<svg viewBox="0 0 50 50"><circle cx="16" cy="14" r="6" fill="#f59e0b"/><circle cx="16" cy="14" r="4" fill="#fff3cd"/><circle cx="34" cy="14" r="6" fill="#fbbf24"/><circle cx="34" cy="14" r="4" fill="#fef3c7"/><circle cx="25" cy="18" r="7" fill="#f97316"/><circle cx="25" cy="18" r="4.5" fill="#ffedd5"/><circle cx="23.5" cy="17" r="1" fill="#333"/><circle cx="26.5" cy="17" r="1" fill="#333"/><path d="M12 50 V32 a13 13 0 0 1 26 0 V50" fill="#f97316"/></svg>`,
 
   "well": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
@@ -3460,11 +3160,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="18" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">Yellow</text>
 </svg>`,
 
-  "yes": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="38" fill="#10b981" opacity="0.15"/>
-  <circle cx="50" cy="50" r="34" fill="#10b981"/>
-  <path d="M28 50 L43 65 L72 35" stroke="white" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`,
+  "yes": `<svg viewBox="0 0 50 50"><circle cx="25" cy="25" r="18" fill="#22c55e" stroke="#16a34a" stroke-width="2"/><path d="M15 25 L22 33 L36 18" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
 
   "yet": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#8b5cf6" opacity="0.18"/>
@@ -3472,20 +3168,7 @@ export const SYMBOL_SVGS = {
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#6d28d9" font-family="Arial, sans-serif">yet</text>
 </svg>`,
 
-  "you": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="28" r="14" fill="#fde8d0"/>
-<circle cx="45.8" cy="24.5" r="1.4000000000000001" fill="#1f2937"/>
-<circle cx="54.2" cy="24.5" r="1.4000000000000001" fill="#1f2937"/>
-<circle cx="46.36" cy="24.08" r="0.49" fill="white" opacity="0.8"/>
-<circle cx="54.760000000000005" cy="24.08" r="0.49" fill="white" opacity="0.8"/>
-<path d="M45.1,30.8 Q50,33.88 54.9,30.8" stroke="#1f2937" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-  <rect x="39" y="44" width="22" height="26" rx="5" fill="#f59e0b"/>
-  <line x1="39" y1="50" x2="22" y2="58" stroke="#f59e0b" stroke-width="7" stroke-linecap="round"/>
-  <line x1="61" y1="50" x2="78" y2="58" stroke="#f59e0b" stroke-width="7" stroke-linecap="round"/>
-  <line x1="42" y1="70" x2="40" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <line x1="58" y1="70" x2="60" y2="88" stroke="#6b7280" stroke-width="6" stroke-linecap="round"/>
-  <path d="M72 72 L85 72 M78 66 L85 72 L78 78" stroke="#b45309" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-</svg>`,
+  "you": `<svg viewBox="0 0 50 50"><circle cx="25" cy="16" r="8" fill="#fbbf24"/><circle cx="25" cy="16" r="5" fill="#fef3c7"/><circle cx="23" cy="15" r="1.2" fill="#333"/><circle cx="27" cy="15" r="1.2" fill="#333"/><path d="M23 19 Q25 21 27 19" stroke="#333" fill="none" stroke-width="1.2"/><path d="M15 50 V34 a10 10 0 0 1 20 0 V50" fill="#fbbf24"/><path d="M10 30 L22 24" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/><circle cx="8" cy="31" r="3" fill="#f59e0b"/></svg>`,
 
   "youll": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>

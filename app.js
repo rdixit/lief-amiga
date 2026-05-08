@@ -140,6 +140,39 @@ function renderAffectWidget() {
   }
 }
 
+let toastHideTimer = null;
+
+function showToast(message, durationMs = 5200) {
+  let host = document.getElementById('toastHost');
+  if (!host) {
+    host = document.createElement('div');
+    host.id = 'toastHost';
+    host.className = 'toast-host';
+    host.setAttribute('aria-live', 'polite');
+    host.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(host);
+  }
+
+  clearTimeout(toastHideTimer);
+  host.replaceChildren();
+
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = message;
+  host.appendChild(el);
+
+  requestAnimationFrame(() => {
+    el.classList.add('toast-visible');
+  });
+
+  toastHideTimer = window.setTimeout(() => {
+    el.classList.remove('toast-visible');
+    const removeAfter = Number.parseFloat(getComputedStyle(el).transitionDuration) * 1000 || 220;
+    window.setTimeout(() => el.remove(), removeAfter + 40);
+    toastHideTimer = null;
+  }, durationMs);
+}
+
 // --- Break / Breathing (unchanged) ---
 let breatheInterval = null;
 let breatheTimeout = null;
@@ -162,7 +195,7 @@ function startBreathingExercise() {
   breakLanding.classList.add('hidden');
   breatheScreen.classList.remove('hidden');
 
-  const totalSeconds = 120;
+  const totalSeconds = 60;
   const phaseSeconds = 4;
   let elapsed = 0;
   let isInhale = true;
@@ -246,9 +279,15 @@ function renderTabs() {
 }
 
 function getGridSymbols() {
+  const sortByFreq = document.getElementById('sortByFrequency').checked;
   let syms = SYMBOLS.filter(s => s.ui_tab === activeTab);
   syms.sort((a, b) => {
     if (a.priority_tier !== b.priority_tier) return a.priority_tier - b.priority_tier;
+    if (sortByFreq) {
+      const aFreq = (a.sources || []).length;
+      const bFreq = (b.sources || []).length;
+      if (aFreq !== bFreq) return bFreq - aFreq;
+    }
     return a.display_label.localeCompare(b.display_label);
   });
   return syms;
@@ -737,6 +776,8 @@ function setupEventListeners() {
     updateSuggestions();
   });
 
+  document.getElementById('sortByFrequency').addEventListener('change', () => renderGrid());
+
   confidenceSlider.addEventListener('input', () => {
     confidenceValueLabel.textContent = `${confidenceSlider.value}%`;
   });
@@ -755,7 +796,9 @@ function setupEventListeners() {
   });
 
   liefConnectBtn.addEventListener('click', () => {
-    alert('Live Lief device connection coming soon. Use the simulated affect slider below to explore affect-aware predictions.');
+    showToast(
+      'Live Lief device connection coming soon. Use the simulated affect slider below to explore affect-aware predictions.',
+    );
   });
 
   quickPhraseBar.addEventListener('scroll', updateQPArrows);
