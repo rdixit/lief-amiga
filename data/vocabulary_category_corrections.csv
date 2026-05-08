@@ -144,3 +144,44 @@ threw,threw,3,Uncategorized,more,actions,verb (past tense of throw)
 that,That,1,People/Pronouns/Possessives,people,more,determiner/function word not a person
 thats_funny,That's funny,2,People/Pronouns/Possessives,people,core,social expression belongs in core
 tummystomach,Tummy/stomach,2,People/Pronouns/Possessives,people,things,body part phrase belongs in things
+# ── Part-of-speech corrections (round 3) ──
+# Format: id, display_label, priority_tier, old_pos, current_pos_field, corrected_pos, reason
+# NOTE: These rows use the POS fields rather than ui_tab fields
+school,School,1,location/preposition,location/preposition,noun,school is a noun (place)
+goodbye,Goodbye,1,verb/action,verb/action,word,social greeting not a verb
+more,More,1,verb/action,verb/action,word,function word not a verb
+stop,stop,1,verb/action,verb/action,negation/repair,safety/negation command
+yes,Yes,1,verb/action,verb/action,word,social word not a verb
+frustrated,Frustrated,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
+nervous,Nervous,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
+sick,Sick,1,pronoun/person,pronoun/person,descriptor/adjective,feeling/adjective not a pronoun
+bathroom,Bathroom,1,location/preposition,location/preposition,noun,noun (place)
+dog,Dog,2,verb/action,verb/action,noun,noun (animal)
+doll,Doll,2,verb/action,verb/action,noun,noun (toy)
+playground,Playground,2,verb/action,verb/action,noun,noun (place)
+airplane,Airplane,2,pronoun/person,pronoun/person,noun,noun (vehicle)
+bus,Bus,2,pronoun/person,pronoun/person,noun,noun (vehicle)
+tummy,Tummy,2,pronoun/person,pronoun/person,noun,noun (body part)
+classroom,Classroom,2,location/preposition,location/preposition,noun,noun (place)
+fine,Fine,2,location/preposition,location/preposition,descriptor/adjective,adjective/feeling
+gym,Gym,2,location/preposition,location/preposition,noun,noun (place)
+home,Home,2,location/preposition,location/preposition,noun,noun (place)
+mouth,Mouth,2,location/preposition,location/preposition,noun,noun (body part)
+train,Train,2,location/preposition,location/preposition,noun,noun (vehicle)
+trampoline,Trampoline,2,location/preposition,location/preposition,noun,noun (equipment)
+chips,Chips,2,word,word,noun,noun (food)
+cookie,Cookie,2,word,word,noun,noun (food)
+shirt,Shirt,2,word,word,noun,noun (clothing)
+great,great,3,verb/action,verb/action,descriptor/adjective,adjective not a verb
+mean,mean,3,pronoun/person,pronoun/person,descriptor/adjective,adjective not a pronoun
+pink,Pink,2,location/preposition,location/preposition,descriptor/adjective,color/descriptor not a preposition
+mine,Mine,1,location/preposition,location/preposition,pronoun/person,possessive pronoun
+know,know,1,negation/repair,negation/repair,verb/action,verb not negation
+good,Good,1,verb/action,verb/action,descriptor/adjective,adjective not a verb
+down,Down,2,verb/action,verb/action,location/preposition,direction/preposition not a verb
+made,made,1,descriptor/adjective,descriptor/adjective,verb/action,past tense of make
+bad,Bad,1,word,word,descriptor/adjective,adjective not a generic word
+need,need,1,word,word,verb/action,verb not a generic word
+books,Books,2,word,word,noun,noun not a generic word
+white,White,2,word,word,descriptor/adjective,color/descriptor not a generic word
+know,know,1,Negation/Repair,more,actions,verb belongs in actions tab (used in I don't know repair pattern)

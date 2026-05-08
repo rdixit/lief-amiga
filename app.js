@@ -346,6 +346,7 @@ function renderGrid() {
     card.className = 'symbol-card' + (isSuggested ? ' suggested' : '');
     card.dataset.id = sym.id;
     card.dataset.tab = sym.ui_tab;
+    card.dataset.pos = sym.part_of_speech || 'word';
 
 
     card.innerHTML = `
@@ -767,6 +768,13 @@ function escapeAttr(text) {
 function setupEventListeners() {
   btnSpeak.addEventListener('click', speakSentence);
   btnClear.addEventListener('click', clearAll);
+
+  const fitzModal = document.getElementById('fitzgeraldModal');
+  const closeFitz = () => fitzModal.classList.add('hidden');
+  document.getElementById('btnColorKey').addEventListener('click', () => fitzModal.classList.remove('hidden'));
+  document.getElementById('btnFitzClose').addEventListener('click', closeFitz);
+  fitzModal.addEventListener('click', e => { if (e.target === fitzModal) closeFitz(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeFitz(); });
 
   showSuggestionsCheckbox.addEventListener('change', () => updateSuggestions());
   reorderSymbolsCheckbox.addEventListener('change', () => {

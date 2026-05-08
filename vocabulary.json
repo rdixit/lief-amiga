@@ -264,7 +264,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -557,7 +557,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -584,7 +584,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "word",
       "intent_tags": [
         "social"
       ],
@@ -736,7 +736,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "word",
       "intent_tags": [
         "request"
       ],
@@ -824,7 +824,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "negation/repair",
       "intent_tags": [
         "refusal/protest"
       ],
@@ -918,7 +918,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1036,7 +1036,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "descriptor/adjective",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "regulation/body need",
         "emotional expression"
@@ -1224,13 +1224,13 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Negation/Repair",
-      "ui_tab": "more",
+      "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "negation/repair",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "refusal/protest"
       ],
@@ -1350,7 +1350,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1465,7 +1465,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1496,7 +1496,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1527,7 +1527,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1583,7 +1583,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1644,7 +1644,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1728,7 +1728,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "social"
       ],
@@ -1852,7 +1852,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1908,7 +1908,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1935,7 +1935,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -1963,7 +1963,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -2484,7 +2484,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "request"
       ],
@@ -3952,7 +3952,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -3979,7 +3979,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4175,7 +4175,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4257,7 +4257,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4284,7 +4284,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4311,7 +4311,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4339,7 +4339,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4423,7 +4423,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4533,7 +4533,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4560,7 +4560,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4587,7 +4587,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4943,7 +4943,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -4970,7 +4970,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -4998,7 +4998,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -5054,7 +5054,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -5081,7 +5081,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "social"
       ],
@@ -5810,7 +5810,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "request"
       ],
@@ -8151,7 +8151,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],

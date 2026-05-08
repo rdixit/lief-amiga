@@ -136,10 +136,33 @@
           <span class="slider-hint">Lower = guesses sooner · Higher = waits for more symbols</span>
         </label>
       </div>
+      <div class="control-group">
+        <button class="color-key-btn" id="btnColorKey">🎨 Symbol color key</button>
+      </div>
       <!-- API key is pre-configured for this demo -->
       <p class="footer-note">
         ARPA-H funded research prototype. Uses AI to predict intended sentences from symbol selections, with optional affect-aware suggestions.
       </p>
+    </div>
+  </div>
+
+  <!-- Fitzgerald Key modal -->
+  <div id="fitzgeraldModal" class="fitz-modal hidden" role="dialog" aria-modal="true" aria-label="Color key">
+    <div class="fitz-modal-content">
+      <button class="fitz-modal-close" id="btnFitzClose" aria-label="Close">&times;</button>
+      <h3 class="fitz-modal-title">Symbol Color Key</h3>
+      <p class="fitz-modal-subtitle">Background tints follow the Fitzgerald Key — a standard AAC color system based on grammar role.</p>
+      <ul class="fitz-key-list">
+        <li><span class="fitz-swatch" style="background:rgba(251,191,36,0.35)"></span><strong>Yellow</strong> — Pronouns <em>(I, you, he/she)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(16,185,129,0.25)"></span><strong>Green</strong> — Verbs / actions <em>(eat, go, play)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(96,165,250,0.30)"></span><strong>Blue</strong> — Nouns / things <em>(home, water, toy)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(249,115,22,0.25)"></span><strong>Orange</strong> — Location &amp; prepositions <em>(in, out, up)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(167,139,250,0.30)"></span><strong>Purple</strong> — Descriptors <em>(happy, big, fast)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(239,68,68,0.25)"></span><strong>Red</strong> — Negation / repair <em>(no, stop, can't)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(236,72,153,0.25)"></span><strong>Pink</strong> — Social phrases <em>(that's funny)</em></li>
+        <li><span class="fitz-swatch" style="background:rgba(240,192,64,0.45); border:2px solid #f0c040;"></span><strong>Gold outline</strong> — Suggested next word</li>
+      </ul>
+      <p class="fitz-modal-note">Left border color indicates the symbol's <strong>tab category</strong> (Core, Actions, Feelings, etc.).</p>
     </div>
   </div>
 
