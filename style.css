@@ -94,6 +94,126 @@ body {
   margin: 10px auto 2px;
 }
 
+/* Quick Phrase Bar */
+.quick-phrase-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  flex-shrink: 0;
+}
+
+.qp-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: opacity 0.2s ease, color 0.15s ease;
+  padding: 0;
+  font-family: inherit;
+}
+.qp-arrow:hover { color: white; }
+.qp-arrow-left  { left: 0;  background: linear-gradient(to right, #1e293b 60%, transparent); padding-right: 6px; }
+.qp-arrow-right { right: 0; background: linear-gradient(to left,  #1e293b 60%, transparent); padding-left: 6px; }
+.qp-arrow.hidden { opacity: 0; pointer-events: none; }
+
+.quick-phrase-bar {
+  display: flex;
+  gap: 8px;
+  padding: 8px 36px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  min-height: 52px;
+  align-items: center;
+  flex: 1;
+}
+.quick-phrase-bar::-webkit-scrollbar { display: none; }
+
+.quick-phrase-btn {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+.quick-phrase-btn:hover { background: rgba(255,255,255,0.2); }
+.quick-phrase-btn:active { transform: scale(0.95); }
+
+.quick-phrase-btn.stress-highlighted {
+  border-color: #f97316;
+  box-shadow: 0 0 0 2px rgba(249,115,22,0.5);
+  background: rgba(249,115,22,0.2);
+}
+
+/* Tab Bar */
+.tab-bar {
+  display: flex;
+  background: #f1f5f9;
+  border-bottom: 2px solid #e2e8f0;
+  flex-shrink: 0;
+  padding: 6px 8px 0;
+  gap: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px 4px 6px;
+  background: white;
+  border: 1.5px solid #e2e8f0;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  gap: 2px;
+  font-family: inherit;
+  box-shadow: 0 -1px 3px rgba(0,0,0,0.04);
+}
+.tab-btn .tab-emoji { font-size: 16px; line-height: 1; }
+.tab-btn .tab-label { font-size: 10px; }
+.tab-btn.active {
+  color: var(--text);
+  background: white;
+  border-color: var(--tab-color, var(--accent));
+  border-bottom-color: white;
+  box-shadow: 0 -2px 0 0 var(--tab-color, var(--accent)), 0 -1px 4px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+}
+.tab-btn:hover:not(.active) {
+  color: #475569;
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+.tab-btn:active { opacity: 0.75; }
+
 /* Sentence Bar */
 .sentence-bar {
   background: var(--sentence-bg);
@@ -235,6 +355,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  height: 100px;
   transition: all 0.2s ease;
   user-select: none;
   -webkit-user-select: none;
@@ -256,7 +377,6 @@ body {
   background: var(--suggested);
   border-color: var(--suggested-border);
   box-shadow: 0 0 0 2px rgba(240, 192, 64, 0.25);
-  /* order is now controlled by JS only, based on the reorder toggle */
 }
 
 .symbol-card.suggested::after {
@@ -271,11 +391,15 @@ body {
 }
 
 .symbol-card .symbol-icon {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.symbol-card .symbol-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .symbol-card .symbol-label {
@@ -286,14 +410,21 @@ body {
   color: var(--text);
   text-align: center;
   line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
 }
 
-/* Category colors */
-.symbol-card[data-category="pronoun"]  { border-left: 4px solid #f59e0b; }
-.symbol-card[data-category="verb"]     { border-left: 4px solid #10b981; }
-.symbol-card[data-category="noun"]     { border-left: 4px solid #3b82f6; }
-.symbol-card[data-category="adjective"]{ border-left: 4px solid #8b5cf6; }
-.symbol-card[data-category="social"]   { border-left: 4px solid #ec4899; }
+/* Tab accent colors on symbol cards (matches tab bar colors) */
+.symbol-card[data-tab="core"]     { border-left: 4px solid #22c55e; }
+.symbol-card[data-tab="actions"]  { border-left: 4px solid #10b981; }
+.symbol-card[data-tab="feelings"] { border-left: 4px solid #fbbf24; }
+.symbol-card[data-tab="people"]   { border-left: 4px solid #f472b6; }
+.symbol-card[data-tab="things"]   { border-left: 4px solid #60a5fa; }
+.symbol-card[data-tab="more"]     { border-left: 4px solid #a78bfa; }
 
 /* Controls Panel */
 .controls-panel {
