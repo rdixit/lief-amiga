@@ -87,9 +87,9 @@ function getAffectAwareSuggestions(key, baseSuggestions) {
 let selectedSymbols = [];
 let activeTab = 'core';
 
-// NOTE(mjp): use env var for this, anyone can still decode this key
-const _k = atob('c2stcHJvai1WbHFqVjRTLS1NajRqQWpqSVljYm96QndWTFY2SElobEIxdlNhWUFGNk5QWVRURC1wS05meHdlS3pWd0l2R09qZVhUVlNwVEVOLVQzQmxia0ZKMjJGd0ZKNldoQ1F1NkdHNnZ5RTV3RkVSN2xPdE84TDdaenczX0ZfUlFSQ3FNUTlBaGRjTHpuazhzYVpEdk55WGg1RWZNREdBa0E=');
-let apiKey = _k;
+// Cloudflare Worker proxy URL — set after deploying worker.js to Workers & Pages.
+// Leave empty string to fall back to browser TTS / local prediction.
+const PROXY_BASE_URL = 'https://lief-aac-proxy.mpesaven.workers.dev';
 let pendingRequest = null;
 
 // --- DOM References ---
@@ -481,7 +481,7 @@ async function updatePrediction() {
     return Math.round(rawConfidence * multiplier);
   }
 
-  if (apiKey) {
+  if (PROXY_BASE_URL) {
     try {
       const result = await predictWithAPI(words);
       const confidence = dampenConfidence(result.confidence);
@@ -626,11 +626,10 @@ Respond with ONLY a JSON object, no markdown:
   messages.push({ role: 'user', content: prompt });
 
   // NOTE(mjp): replace with local SLM in later phases
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  const response = await fetch(`${PROXY_BASE_URL}/v1/chat/completions`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify({
       model: 'gpt-4o-mini',
@@ -687,7 +686,7 @@ function speakSentence() {
 async function speakText(text) {
   stopSpeaking();
   updateSpeakButtonState(true);
-  if (apiKey) {
+  if (PROXY_BASE_URL) {
     try { await speakWithOpenAI(text); return; }
     catch (e) { console.warn('OpenAI TTS failed, falling back to browser:', e); }
   }
@@ -695,9 +694,9 @@ async function speakText(text) {
 }
 
 async function speakWithOpenAI(text) {
-  const response = await fetch('https://api.openai.com/v1/audio/speech', {
+  const response = await fetch(`${PROXY_BASE_URL}/v1/audio/speech`, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'tts-1', input: text, voice: 'nova', speed: 0.9 })
   });
   if (!response.ok) throw new Error(`TTS API error: ${response.status}`);
