@@ -11,9 +11,11 @@ let TABS = [];
 let NEXT_WORD_MAP = {};
 let SENTENCE_TEMPLATES = {};
 let AFFECT_SUGGESTIONS = {};
+let APP_CONFIG = {};
+let ROOM_CONFIG = null;
 
 async function loadVocabulary() {
-  const res = await fetch('./vocabulary.json');
+  const res = await fetch(`./vocabulary.json?_=${Date.now()}`);
   VOCAB = await res.json();
   SYMBOLS = VOCAB.symbols.filter(s => s.allowed_for_grid);
   QUICK_PHRASES = VOCAB.quick_phrases;
@@ -21,6 +23,12 @@ async function loadVocabulary() {
   NEXT_WORD_MAP = VOCAB.next_word_map;
   SENTENCE_TEMPLATES = VOCAB.sentence_templates;
   AFFECT_SUGGESTIONS = VOCAB.affect_suggestions;
+  APP_CONFIG = VOCAB.app_config || {};
+}
+
+async function loadRoomConfig() {
+  const res = await fetch(`./data/meaning_room.json?_=${Date.now()}`);
+  ROOM_CONFIG = await res.json();
 }
 
 function getSymbolSVG(sym) {
@@ -86,6 +94,8 @@ function getAffectAwareSuggestions(key, baseSuggestions) {
 // --- App State ---
 let selectedSymbols = [];
 let activeTab = 'core';
+let currentView = 'meaning_room';
+let currentAnchor = null;
 
 // Cloudflare Worker proxy URL — set after deploying worker.js to Workers & Pages.
 // Leave empty string to fall back to browser TTS / local prediction.
@@ -125,6 +135,16 @@ const breatheInstruction = document.getElementById('breatheInstruction');
 const breatheTimerFill = document.getElementById('breatheTimerFill');
 const breatheTimerLabel = document.getElementById('breatheTimerLabel');
 const btnStopBreathe = document.getElementById('btnStopBreathe');
+
+// --- Meaning Room DOM refs ---
+const meaningRoomView  = document.getElementById('meaningRoomView');
+const meaningRoomStage = document.getElementById('meaningRoomStage');
+const anchorGridView   = document.getElementById('anchorGridView');
+const anchorGridLabel  = document.getElementById('anchorGridLabel');
+const anchorGrid       = document.getElementById('anchorGrid');
+const anchorBackBtn    = document.getElementById('anchorBackBtn');
+const gridTabsView     = document.getElementById('gridTabsView');
+const btnViewToggle    = document.getElementById('btnViewToggle');
 
 // --- Affect widget ---
 function renderAffectWidget() {
@@ -307,10 +327,13 @@ function renderQuickPhrases() {
   const stressLevel = parseInt(mockValenceSlider.value, 10);
   quickPhraseBar.innerHTML = QUICK_PHRASES.map(qp => {
     const isStressHighlighted = stressLevel >= 3 && qp.affect_priority === 'stressed';
+    const label = qp.bar_label || qp.display_label;
+    const emojiSpan = qp.emoji ? `<span class="qp-emoji" aria-hidden="true">${qp.emoji}</span>` : '';
     return `<button
       class="quick-phrase-btn${isStressHighlighted ? ' stress-highlighted' : ''}"
       data-utterance="${escapeAttr(qp.utterance)}"
-    >${escapeHtml(qp.display_label)}</button>`;
+      aria-label="${escapeAttr(qp.display_label)}"
+    >${emojiSpan}<span class="qp-label">${escapeHtml(label)}</span></button>`;
   }).join('');
 
   quickPhraseBar.querySelectorAll('.quick-phrase-btn').forEach(btn => {
@@ -734,6 +757,204 @@ if ('speechSynthesis' in window) {
 }
 
 // ============================================================
+// ============================================================
+// View state machine
+// ============================================================
+
+const STORAGE_KEY = 'liefaac.view';
+
+function loadInitialView() {
+  const params = new URLSearchParams(window.location.search);
+  // ?view=meaning_room or ?view=grid_tabs overrides localStorage (useful for debugging)
+  if (params.has('view')) return params.get('view');
+  return localStorage.getItem(STORAGE_KEY)
+    || APP_CONFIG.default_view
+    || 'meaning_room';
+}
+
+function setView(view, anchor) {
+  currentView = view;
+  if (anchor !== undefined) currentAnchor = anchor;
+
+  meaningRoomView.classList.add('hidden');
+  anchorGridView.classList.add('hidden');
+  gridTabsView.classList.add('hidden');
+
+  if (view === 'meaning_room') {
+    meaningRoomView.classList.remove('hidden');
+    renderMeaningRoom();
+  } else if (view === 'anchor_grid' && currentAnchor) {
+    anchorGridView.classList.remove('hidden');
+    renderAnchorGrid(currentAnchor);
+  } else if (view === 'grid_tabs') {
+    gridTabsView.classList.remove('hidden');
+    renderTabs();
+    renderGrid();
+  }
+
+  renderViewToggleButton();
+  // Persist top-level view (anchor_grid is a sub-state of meaning_room)
+  localStorage.setItem(STORAGE_KEY, view === 'anchor_grid' ? 'meaning_room' : view);
+}
+
+const GRID_ICON_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+  <rect x="0" y="0" width="7" height="7" rx="1.5"/>
+  <rect x="9" y="0" width="7" height="7" rx="1.5"/>
+  <rect x="0" y="9" width="7" height="7" rx="1.5"/>
+  <rect x="9" y="9" width="7" height="7" rx="1.5"/>
+</svg>`;
+
+const ROOM_ICON_SVG = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M2 8.5L8 3l6 5.5"/>
+  <path d="M3.5 7.5V13h9V7.5"/>
+</svg>`;
+
+function renderViewToggleButton() {
+  if (APP_CONFIG.show_view_toggle === false) {
+    btnViewToggle.classList.add('hidden');
+    return;
+  }
+  btnViewToggle.classList.remove('hidden');
+  const isRoom = currentView === 'meaning_room' || currentView === 'anchor_grid';
+  btnViewToggle.innerHTML = isRoom
+    ? `${GRID_ICON_SVG} <span>Grid</span>`
+    : `${ROOM_ICON_SVG} <span>Room</span>`;
+  btnViewToggle.title = isRoom ? 'Switch to Grid view' : 'Switch to Room view';
+}
+
+// ============================================================
+// Meaning Room rendering
+// ============================================================
+
+function renderMeaningRoom() {
+  if (!ROOM_CONFIG) return;
+  meaningRoomStage.innerHTML = '';
+
+  // Compute stage size to fit within the view while preserving the image aspect ratio.
+  // Reading clientWidth/clientHeight triggers a synchronous layout, giving accurate dims.
+  const [imgW, imgH] = ROOM_CONFIG.image_natural_size;
+  const ratio = imgW / imgH;
+  const viewW = meaningRoomView.clientWidth;
+  const viewH = meaningRoomView.clientHeight;
+
+
+  let stageW, stageH;
+  if (viewH > 0 && viewW / viewH > ratio) {
+    // View is wider than the image ratio — constrain by height
+    stageH = viewH;
+    stageW = stageH * ratio;
+  } else {
+    // View is taller — constrain by width
+    stageW = viewW || imgW;
+    stageH = stageW / ratio;
+  }
+
+  meaningRoomStage.style.width  = `${Math.floor(stageW)}px`;
+  meaningRoomStage.style.height = `${Math.floor(stageH)}px`;
+  meaningRoomStage.style.aspectRatio = ''; // clear CSS hint; JS drives size now
+
+  const img = document.createElement('img');
+  img.className = 'meaning-room-img';
+  img.src = ROOM_CONFIG.image;
+  img.alt = 'Meaning Room scene';
+  img.draggable = false;
+  meaningRoomStage.appendChild(img);
+
+  const stressZone = parseInt(mockValenceSlider.value, 10);
+
+  ROOM_CONFIG.anchors.forEach(anchor => {
+    const btn = document.createElement('button');
+    btn.className = 'mr-hotspot';
+    btn.dataset.anchorId = anchor.id;
+    btn.setAttribute('aria-label', anchor.label);
+
+    const h = anchor.hotspot;
+    btn.style.left   = `${h.x * 100}%`;
+    btn.style.top    = `${h.y * 100}%`;
+    btn.style.width  = `${h.w * 100}%`;
+    btn.style.height = `${h.h * 100}%`;
+    applyHotspotGlow(btn, anchor, stressZone);
+
+    if (anchor.icon) {
+      const iconEl = document.createElement('span');
+      iconEl.className = 'mr-hotspot-icon';
+      iconEl.textContent = anchor.icon;
+      btn.appendChild(iconEl);
+    }
+
+    btn.addEventListener('click', () => setView('anchor_grid', anchor));
+    meaningRoomStage.appendChild(btn);
+  });
+}
+
+function effectiveGlow(anchor, stressZone) {
+  const curve = anchor.stress_glow_curve || ROOM_CONFIG.stress_glow_curve_default;
+  const idx = Math.max(0, Math.min(4, stressZone - 1));
+  return curve[idx] ?? ROOM_CONFIG.default_glow_intensity;
+}
+
+function applyHotspotGlow(btn, anchor, stressZone) {
+  btn.style.setProperty('--glow', effectiveGlow(anchor, stressZone).toFixed(2));
+  // Only stress-sensitive anchors (those with a custom curve) pulse at zones 4-5
+  const isStressSensitive = Array.isArray(anchor.stress_glow_curve);
+  const isPulsing = isStressSensitive && stressZone >= 4;
+  btn.classList.toggle('stress-pulse', isPulsing);
+  if (isPulsing) {
+    // Zone 5 = fast urgent pulse; zone 4 = slower warning pulse
+    btn.style.setProperty('--pulse-dur', stressZone >= 5 ? '1.1s' : '1.8s');
+  }
+}
+
+function updateMeaningRoomGlow() {
+  if (currentView !== 'meaning_room') return;
+  const stressZone = parseInt(mockValenceSlider.value, 10);
+  meaningRoomStage.querySelectorAll('.mr-hotspot').forEach(btn => {
+    const anchor = ROOM_CONFIG.anchors.find(a => a.id === btn.dataset.anchorId);
+    if (anchor) applyHotspotGlow(btn, anchor, stressZone);
+  });
+}
+
+// ============================================================
+// Anchor grid rendering
+// ============================================================
+
+function renderAnchorGrid(anchor) {
+  anchorGridLabel.textContent = anchor.label;
+  anchorGrid.innerHTML = '';
+
+  const symMap = new Map(SYMBOLS.map(s => [s.id, s]));
+
+  anchor.symbol_ids.forEach(id => {
+    const sym = symMap.get(id);
+    if (!sym) return;
+
+    const svgContent = getSymbolSVG(sym);
+    const card = document.createElement('button');
+    card.className = 'symbol-card';
+    card.dataset.id  = sym.id;
+    card.dataset.tab = sym.ui_tab;
+    card.dataset.pos = sym.part_of_speech || 'word';
+
+    card.innerHTML = `
+      <div class="symbol-icon">${svgContent}</div>
+      <div class="symbol-label">${escapeHtml(sym.display_label)}</div>
+    `;
+
+    card.addEventListener('click', () => {
+      handleSymbolTap(sym);
+      const delay = APP_CONFIG.auto_return_to_scene_ms || 0;
+      if (delay > 0) {
+        setTimeout(() => setView('meaning_room'), delay);
+      } else {
+        setView('meaning_room');
+      }
+    });
+
+    anchorGrid.appendChild(card);
+  });
+}
+
+// ============================================================
 // Clear
 // ============================================================
 
@@ -800,6 +1021,7 @@ function setupEventListeners() {
     renderAffectWidget();
     renderQuickPhrases();
     updateSuggestions();
+    updateMeaningRoomGlow();
   });
 
   liefConnectBtn.addEventListener('click', () => {
@@ -820,6 +1042,20 @@ function setupEventListeners() {
   btnBreakResume.addEventListener('click', hideBreakModal);
   btnStartBreathe.addEventListener('click', startBreathingExercise);
   btnStopBreathe.addEventListener('click', hideBreakModal);
+
+  btnViewToggle.addEventListener('click', () => {
+    const isRoom = currentView === 'meaning_room' || currentView === 'anchor_grid';
+    setView(isRoom ? 'grid_tabs' : 'meaning_room');
+  });
+
+  anchorBackBtn.addEventListener('click', () => setView('meaning_room'));
+
+  // Re-fit the meaning room stage whenever the view is resized (orientation, window resize)
+  if (window.ResizeObserver) {
+    new ResizeObserver(() => {
+      if (currentView === 'meaning_room') renderMeaningRoom();
+    }).observe(meaningRoomView);
+  }
 }
 
 // ============================================================
@@ -827,13 +1063,15 @@ function setupEventListeners() {
 // ============================================================
 
 async function init() {
+  if (new URLSearchParams(window.location.search).has('debug')) {
+    document.body.classList.add('debug-hotspots');
+  }
   await loadVocabulary();
-  renderTabs();
-  renderQuickPhrases();
-  renderGrid();
+  await loadRoomConfig();
   setupEventListeners();
   renderAffectWidget();
-  updateSuggestions();
+  renderQuickPhrases();
+  setView(loadInitialView());
 }
 
 init().catch(err => {

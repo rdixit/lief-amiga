@@ -23,9 +23,6 @@
           <button class="qp-arrow qp-arrow-right" id="qpArrowRight" aria-label="Scroll right">&#8250;</button>
         </div>
 
-        <!-- Tab bar -->
-        <div class="tab-bar" id="tabBar"></div>
-
         <!-- Sentence bar -->
         <div class="sentence-bar">
           <div class="sentence-display" id="sentenceDisplay">
@@ -49,8 +46,38 @@
         <!-- Selected symbols strip -->
         <div class="selected-strip" id="selectedStrip"></div>
 
-        <!-- Symbol grid -->
-        <div class="symbol-grid" id="symbolGrid"></div>
+        <!-- === VIEW BODY: exactly one visible at a time === -->
+
+        <!-- Meaning Room view -->
+        <div class="view-body" id="meaningRoomView">
+          <div class="meaning-room-stage" id="meaningRoomStage"></div>
+        </div>
+
+        <!-- Anchor grid view (drills in from Meaning Room) -->
+        <div class="view-body hidden" id="anchorGridView">
+          <div class="anchor-grid-header" id="anchorGridHeader">
+            <button class="anchor-back-btn" id="anchorBackBtn">&#8592; Back to scene</button>
+            <span class="anchor-grid-label" id="anchorGridLabel"></span>
+          </div>
+          <div class="symbol-grid" id="anchorGrid"></div>
+        </div>
+
+        <!-- Tabs + Grid view -->
+        <div class="view-body hidden" id="gridTabsView">
+          <div class="tab-bar" id="tabBar"></div>
+          <div class="symbol-grid" id="symbolGrid"></div>
+        </div>
+
+        <!-- View toggle button (bottom-left) -->
+        <button id="btnViewToggle" class="btn-view-toggle" title="Switch view">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <rect x="0" y="0" width="7" height="7" rx="1.5"/>
+            <rect x="9" y="0" width="7" height="7" rx="1.5"/>
+            <rect x="0" y="9" width="7" height="7" rx="1.5"/>
+            <rect x="9" y="9" width="7" height="7" rx="1.5"/>
+          </svg>
+          <span>Grid</span>
+        </button>
 
         <!-- Persistent break button -->
         <button id="btnBreak" class="btn-break" title="Take a break">

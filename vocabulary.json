@@ -18,6 +18,11 @@
     "quick_phrase_count": 13,
     "notes": "SVG icons for symbols with svg_key are defined in symbols.js. Symbols without svg_key need new SVGs generated. Orphan symbols restored: feel, school, food, thank_you, he_she. he/she promoted to tier 1."
   },
+  "app_config": {
+    "default_view": "meaning_room",
+    "show_view_toggle": true,
+    "auto_return_to_scene_ms": 0
+  },
   "tabs": [
     {
       "id": "core",
@@ -67,6 +72,8 @@
       "id": "help_me",
       "display_label": "Help me",
       "utterance": "Help me.",
+      "emoji": "🙋",
+      "bar_label": "Help me",
       "intent_tags": [
         "help-seeking"
       ],
@@ -80,6 +87,8 @@
       "id": "i_need_a_break",
       "display_label": "I need a break",
       "utterance": "I need a break.",
+      "emoji": "⏸️",
+      "bar_label": "Need a break",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -92,6 +101,8 @@
       "id": "too_loud",
       "display_label": "Too loud",
       "utterance": "Too loud.",
+      "emoji": "🔊",
+      "bar_label": "Too loud",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -104,6 +115,8 @@
       "id": "i_want_water",
       "display_label": "I want water",
       "utterance": "I want water.",
+      "emoji": "💧",
+      "bar_label": "I want water",
       "intent_tags": [
         "request"
       ],
@@ -116,6 +129,8 @@
       "id": "i_need_the_bathroom",
       "display_label": "I need the bathroom",
       "utterance": "I need the bathroom.",
+      "emoji": "🚽",
+      "bar_label": "Bathroom",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -128,6 +143,8 @@
       "id": "all_done",
       "display_label": "All done",
       "utterance": "All done.",
+      "emoji": "✅",
+      "bar_label": "All done",
       "intent_tags": [
         "refusal/protest"
       ],
@@ -138,6 +155,8 @@
       "id": "i_dont_want_that",
       "display_label": "I don’t want that",
       "utterance": "I don’t want that.",
+      "emoji": "🙅",
+      "bar_label": "Don’t want",
       "intent_tags": [
         "request",
         "refusal/protest"
@@ -151,6 +170,8 @@
       "id": "my_turn",
       "display_label": "My turn",
       "utterance": "My turn.",
+      "emoji": "🔄",
+      "bar_label": "My turn",
       "intent_tags": [
         "social"
       ],
@@ -163,6 +184,8 @@
       "id": "i_like_this",
       "display_label": "I like this",
       "utterance": "I like this.",
+      "emoji": "👍",
+      "bar_label": "I like this",
       "intent_tags": [
         "social"
       ],
@@ -175,6 +198,8 @@
       "id": "im_frustrated",
       "display_label": "I’m frustrated",
       "utterance": "I’m frustrated.",
+      "emoji": "😡",
+      "bar_label": "Frustrated",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -187,6 +212,8 @@
       "id": "one_more_minute",
       "display_label": "One more minute",
       "utterance": "One more minute.",
+      "emoji": "☝️",
+      "bar_label": "1 more min",
       "intent_tags": [
         "request"
       ],
@@ -199,6 +226,8 @@
       "id": "thats_funny",
       "display_label": "That’s funny",
       "utterance": "That’s funny.",
+      "emoji": "😂",
+      "bar_label": "That's funny",
       "intent_tags": [
         "social"
       ],
@@ -211,6 +240,8 @@
       "id": "hi_hello",
       "display_label": "Hi / Hello",
       "utterance": "Hi / Hello.",
+      "emoji": "👋",
+      "bar_label": "Hi / Hello",
       "intent_tags": [
         "social"
       ],
@@ -8163,6 +8194,167 @@
       "phrase_templates": [],
       "notes": "Reference expansion from Marvin et al. 330 preschool words",
       "svg_key": null
+    },
+    {
+      "id": "scared",
+      "canonical_term": "scared",
+      "display_label": "Scared",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": ["afraid", "frightened"],
+      "phrase_templates": ["I feel scared", "I am scared"],
+      "notes": "Tier 2 feeling; important for ASD emotional communication",
+      "svg_key": "scared"
+    },
+    {
+      "id": "excited",
+      "canonical_term": "excited",
+      "display_label": "Excited",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": ["hyped"],
+      "phrase_templates": ["I feel excited", "I am excited"],
+      "notes": "Tier 2 feeling; positive arousal state",
+      "svg_key": "excited"
+    },
+    {
+      "id": "calm",
+      "canonical_term": "calm",
+      "display_label": "Calm",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression", "regulation"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": ["relaxed", "peaceful"],
+      "phrase_templates": ["I feel calm", "I am calm"],
+      "notes": "Tier 2 feeling; regulation target state",
+      "svg_key": "calm"
+    },
+    {
+      "id": "worried",
+      "canonical_term": "worried",
+      "display_label": "Worried",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": ["anxious"],
+      "phrase_templates": ["I feel worried", "I am worried"],
+      "notes": "Tier 2 feeling; anxiety expression",
+      "svg_key": "worried"
+    },
+    {
+      "id": "bored",
+      "canonical_term": "bored",
+      "display_label": "Bored",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": null,
+      "phrase_templates": ["I feel bored", "I am bored"],
+      "notes": "Tier 2 feeling",
+      "svg_key": "bored"
+    },
+    {
+      "id": "confused",
+      "canonical_term": "confused",
+      "display_label": "Confused",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": null,
+      "phrase_templates": ["I feel confused", "I am confused"],
+      "notes": "Tier 2 feeling; important for self-advocacy",
+      "svg_key": "confused"
+    },
+    {
+      "id": "surprised",
+      "canonical_term": "surprised",
+      "display_label": "Surprised",
+      "type": "word",
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "category_xls": "Feelings",
+      "ui_tab": "feelings",
+      "sources": ["AMIGA-AAC Meaning Room"],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "descriptor/adjective",
+      "intent_tags": ["emotional expression"],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": null,
+      "phrase_templates": ["I feel surprised", "I am surprised"],
+      "notes": "Tier 2 feeling",
+      "svg_key": "surprised"
     },
     {
       "id": "messy",
