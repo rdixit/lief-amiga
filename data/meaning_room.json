@@ -1,0 +1,136 @@
+{
+  "image": "assets/images/meaning_room_v0_1600x900.png",
+  "image_natural_size": [1600, 900],
+  "default_glow_intensity": 0.50,
+  "stress_glow_curve_default": [0.35, 0.37, 0.40, 0.43, 0.46],
+  "deferred_anchors": ["body", "cognition", "relationships"],
+  "anchors": [
+    {
+      "id": "self",
+      "label": "Me",
+      "icon": null,
+      "hotspot": { "x": 0.33, "y": 0.08, "w": 0.13, "h": 0.74 },
+      "symbol_ids": ["i", "me", "my", "mine",
+        "ear", "eye", "hand", "leg", "nose", "stomach", "tummy", "tummystomach", "mouth"],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "feelings",
+      "label": "Feelings",
+      "icon": "❤️",
+      "hotspot": { "x": 0.36, "y": 0.36, "w": 0.08, "h": 0.16 },
+      "symbol_ids": [
+        "happy", "sad", "mad", "scared", "tired", "sick",
+        "frustrated", "nervous", "excited", "calm",
+        "worried", "bored", "confused", "surprised",
+        "i_am_tired", "im_frustrated", "fine"
+      ],
+      "stress_glow_curve": [0.50, 0.62, 0.78, 0.92, 1.00]
+    },
+    {
+      "id": "actions",
+      "label": "Actions",
+      "icon": null,
+      "hotspot": { "x": 0.35, "y": 0.78, "w": 0.12, "h": 0.20 },
+      "symbol_ids": [
+        "want", "need", "like", "do", "make", "made", "open", "close", "put", "take",
+        "see", "feel", "turn", "work", "know", "more", "all_done", "good", "yes", "ok", "okfine",
+        "want_help", "want_item", "want_help_want_item", "i_like_this", "thank_you",
+        "look_at_me", "my_turn", "thats_funny", "i_found_something",
+        "eat", "drink", "play", "go", "walk", "help", "hug", "jump", "run",
+        "push", "read", "sleep"
+      ],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "other_people",
+      "label": "People",
+      "icon": null,
+      "hotspot": { "x": 0.66, "y": 0.32, "w": 0.22, "h": 0.44 },
+      "symbol_ids": ["you", "mom", "dad", "he", "she", "he_she", "them", "their", "your", "hello", "hi", "hi_hello", "goodbye"],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "time",
+      "label": "Time",
+      "icon": null,
+      "hotspot": { "x": 0.02, "y": 0.02, "w": 0.13, "h": 0.24 },
+      "symbol_ids": ["one_more_minute"],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "stop_refusal",
+      "label": "Stop",
+      "icon": null,
+      "hotspot": { "x": 0.15, "y": 0.02, "w": 0.13, "h": 0.24 },
+      "symbol_ids": ["stop", "no", "not", "cant", "wont", "arent", "couldnt", "havent", "i_dont_want_that", "no_i_dont_want_that"],
+      "stress_glow_curve": [0.50, 0.62, 0.78, 0.92, 1.00]
+    },
+    {
+      "id": "outside",
+      "label": "Outside",
+      "icon": null,
+      "hotspot": { "x": 0.63, "y": 0.13, "w": 0.33, "h": 0.36 },
+      "symbol_ids": ["go", "home", "walk", "playground", "gym", "classroom", "school", "bathroom", "sand"],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "calm_corner",
+      "label": "Calm",
+      "icon": "🧘",
+      "hotspot": { "x": 0.50, "y": 0.36, "w": 0.17, "h": 0.32 },
+      "symbol_ids": [
+        "i_need_a_break", "break", "space", "sleep", "help", "help_me",
+        "i_need_help", "i_need_help_stop", "too_loud", "too_loud_i_need_a_break",
+        "help_me_im_frustrated", "i_need_the_bathroom"
+      ],
+      "stress_glow_curve": [0.50, 0.62, 0.78, 0.92, 1.00]
+    },
+    {
+      "id": "toys",
+      "label": "Toys",
+      "icon": null,
+      "hotspot": { "x": 0.02, "y": 0.51, "w": 0.23, "h": 0.47 },
+      "symbol_ids": [
+        "toy", "play", "balloon", "puzzle", "play_doh", "doll", "bubbles",
+        "game", "toygame", "music", "ipad", "books", "read", "car", "train", "boat",
+        "airplane", "bus", "slide", "spin", "squeeze", "swing", "tickle",
+        "ticklesqueeze", "jump", "run", "push", "hug",
+        "dog", "trampoline"
+      ],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "food_drink",
+      "label": "Food",
+      "icon": null,
+      "hotspot": { "x": 0.65, "y": 0.76, "w": 0.29, "h": 0.22 },
+      "symbol_ids": [
+        "water", "juice", "waterjuice", "food", "fruit", "cookie", "candy", "popcorn", "pretzel",
+        "rice", "carrot", "chips", "eat", "drink", "i_want_water",
+        "i_want_food", "i_want_apple"
+      ],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "clothing",
+      "label": "Clothes",
+      "icon": null,
+      "hotspot": { "x": 0.01, "y": 0.26, "w": 0.26, "h": 0.24 },
+      "symbol_ids": ["shirt", "jacket", "i_want_a_jacket", "coat", "hat", "pants", "shoe", "sock"],
+      "stress_glow_curve": null
+    },
+    {
+      "id": "colors_descriptors",
+      "label": "Descriptions",
+      "icon": null,
+      "hotspot": { "x": 0.63, "y": 0.01, "w": 0.30, "h": 0.11 },
+      "symbol_ids": [
+        "red", "orange", "yellow", "green", "blue", "purple", "pink",
+        "black", "white", "big", "little", "fast", "slow", "that", "bad",
+        "in", "out", "up", "down", "off"
+      ],
+      "stress_glow_curve": null
+    }
+  ]
+}

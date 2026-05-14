@@ -34,8 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 900px;
-  width: 100%;
+  width: 900px;
 }
 
 /* Header */
@@ -55,14 +54,15 @@ body {
   margin-top: 4px;
 }
 
-/* iPad Frame */
+/* iPad Frame — simulates iPad Air 10.9" in landscape (1180×820 logical points).
+   Fixed width so the content area dimensions are deterministic. */
 .ipad-frame {
   background: var(--ipad-bg);
   border-radius: 36px;
   padding: 16px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.1);
-  width: 100%;
-  max-width: 860px;
+  width: 900px;
+  flex-shrink: 0;
   position: relative;
 }
 
@@ -81,8 +81,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 520px;
-  max-height: 80vh;
+  aspect-ratio: 1180 / 820;
   position: relative;
 }
 
@@ -136,7 +135,7 @@ body {
   -ms-overflow-style: none;
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,0.1);
-  min-height: 52px;
+  min-height: 56px;
   align-items: center;
   flex: 1;
 }
@@ -144,20 +143,33 @@ body {
 
 .quick-phrase-btn {
   flex-shrink: 0;
-  padding: 7px 14px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  min-width: 54px;
   background: rgba(255,255,255,0.1);
   border: 1.5px solid rgba(255,255,255,0.2);
   color: white;
-  font-size: 13px;
-  font-weight: 600;
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.15s ease;
   font-family: inherit;
 }
 .quick-phrase-btn:hover { background: rgba(255,255,255,0.2); }
 .quick-phrase-btn:active { transform: scale(0.95); }
+
+.qp-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+.qp-label {
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #e2e8f0;
+}
 
 .quick-phrase-btn.stress-highlighted {
   border-color: #f97316;
@@ -560,7 +572,7 @@ body {
   padding: 16px 20px;
   margin-top: 16px;
   width: 100%;
-  max-width: 860px;
+  width: 900px;
   color: white;
 }
 
@@ -686,7 +698,7 @@ body {
   gap: 12px;
   margin-top: 12px;
   width: 100%;
-  max-width: 860px;
+  width: 900px;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.10);
   backdrop-filter: blur(10px);
@@ -974,6 +986,214 @@ body {
   background: #64748b;
 }
 
+/* === View body containers === */
+.view-body {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.view-body.hidden { display: none; }
+
+/* Meaning Room outer wrapper — fills available space, centers the stage */
+#meaningRoomView {
+  align-items: center;
+  justify-content: center;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+/* === Meaning Room stage === */
+/* Width/height set by JS to exactly fit the view while preserving image aspect ratio.
+   Hotspot buttons (position:absolute) overlay the image with % coords. */
+.meaning-room-stage {
+  position: relative;
+  overflow: hidden;
+}
+
+.meaning-room-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+}
+
+/* Debug mode — add ?debug to URL to see hotspot boundaries */
+body.debug-hotspots .mr-hotspot {
+  border: 2px solid rgba(255, 80, 80, 0.85) !important;
+  background: rgba(255, 80, 80, 0.15) !important;
+}
+body.debug-hotspots .mr-hotspot::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* High-stress pulse animation — zones 4-5 */
+/* Pulse animation for zones 4-5.
+   Trough is already notably brighter than a resting non-stress anchor;
+   peak is ~2x the hover brightness so the urgency reads clearly. */
+@keyframes mr-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 14px 3px  rgba(255, 190, 70, 0.72),
+      0 0 28px 6px  rgba(255, 140, 30, 0.28),
+      inset 0 0 18px rgba(255, 200, 70, 0.40);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 26px 6px  rgba(255, 160, 30, 0.92),
+      0 0 50px 10px rgba(255, 100, 10, 0.42),
+      inset 0 0 30px rgba(255, 165, 30, 0.58);
+    transform: scale(1.020);
+  }
+}
+
+/* Hotspot overlays — baseline glow uses a floor + scaled component so zones 1-2 are
+   clearly visible without stress, zones 4-5 get the pulse animation added via JS. */
+.mr-hotspot {
+  position: absolute;
+  background: transparent;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  /* Suppress transition when pulsing so animation runs cleanly */
+  transition: box-shadow 0.35s ease, background 0.15s ease, transform 0.15s ease;
+  box-shadow:
+    0 0 calc(5px + 10px * var(--glow, 0.5)) calc(1px + 2px * var(--glow, 0.5))
+      rgba(255, 215, 100, calc(0.18 + 0.32 * var(--glow, 0.5))),
+    inset 0 0 calc(6px + 8px * var(--glow, 0.5))
+      rgba(255, 215, 100, calc(0.08 + 0.16 * var(--glow, 0.5)));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zones 4-5: override box-shadow with animation, duration set from JS via --pulse-dur */
+.mr-hotspot.stress-pulse {
+  animation: mr-pulse var(--pulse-dur, 1.8s) ease-in-out infinite;
+  transition: none;
+}
+
+.mr-hotspot:hover,
+.mr-hotspot:focus-visible {
+  background: rgba(255, 220, 120, 0.12);
+  box-shadow:
+    0 0 18px 4px rgba(255, 220, 120, 0.70),
+    0 0 32px 7px rgba(255, 200, 80,  0.22),
+    inset 0 0 20px rgba(255, 220, 120, 0.35);
+  outline: none;
+}
+.mr-hotspot:active { transform: scale(0.97); }
+
+/* Anchor label pill — hidden by default, shown when body.show-anchor-labels is set */
+.mr-hotspot-label {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.52);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+  padding: 2px 7px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+body.show-anchor-labels .mr-hotspot-label {
+  display: block;
+}
+
+.mr-hotspot-icon {
+  font-size: 28px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35));
+  pointer-events: none;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  padding: 4px 6px;
+}
+
+/* === Anchor grid header === */
+.anchor-grid-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #f1f5f9;
+  border-bottom: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.anchor-back-btn {
+  background: rgba(74, 144, 217, 0.12);
+  border: 1.5px solid rgba(74, 144, 217, 0.3);
+  border-radius: 8px;
+  color: #4a90d9;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.anchor-back-btn:hover { background: rgba(74, 144, 217, 0.22); }
+.anchor-back-btn:active { transform: scale(0.95); }
+
+.anchor-grid-label {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #334155;
+}
+
+/* === View toggle button (mirrors .btn-break, bottom-left) === */
+.btn-view-toggle {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(224, 242, 254, 0.92);
+  color: #0369a1;
+  border: 1.5px solid #7dd3fc;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-family: inherit;
+}
+.btn-view-toggle:hover {
+  background: rgba(186, 230, 253, 0.95);
+  transform: scale(1.05);
+}
+.btn-view-toggle:active { transform: scale(0.95); }
+.btn-view-toggle.hidden { display: none; }
+
 /* Responsive */
 @media (max-width: 600px) {
   .ipad-frame { border-radius: 24px; padding: 10px; }
@@ -997,6 +1217,10 @@ body {
   .lief-affect-widget .affect-source { font-size: 11px; }
   .lief-connect-btn { font-size: 12px; padding: 6px 10px; }
   .btn-break { padding: 4px 8px; font-size: 10px; }
+  .btn-view-toggle { padding: 4px 8px; font-size: 10px; }
+  .mr-hotspot-icon { font-size: 22px; }
+  .anchor-back-btn { font-size: 11px; padding: 5px 8px; }
+  .anchor-grid-label { font-size: 13px; }
   .break-modal-icon { font-size: 48px; }
   .break-modal-title { font-size: 24px; }
   .break-modal-subtitle { font-size: 15px; }
