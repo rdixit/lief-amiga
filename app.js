@@ -882,6 +882,11 @@ function renderMeaningRoom() {
       btn.appendChild(iconEl);
     }
 
+    const labelEl = document.createElement('span');
+    labelEl.className = 'mr-hotspot-label';
+    labelEl.textContent = anchor.label;
+    btn.appendChild(labelEl);
+
     btn.addEventListener('click', () => setView('anchor_grid', anchor));
     meaningRoomStage.appendChild(btn);
   });
@@ -1005,6 +1010,10 @@ function setupEventListeners() {
   });
 
   document.getElementById('sortByFrequency').addEventListener('change', () => renderGrid());
+
+  document.getElementById('showAnchorLabels').addEventListener('change', e => {
+    document.body.classList.toggle('show-anchor-labels', e.target.checked);
+  });
 
   confidenceSlider.addEventListener('input', () => {
     confidenceValueLabel.textContent = `${confidenceSlider.value}%`;
