@@ -334,6 +334,53 @@ The **dysregulation paradox**: the moment AAC is most needed (high arousal, dist
 
 ---
 
+## 🎨 Image Generation Prompt — Scene Reference Art
+
+The following prompt is intended for **Midjourney, DALL-E, or Ideogram** to generate a reference image for the Meaning Room scene. The goal is a warm, non-clinical illustration that communicates the spatial zones intuitively — suitable as a background layer over which invisible tap hotspots are placed in the Tier 1 MVP.
+
+> A warm, cozy child's therapy room illustrated in soft watercolor and gentle gouache style. The room is viewed from a slight 3/4 isometric angle. At center stands a simple, friendly child figure with a soft golden glow emanating from their face and chest — the emotional aura. The figure's body has subtle anatomical zone markers (eyes, ears, heart, hands, feet) delicately visible. In the upper-left corner hangs a round analog clock on the wall. In the upper-right corner, a large window looks out onto rolling green hills and a warm sun — the outside world. On the left wall, wooden coat hooks hold a jacket, hat, and shoes. A bold red STOP hand symbol is visible in the upper-left corner near the clock. In the lower left, a colorful open toy box overflows with a balloon, a toy car, puzzle pieces, and a small speaker. In the lower right, a low wooden table holds a glass of water, an apple, and a cookie. On the right side of the room, two soft silhouettes — a parent-sized figure and a child-sized figure — stand near each other with a gentle dotted arrow between them and the central child, suggesting relationship and connection. On the upper wall, six colored paint swatches (red, orange, yellow, green, blue, purple) suggest a descriptor palette. In the upper corner, a cozy bean bag with a small potted plant nearby suggests a calm regulation zone. A small speech bubble near the top of the scene reads "Hi!" in a friendly font. Soft afternoon light. Muted, warm, non-clinical. No other text labels. Style: Pixar concept art meets Montessori classroom illustration. Aspect ratio 4:3.
+
+**Key requirements for any generated variant:**
+- Child figure must be **gender-neutral and racially ambiguous** (silhouette / abstract preferred)
+- Zones must be **spatially distinct** enough that invisible hotspot rectangles can be mapped without overlap
+- No text labels embedded in the image — labels are overlaid programmatically
+- Should work at **tablet resolution** (~1024×768) without losing zone legibility
+
+---
+
+## 🧪 Does the Meaning Room Serve All Three Clinical Purposes?
+
+*Question from Joannalyn Delacruz:*
+> Does the meaning room serve all 3 purposes: (1) retrieve frequent words/phrases, (2) surface less frequent but useful words/phrases, and (3) allow new words or phrases to be added/programmed over time as communication needs emerge?
+
+**Short answer: Yes to 1, partially to 2, and 3 is genuinely hard.**
+
+---
+
+### ✅ Purpose 1 — Retrieve Frequent Words/Phrases
+
+**The quick phrase bar is the solution.** Always-visible, symbol-only, single-tap access to the highest-frequency phrases (bathroom, more, my turn, help, stop). This bypasses zone navigation entirely for the most urgent and most common communication needs. The scene itself handles the next tier of frequency — zone anchors provide fast access to familiar clusters once spatial memory is established.
+
+---
+
+### ⚠️ Purpose 2 — Surface Less Frequent but Useful Words/Phrases
+
+This is where the design is under real pressure. Within each zone's grid, **word positions persist across sessions** (Tier 2), so fringe vocabulary becomes findable over time through spatial memory rather than reading. That's the theory.
+
+The critical constraint: **grid size must be bounded.** If a zone's grid contains too many words, discoverability collapses regardless of spatial consistency. The current solution is scrolling, which is workable but not ideal — scrolling obscures words that are off-screen, and these users cannot search or browse by text to recover them. There is no search/browse fallback available to a nonverbal child.
+
+This makes the vocabulary re-mapping work a clinical prerequisite, not just tidying. Zone grids need clean, bounded membership before spatial memory can do its job. A grid of 30 is navigable; a grid of 109 is not.
+
+---
+
+### ❌ Purpose 3 — Add New Words/Phrases Over Time
+
+This is genuinely hard and should not be undersold. Adding new words to an existing zone grid requires someone (SLP or developer) to place the symbol, assign it to a zone, and ensure the grid doesn't grow past a usable size — which may mean promoting other words out. Adding a new zone to the scene itself requires a scene redesign and developer involvement.
+
+There is no lightweight self-service mechanism for this yet. It is a known limitation of the current architecture and a significant clinical friction point for any user whose communication needs evolve quickly.
+
+---
+
 ## 🗂️ Design Constraints (Non-Negotiable)
 
 - **Flat** — no deep menus
