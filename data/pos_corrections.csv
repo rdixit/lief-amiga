@@ -1,0 +1,126 @@
+symbol_id,display_label,priority_tier,current_pos,corrected_pos,phrase_pos,rationale
+all_done,All done,1,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+help_me,Help me,1,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_need_a_break,I need a break,1,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_need_the_bathroom,I need the bathroom,1,location/preposition,phrase,verb/action,phrase type: POS location/preposition→phrase; phrase_pos=verb/action
+i_want_water,I want water,1,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+space,Space,1,word,noun,,reclassify from word: concrete noun
+thank_you,Thank You,1,word,phrase,word,phrase type: POS word→phrase; phrase_pos=word
+too_loud,Too loud,1,phrase,phrase,descriptor/adjective,already phrase POS; adding phrase_pos=descriptor/adjective
+help_me_im_frustrated,Help me / I'm frustrated,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+hi_hello,Hi / Hello,2,phrase,phrase,word,already phrase POS; adding phrase_pos=word
+i_am_tired,I am tired,2,descriptor/adjective,phrase,descriptor/adjective,phrase type: POS descriptor/adjective→phrase; phrase_pos=descriptor/adjective
+i_dont_want_that,I don't want that,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_found_something,I found something,2,location/preposition,phrase,verb/action,phrase type: POS location/preposition→phrase; phrase_pos=verb/action
+i_like_this,I like this,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_need_help,I need help,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_need_help_stop,I need help / stop,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_want_a_jacket,I want a jacket,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_want_apple,I want apple,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+i_want_food,I want food,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+im_frustrated,I’m frustrated,2,pronoun/person,phrase,descriptor/adjective,phrase type: POS pronoun/person→phrase; phrase_pos=descriptor/adjective
+look_at_me,Look at me,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+my_turn,My turn,2,verb/action,phrase,noun,phrase type: POS verb/action→phrase; phrase_pos=noun
+no_i_dont_want_that,No / I don’t want that,2,verb/action,phrase,negation/repair,phrase type: POS verb/action→phrase; phrase_pos=negation/repair
+okfine,OK/Fine,2,location/preposition,phrase,word,phrase type: POS location/preposition→phrase; phrase_pos=word
+one_more_minute,One more minute,2,verb/action,phrase,noun,phrase type: POS verb/action→phrase; phrase_pos=noun
+play_doh,Play doh,2,verb/action,noun,,"compound noun, not phrase: type phrase→word, is_phrase→false; POS verb/action→noun"
+thats_funny,That’s funny,2,pronoun/person,phrase,descriptor/adjective,phrase type: POS pronoun/person→phrase; phrase_pos=descriptor/adjective
+ticklesqueeze,Tickle/squeeze,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+too_loud_i_need_a_break,Too loud / I need a break,2,verb/action,phrase,descriptor/adjective,phrase type: POS verb/action→phrase; phrase_pos=descriptor/adjective
+toygame,Toy/Game,2,noun,noun,,"compound noun, not phrase: type phrase→word, is_phrase→false; POS noun→noun"
+tummystomach,Tummy/stomach,2,pronoun/person,noun,,"compound noun, not phrase: type phrase→word, is_phrase→false; POS pronoun/person→noun"
+want_help,Want help,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+want_help_want_item,Want help / want item,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+want_item,want item,2,verb/action,phrase,verb/action,phrase type: POS verb/action→phrase; phrase_pos=verb/action
+waterjuice,Water/juice,2,noun,noun,,"compound noun, not phrase: type phrase→word, is_phrase→false; POS noun→noun"
+another,another,3,pronoun/person,word,,reclassify from pronoun/person: determiner/function word
+ant,ant,3,word,noun,,reclassify from word: concrete noun
+are,are,3,word,verb/action,,reclassify from word: verb/auxiliary
+around,around,3,word,location/preposition,,reclassify from word: preposition/spatial
+at,at,3,word,location/preposition,,reclassify from word: preposition/spatial
+away,away,3,word,location/preposition,,reclassify from word: preposition/spatial
+baby,baby,3,word,noun,,reclassify from word: concrete noun
+back,back,3,word,location/preposition,,reclassify from word: preposition/spatial
+be,be,3,word,verb/action,,reclassify from word: verb/auxiliary
+better,better,3,word,descriptor/adjective,,reclassify from word: adjective/descriptor
+bird,bird,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+birds,birds,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+bite,bite,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+bugs,bugs,3,word,noun,,reclassify from word: concrete noun
+by,by,3,word,location/preposition,,reclassify from word: preposition/spatial
+came,came,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+can,can,3,word,verb/action,,reclassify from word: verb/auxiliary
+could,could,3,word,verb/action,,reclassify from word: verb/auxiliary
+day,day,3,word,noun,,reclassify from word: concrete noun
+did,did,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+didnt,didn't,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+fall,fall,3,word,verb/action,,reclassify from word: verb/auxiliary
+fire,fire,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+first,first,3,pronoun/person,word,,reclassify from pronoun/person: function word
+five,five,3,pronoun/person,word,,reclassify from pronoun/person: function word
+fixed,fixed,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+fly,fly,3,word,verb/action,,reclassify from word: verb/auxiliary
+found,found,3,word,verb/action,,reclassify from word: verb/auxiliary
+from,from,3,word,location/preposition,,reclassify from word: preposition/spatial
+had,had,3,word,verb/action,,reclassify from word: verb/auxiliary
+hair,hair,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+has,has,3,word,verb/action,,reclassify from word: verb/auxiliary
+have,have,3,word,verb/action,,reclassify from word: verb/auxiliary
+head,head,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+hear,hear,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+here,here,3,pronoun/person,word,,reclassify from pronoun/person: function word
+heres,here's,3,pronoun/person,word,,reclassify from pronoun/person: function word
+high,high,3,word,descriptor/adjective,,reclassify from word: adjective/descriptor
+hill,hill,3,word,noun,,reclassify from word: concrete noun
+him,him,3,word,pronoun/person,,reclassify from word: personal pronoun (object)
+his,his,3,word,pronoun/person,,reclassify from word: possessive pronoun
+if,if,3,pronoun/person,word,,reclassify from pronoun/person: function word
+is,is,3,pronoun/person,word,,reclassify from pronoun/person: function word
+isnt,isn't,3,pronoun/person,word,,reclassify from pronoun/person: function word
+just,just,3,pronoun/person,word,,reclassify from pronoun/person: function word
+leaves,leaves,3,word,noun,,reclassify from word: concrete noun
+let,let,3,word,verb/action,,reclassify from word: verb/auxiliary
+lets,let's,3,word,verb/action,,reclassify from word: verb/auxiliary
+lift,lift,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+long,long,3,word,descriptor/adjective,,reclassify from word: adjective/descriptor
+man,man,3,word,noun,,reclassify from word: concrete noun
+may,may,3,word,verb/action,,reclassify from word: verb/auxiliary
+messy,messy,3,pronoun/person,descriptor/adjective,,reclassify from pronoun/person: adjective/descriptor
+middle,middle,3,pronoun/person,word,,reclassify from pronoun/person: function word
+move,move,3,word,verb/action,,reclassify from word: verb/auxiliary
+must,must,3,pronoun/person,word,,reclassify from pronoun/person: function word
+name,Name,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+new,new,3,word,descriptor/adjective,,reclassify from word: adjective/descriptor
+of,of,3,word,location/preposition,,reclassify from word: preposition/spatial
+old,old,3,word,descriptor/adjective,,reclassify from word: adjective/descriptor
+on,on,3,word,location/preposition,,reclassify from word: preposition/spatial
+over,over,3,word,location/preposition,,reclassify from word: preposition/spatial
+pet,pet,3,word,noun,,reclassify from word: concrete noun
+pick,pick,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+piece,piece,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+remember,remember,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+said,said,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+saw,saw,3,word,verb/action,,reclassify from word: verb/auxiliary
+side,side,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+some,some,3,pronoun/person,word,,reclassify from pronoun/person: determiner/function word
+sometimes,sometimes,3,pronoun/person,word,,reclassify from pronoun/person: function word
+still,still,3,pronoun/person,word,,reclassify from pronoun/person: function word
+then,then,3,pronoun/person,word,,reclassify from pronoun/person: function word
+there,there,3,pronoun/person,word,,reclassify from pronoun/person: adverb/function word
+theres,there's,3,pronoun/person,word,,reclassify from pronoun/person: contraction of there+is
+these,these,3,pronoun/person,word,,reclassify from pronoun/person: demonstrative/function word
+threw,threw,3,word,verb/action,,reclassify from word: verb/auxiliary
+through,through,3,word,location/preposition,,reclassify from word: preposition/spatial
+time,time,3,pronoun/person,noun,,reclassify from pronoun/person: concrete noun
+to,to,3,word,location/preposition,,reclassify from word: preposition/spatial
+top,top,3,word,noun,,reclassify from word: concrete noun
+trees,trees,3,word,noun,,reclassify from word: concrete noun
+was,was,3,word,verb/action,,reclassify from word: verb/auxiliary
+way,way,3,word,noun,,reclassify from word: concrete noun
+went,went,3,pronoun/person,verb/action,,reclassify from pronoun/person: verb/auxiliary
+when,when,3,pronoun/person,question word,,reclassify from pronoun/person: question word
+where,where,3,pronoun/person,question word,,reclassify from pronoun/person: question word
+wheres,where's,3,pronoun/person,question word,,reclassify from pronoun/person: question word
+with,with,3,pronoun/person,word,,reclassify from pronoun/person: function word
+would,would,3,word,verb/action,,reclassify from word: verb/auxiliary

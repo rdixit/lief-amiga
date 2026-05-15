@@ -454,7 +454,9 @@ body {
 .symbol-card[data-pos="location/preposition"] { background: rgba(249, 115, 22, 0.10); }  /* orange — where */
 .symbol-card[data-pos="descriptor/adjective"] { background: rgba(167, 139, 250, 0.12); } /* purple — describe */
 .symbol-card[data-pos="negation/repair"]      { background: rgba(239, 68, 68,  0.10); }  /* red    — no/fix */
-.symbol-card[data-pos="phrase"]               { background: rgba(236, 72, 153, 0.10); }  /* pink   — social */
+.symbol-card[data-pos="phrase"]               { background: rgba(236, 72, 153, 0.10); }  /* pink   — phrase */
+.symbol-card[data-pos="word"]                 { background: rgba(156, 163, 175, 0.10); }  /* gray   — function */
+.symbol-card[data-pos="question word"]        { background: rgba(6, 182, 212,  0.12); }  /* cyan   — question */
 
 /* Suggested state always wins over POS tint */
 .symbol-card.suggested[data-pos] { background: var(--suggested); }

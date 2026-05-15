@@ -180,3 +180,74 @@ describe('stress glow integrity', () => {
     }
   });
 });
+
+// ─────────────────────────────────────────────────────────────
+// 5. POS integrity
+// ─────────────────────────────────────────────────────────────
+const VALID_POS = new Set([
+  'verb/action', 'noun', 'pronoun/person', 'descriptor/adjective',
+  'location/preposition', 'negation/repair', 'question word', 'phrase', 'word',
+]);
+
+const ALLOWED_WORD_POS_T1T2 = new Set([
+  'ok', 'yes', 'more', 'hello', 'hi', 'goodbye', 'bye', 'that',
+]);
+
+const css = readFileSync(resolve(ROOT, 'style.css'), 'utf8');
+
+describe('POS integrity', () => {
+
+  it('every symbol has a valid part_of_speech', () => {
+    const invalid = vocab.symbols
+      .filter(s => !VALID_POS.has(s.part_of_speech))
+      .map(s => `${s.id}: "${s.part_of_speech}"`);
+    assert.deepEqual(invalid, [], `Symbols with invalid POS:\n  ${invalid.join('\n  ')}`);
+  });
+
+  it('no tier 1-2 symbols have POS="word" except allowed function words', () => {
+    const unexpected = vocab.symbols
+      .filter(s => s.priority_tier <= 2 && s.part_of_speech === 'word' && !ALLOWED_WORD_POS_T1T2.has(s.id))
+      .map(s => s.id);
+    assert.deepEqual(
+      unexpected, [],
+      `T1-T2 symbols with POS="word" that should be reclassified:\n  ${unexpected.join('\n  ')}`
+    );
+  });
+
+  it('all phrase-type symbols have POS="phrase"', () => {
+    const mismatched = vocab.symbols
+      .filter(s => (s.type === 'phrase' || s.is_phrase) && s.part_of_speech !== 'phrase')
+      .map(s => `${s.id}: type=${s.type}, pos=${s.part_of_speech}`);
+    assert.deepEqual(
+      mismatched, [],
+      `Phrase-type symbols without POS="phrase":\n  ${mismatched.join('\n  ')}`
+    );
+  });
+
+  it('all phrase-POS symbols have a phrase_pos field', () => {
+    const missing = vocab.symbols
+      .filter(s => s.part_of_speech === 'phrase' && !s.phrase_pos)
+      .map(s => s.id);
+    assert.deepEqual(
+      missing, [],
+      `Symbols with POS="phrase" but no phrase_pos:\n  ${missing.join('\n  ')}`
+    );
+  });
+
+  it('every POS value in vocabulary has a CSS rule in style.css', () => {
+    const posValues = new Set(vocab.symbols.map(s => s.part_of_speech));
+    const missing = [...posValues].filter(pos => !css.includes(`data-pos="${pos}"`));
+    assert.deepEqual(
+      missing, [],
+      `POS values without CSS rules:\n  ${missing.join('\n  ')}`
+    );
+  });
+
+  it('no symbols have curly quotes in display_label or canonical_term', () => {
+    const curly = /[‘’“”]/;
+    const bad = vocab.symbols
+      .filter(s => curly.test(s.display_label || '') || curly.test(s.canonical_term || ''))
+      .map(s => `${s.id}: "${s.display_label}"`);
+    assert.deepEqual(bad, [], `Symbols with curly quotes:\n  ${bad.join('\n  ')}`);
+  });
+});

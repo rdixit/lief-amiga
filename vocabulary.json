@@ -153,10 +153,10 @@
     },
     {
       "id": "i_dont_want_that",
-      "display_label": "I don’t want that",
-      "utterance": "I don’t want that.",
+      "display_label": "I don't want that",
+      "utterance": "I don't want that.",
       "emoji": "🙅",
-      "bar_label": "Don’t want",
+      "bar_label": "Don't want",
       "intent_tags": [
         "request",
         "refusal/protest"
@@ -196,8 +196,8 @@
     },
     {
       "id": "im_frustrated",
-      "display_label": "I’m frustrated",
-      "utterance": "I’m frustrated.",
+      "display_label": "I'm frustrated",
+      "utterance": "I'm frustrated.",
       "emoji": "😡",
       "bar_label": "Frustrated",
       "intent_tags": [
@@ -224,8 +224,8 @@
     },
     {
       "id": "thats_funny",
-      "display_label": "That’s funny",
-      "utterance": "That’s funny.",
+      "display_label": "That's funny",
+      "utterance": "That's funny.",
       "emoji": "😂",
       "bar_label": "That's funny",
       "intent_tags": [
@@ -355,7 +355,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -368,7 +368,8 @@
         "Thank you!"
       ],
       "notes": "Restored from v1 app.js; no gratitude expression existed in vocabulary",
-      "svg_key": "thank_you"
+      "svg_key": "thank_you",
+      "phrase_pos": "word"
     },
     {
       "id": "he_she",
@@ -414,7 +415,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "refusal/protest"
       ],
@@ -429,7 +430,8 @@
         "Different"
       ],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "break",
@@ -678,7 +680,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "help-seeking"
       ],
@@ -689,10 +691,11 @@
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": "Help me / I’m frustrated",
+      "synonyms_or_variants": "Help me / I'm frustrated",
       "phrase_templates": [],
       "notes": "Emotional expression; Functional communication",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_need_a_break",
@@ -708,7 +711,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -721,7 +724,8 @@
       "synonyms_or_variants": "Too loud / I need a break",
       "phrase_templates": [],
       "notes": "Sensory regulation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_want_water",
@@ -737,7 +741,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -750,7 +754,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Basic needs, fast access",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "more",
@@ -1300,7 +1305,7 @@
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": "No / I don’t want that",
+      "synonyms_or_variants": "No / I don't want that",
       "phrase_templates": [
         "I don't want that",
         "All done",
@@ -1639,13 +1644,13 @@
       "is_phrase": true,
       "is_quick_phrase": true,
       "category_xls": "Places",
-      "ui_tab": "things",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
       "priority_tier": 1,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1658,7 +1663,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "High priority, fast phrase",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "mine",
@@ -1702,7 +1708,7 @@
       ],
       "priority_tier": 1,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -1742,7 +1748,8 @@
       "synonyms_or_variants": "Too loud / I need a break",
       "phrase_templates": [],
       "notes": "Sensory regulation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "descriptor/adjective"
     },
     {
       "id": "bad",
@@ -1752,7 +1759,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Social",
-      "ui_tab": "core",
+      "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -2010,7 +2017,7 @@
     {
       "id": "help_me_im_frustrated",
       "canonical_term": "help me / i'm frustrated",
-      "display_label": "Help me / I’m frustrated",
+      "display_label": "Help me / I'm frustrated",
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
@@ -2021,7 +2028,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "help-seeking",
         "regulation/body need"
@@ -2035,7 +2042,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Emotional expression",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "hug",
@@ -2067,7 +2075,7 @@
     {
       "id": "i_dont_want_that",
       "canonical_term": "i don't want that",
-      "display_label": "I don’t want that",
+      "display_label": "I don't want that",
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
@@ -2078,7 +2086,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request",
         "refusal/protest"
@@ -2089,10 +2097,11 @@
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": "No / I don’t want that",
+      "synonyms_or_variants": "No / I don't want that",
       "phrase_templates": [],
       "notes": "Clear refusal",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_like_this",
@@ -2108,7 +2117,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -2121,7 +2130,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Positive emotion",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_need_help",
@@ -2137,7 +2147,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "help-seeking"
       ],
@@ -2150,7 +2160,8 @@
       "synonyms_or_variants": "I need help / stop",
       "phrase_templates": [],
       "notes": "Safety + regulation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_need_help_stop",
@@ -2166,7 +2177,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "refusal/protest",
         "help-seeking"
@@ -2180,7 +2191,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Safety + regulation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_want_a_jacket",
@@ -2196,7 +2208,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -2209,7 +2221,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Basic request",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_want_apple",
@@ -2225,7 +2238,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -2238,7 +2251,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Decision making",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "i_want_food",
@@ -2254,7 +2268,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -2267,7 +2281,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Simple AAC (≤100 words)",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "jump",
@@ -2339,7 +2354,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -2352,7 +2367,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Social bid",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "make",
@@ -2396,7 +2412,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -2413,12 +2429,13 @@
         "Hi / Hello"
       ],
       "notes": "Social interaction",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "noun"
     },
     {
       "id": "no_i_dont_want_that",
       "canonical_term": "no / i don't want that",
-      "display_label": "No / I don’t want that",
+      "display_label": "No / I don't want that",
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
@@ -2429,7 +2446,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request",
         "refusal/protest"
@@ -2443,7 +2460,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Clear refusal",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "negation/repair"
     },
     {
       "id": "one_more_minute",
@@ -2453,13 +2471,13 @@
       "is_phrase": true,
       "is_quick_phrase": true,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "more",
       "sources": [
         "Validation scenarios"
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -2472,14 +2490,15 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Negotiation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "noun"
     },
     {
       "id": "play_doh",
       "canonical_term": "play doh",
       "display_label": "Play doh",
-      "type": "phrase",
-      "is_phrase": true,
+      "type": "word",
+      "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
       "ui_tab": "actions",
@@ -2488,7 +2507,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "request"
       ],
@@ -2870,7 +2889,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -2881,7 +2900,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "too_loud_i_need_a_break",
@@ -2897,7 +2917,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -2910,7 +2930,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Sensory regulation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "descriptor/adjective"
     },
     {
       "id": "walk",
@@ -2953,7 +2974,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request",
         "help-seeking"
@@ -2965,7 +2986,8 @@
       "synonyms_or_variants": "Want help / want item",
       "phrase_templates": [],
       "notes": "Variant from slash-delimited Faison row",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "want_help_want_item",
@@ -2981,7 +3003,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request",
         "help-seeking"
@@ -2993,7 +3015,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Restrict outputs to simple words only",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "want_item",
@@ -3009,7 +3032,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "request"
       ],
@@ -3020,7 +3043,8 @@
       "synonyms_or_variants": "Want help / want item",
       "phrase_templates": [],
       "notes": "Variant from slash-delimited Faison row",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "work",
@@ -3547,7 +3571,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "descriptor/adjective",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "regulation/body need",
         "description/labeling"
@@ -3561,7 +3585,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Simple expression",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "descriptor/adjective"
     },
     {
       "id": "little",
@@ -3943,11 +3968,11 @@
       "id": "waterjuice",
       "canonical_term": "water/juice",
       "display_label": "Water/juice",
-      "type": "phrase",
-      "is_phrase": true,
+      "type": "word",
+      "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "more",
+      "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -4053,7 +4078,7 @@
     {
       "id": "im_frustrated",
       "canonical_term": "i'm frustrated",
-      "display_label": "I’m frustrated",
+      "display_label": "I'm frustrated",
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
@@ -4064,7 +4089,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "regulation/body need"
       ],
@@ -4074,10 +4099,11 @@
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": "Help me / I’m frustrated",
+      "synonyms_or_variants": "Help me / I'm frustrated",
       "phrase_templates": [],
       "notes": "Emotional expression",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "descriptor/adjective"
     },
     {
       "id": "mom",
@@ -4110,7 +4136,7 @@
     {
       "id": "thats_funny",
       "canonical_term": "that's funny",
-      "display_label": "That’s funny",
+      "display_label": "That's funny",
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
@@ -4121,7 +4147,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -4134,7 +4160,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Social commenting",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "descriptor/adjective"
     },
     {
       "id": "their",
@@ -4223,8 +4250,8 @@
       "id": "tummystomach",
       "canonical_term": "tummy/stomach",
       "display_label": "Tummy/stomach",
-      "type": "phrase",
-      "is_phrase": true,
+      "type": "word",
+      "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "things",
@@ -4233,7 +4260,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4391,13 +4418,13 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Places",
-      "ui_tab": "things",
+      "ui_tab": "actions",
       "sources": [
         "Validation scenarios"
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "social"
       ],
@@ -4410,7 +4437,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Expressive language",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "verb/action"
     },
     {
       "id": "in",
@@ -4503,13 +4531,13 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Places",
-      "ui_tab": "things",
+      "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
       ],
       "priority_tier": 2,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -4520,7 +4548,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "word"
     },
     {
       "id": "out",
@@ -4934,11 +4963,11 @@
       "id": "toygame",
       "canonical_term": "toy/game",
       "display_label": "Toy/Game",
-      "type": "phrase",
-      "is_phrase": true,
+      "type": "word",
+      "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Preferred Items",
-      "ui_tab": "more",
+      "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -5069,7 +5098,8 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Social initiation",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "word"
     },
     {
       "id": "shirt",
@@ -6886,7 +6916,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -6940,7 +6970,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -6967,7 +6997,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7021,7 +7051,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7075,7 +7105,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7102,7 +7132,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7129,7 +7159,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7183,7 +7213,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7237,7 +7267,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7264,7 +7294,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7291,7 +7321,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "refusal/protest"
       ],
@@ -7318,7 +7348,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7345,7 +7375,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7372,7 +7402,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7426,7 +7456,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7453,7 +7483,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7480,7 +7510,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7534,7 +7564,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7561,7 +7591,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7588,7 +7618,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7615,7 +7645,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7723,7 +7753,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7804,7 +7834,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7831,7 +7861,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7885,7 +7915,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7912,7 +7942,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -7993,7 +8023,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8020,7 +8050,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8047,7 +8077,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8128,7 +8158,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8155,7 +8185,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8204,17 +8234,27 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": ["afraid", "frightened"],
-      "phrase_templates": ["I feel scared", "I am scared"],
+      "synonyms_or_variants": [
+        "afraid",
+        "frightened"
+      ],
+      "phrase_templates": [
+        "I feel scared",
+        "I am scared"
+      ],
       "notes": "Tier 2 feeling; important for ASD emotional communication",
       "svg_key": "scared"
     },
@@ -8227,17 +8267,26 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": ["hyped"],
-      "phrase_templates": ["I feel excited", "I am excited"],
+      "synonyms_or_variants": [
+        "hyped"
+      ],
+      "phrase_templates": [
+        "I feel excited",
+        "I am excited"
+      ],
       "notes": "Tier 2 feeling; positive arousal state",
       "svg_key": "excited"
     },
@@ -8250,17 +8299,28 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression", "regulation"],
+      "intent_tags": [
+        "emotional expression",
+        "regulation"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": ["relaxed", "peaceful"],
-      "phrase_templates": ["I feel calm", "I am calm"],
+      "synonyms_or_variants": [
+        "relaxed",
+        "peaceful"
+      ],
+      "phrase_templates": [
+        "I feel calm",
+        "I am calm"
+      ],
       "notes": "Tier 2 feeling; regulation target state",
       "svg_key": "calm"
     },
@@ -8273,17 +8333,26 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
-      "synonyms_or_variants": ["anxious"],
-      "phrase_templates": ["I feel worried", "I am worried"],
+      "synonyms_or_variants": [
+        "anxious"
+      ],
+      "phrase_templates": [
+        "I feel worried",
+        "I am worried"
+      ],
       "notes": "Tier 2 feeling; anxiety expression",
       "svg_key": "worried"
     },
@@ -8296,17 +8365,24 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
       "synonyms_or_variants": null,
-      "phrase_templates": ["I feel bored", "I am bored"],
+      "phrase_templates": [
+        "I feel bored",
+        "I am bored"
+      ],
       "notes": "Tier 2 feeling",
       "svg_key": "bored"
     },
@@ -8319,17 +8395,24 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
       "synonyms_or_variants": null,
-      "phrase_templates": ["I feel confused", "I am confused"],
+      "phrase_templates": [
+        "I feel confused",
+        "I am confused"
+      ],
       "notes": "Tier 2 feeling; important for self-advocacy",
       "svg_key": "confused"
     },
@@ -8342,17 +8425,24 @@
       "is_quick_phrase": false,
       "category_xls": "Feelings",
       "ui_tab": "feelings",
-      "sources": ["AMIGA-AAC Meaning Room"],
+      "sources": [
+        "AMIGA-AAC Meaning Room"
+      ],
       "priority_tier": 2,
       "core_or_fringe": "core",
       "part_of_speech": "descriptor/adjective",
-      "intent_tags": ["emotional expression"],
+      "intent_tags": [
+        "emotional expression"
+      ],
       "scenario_tags": [],
       "allowed_for_generation": true,
       "allowed_for_grid": true,
       "requires_personalization": false,
       "synonyms_or_variants": null,
-      "phrase_templates": ["I feel surprised", "I am surprised"],
+      "phrase_templates": [
+        "I feel surprised",
+        "I am surprised"
+      ],
       "notes": "Tier 2 feeling",
       "svg_key": "surprised"
     },
@@ -8370,7 +8460,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8397,7 +8487,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8451,7 +8541,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8505,7 +8595,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8640,7 +8730,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8667,7 +8757,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8694,7 +8784,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8721,7 +8811,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8802,7 +8892,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8829,7 +8919,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8910,7 +9000,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8937,7 +9027,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8964,7 +9054,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8991,7 +9081,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9018,7 +9108,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9045,7 +9135,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9153,7 +9243,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9288,7 +9378,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9315,7 +9405,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "question word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9342,7 +9432,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "question word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9369,7 +9459,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "question word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9396,7 +9486,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10173,7 +10263,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "social"
       ],
@@ -10200,7 +10290,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -10227,7 +10317,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "social"
       ],
@@ -10254,7 +10344,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "social"
       ],
@@ -10497,7 +10587,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10551,7 +10641,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10578,7 +10668,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10605,7 +10695,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10632,7 +10722,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10713,7 +10803,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10767,7 +10857,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10794,7 +10884,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10821,7 +10911,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10848,7 +10938,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10929,7 +11019,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10956,7 +11046,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10983,7 +11073,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11010,7 +11100,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11037,7 +11127,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11064,7 +11154,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11172,7 +11262,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11199,7 +11289,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11226,7 +11316,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11253,7 +11343,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11307,7 +11397,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11361,7 +11451,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11442,7 +11532,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11523,7 +11613,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11604,7 +11694,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11685,7 +11775,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11739,7 +11829,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11820,7 +11910,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11847,7 +11937,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11928,7 +12018,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11955,7 +12045,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12090,7 +12180,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12117,7 +12207,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12183,6 +12273,60 @@
       "phrase_templates": [],
       "notes": "Reference expansion from Marvin et al. 330 preschool words",
       "svg_key": null
+    },
+    {
+      "id": "well",
+      "canonical_term": "well",
+      "display_label": "well",
+      "type": "word",
+      "category_xls": "People/Pronouns/Possessives",
+      "ui_tab": "more",
+      "part_of_speech": "word",
+      "priority_tier": 3,
+      "core_or_fringe": "core",
+      "sources": [
+        "Marvin 330 preschool words"
+      ],
+      "intent_tags": [
+        "general vocabulary"
+      ],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": false,
+      "requires_personalization": false,
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "svg_key": null,
+      "synonyms_or_variants": null,
+      "phrase_templates": [],
+      "notes": "Reference expansion from Marvin et al. 330 preschool words"
+    },
+    {
+      "id": "were",
+      "canonical_term": "were",
+      "display_label": "were",
+      "type": "word",
+      "category_xls": "People/Pronouns/Possessives",
+      "ui_tab": "more",
+      "part_of_speech": "verb/action",
+      "priority_tier": 3,
+      "core_or_fringe": "core",
+      "sources": [
+        "Marvin 330 preschool words"
+      ],
+      "intent_tags": [
+        "general vocabulary"
+      ],
+      "scenario_tags": [],
+      "allowed_for_generation": true,
+      "allowed_for_grid": false,
+      "requires_personalization": false,
+      "is_phrase": false,
+      "is_quick_phrase": false,
+      "svg_key": null,
+      "synonyms_or_variants": null,
+      "phrase_templates": [],
+      "notes": "Reference expansion from Marvin et al. 330 preschool words"
     }
   ],
   "phrase_templates": [
@@ -12299,7 +12443,7 @@
     {
       "scenario": "Frustration",
       "context": "Toy not working properly",
-      "intended_meaning": "Help me / I’m frustrated",
+      "intended_meaning": "Help me / I'm frustrated",
       "constraints": "Emotional expression"
     },
     {
@@ -12341,7 +12485,7 @@
     {
       "scenario": "Rejecting",
       "context": "Given unwanted food/activity",
-      "intended_meaning": "No / I don’t want that",
+      "intended_meaning": "No / I don't want that",
       "constraints": "Clear refusal"
     },
     {
@@ -12353,7 +12497,7 @@
     {
       "scenario": "Commenting",
       "context": "Watching a funny video",
-      "intended_meaning": "That’s funny",
+      "intended_meaning": "That's funny",
       "constraints": "Social commenting"
     },
     {

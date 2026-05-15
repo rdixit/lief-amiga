@@ -35,6 +35,8 @@ Then open [http://localhost:8001](http://localhost:8001) in your browser.
 | `style.css` | All styles including iPad frame, hotspot glow, and pulse animation |
 | `scripts/generate_symbols.py` | Regenerate `symbols.js` from `vocabulary.json` |
 | `scripts/build_vocabulary_corrections_export.py` | Diff `vocabulary.json` vs canonical CSV, output correction report |
+| `scripts/vocab_sync.py` | Bidirectional sync between `vocabulary.json` and the canonical CSV |
+| `scripts/build_union_table.py` | Cross-system collision audit joining vocab, tabs, and Meaning Room |
 
 ---
 
@@ -116,7 +118,8 @@ The original grid view with 6 tabs: Core · Actions · Feelings · People · Thi
 | `display_label` | Human-readable label shown on the card |
 | `ui_tab` | Runtime tab assignment: `core`, `actions`, `feelings`, `people`, `things`, `more` |
 | `priority_tier` | `1` (MVP core) · `2` (Faison expansion) · `3` (reference, hidden by default) |
-| `part_of_speech` | Fitzgerald Key role: `verb/action`, `noun`, `descriptor/adjective`, `pronoun/person`, `location/preposition`, `negation/repair`, `phrase` |
+| `part_of_speech` | Fitzgerald Key role: `verb/action`, `noun`, `descriptor/adjective`, `pronoun/person`, `location/preposition`, `negation/repair`, `phrase`, `question word`, `word` |
+| `phrase_pos` | For phrase-type symbols only: the head word's linguistic POS (e.g., `verb/action` for "help me") |
 | `sources` | Source word lists the symbol appears in (used for frequency sort) |
 | `allowed_for_grid` | `true` for Tier 1 and 2; `false` for Tier 3 |
 
@@ -137,6 +140,8 @@ Symbol cards show a subtle background tint by grammatical role:
 | 🟣 Purple | Descriptors / adjectives |
 | 🔴 Red | Negation / repair |
 | 🩷 Pink | Phrases |
+| ⬜ Gray | Function words (articles, conjunctions, interjections) |
+| 🩵 Cyan | Question words |
 
 ---
 
@@ -146,7 +151,7 @@ Symbol cards show a subtle background tint by grammatical role:
 npm test
 ```
 
-Uses Node's built-in test runner (`node:test`) — no install required. Runs `tests/data/vocab_coverage.test.js` (71 tests, ~100ms).
+Uses Node's built-in test runner (`node:test`) — no install required. Runs `tests/data/vocab_coverage.test.js` (77 tests, ~100ms).
 
 **What is tested:**
 
@@ -156,6 +161,7 @@ Uses Node's built-in test runner (`node:test`) — no install required. Runs `te
 | `symbol resolution` | Every `symbol_id` exists in `vocabulary.json`, has `allowed_for_grid: true`, no duplicates within an anchor |
 | `tier coverage` | Every tier-1 and tier-2 grid symbol appears in at least one anchor |
 | `stress glow integrity` | Glow values in `[0,1]`, curves are monotonically non-decreasing |
+| `POS integrity` | Valid POS on every symbol, phrase-type consistency, CSS rule coverage, no curly quotes |
 
 ---
 
@@ -179,17 +185,68 @@ Diffs `vocabulary.json` against the original canonical spreadsheet CSV and write
 python3 scripts/build_vocabulary_corrections_export.py
 ```
 
+### `scripts/vocab_sync.py`
+
+Bidirectional sync between `vocabulary.json` (app-facing) and the canonical CSV (team-facing). The CSV is the artifact Joannalyn and Gabby review; `vocabulary.json` is what the app loads.
+
+```bash
+python3 scripts/vocab_sync.py export              # vocabulary.json → CSV
+python3 scripts/vocab_sync.py diff                 # show what changed between CSV and JSON
+python3 scripts/vocab_sync.py import               # dry-run: preview CSV → JSON changes
+python3 scripts/vocab_sync.py import --apply        # write CSV changes back to vocabulary.json
+```
+
+**Synced fields:** `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`. After an `export` + `diff`, there should be zero differences. If the team edits the CSV, `import --apply` writes those changes back.
+
+The canonical CSV lives at `data/AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv`.
+
+### `scripts/build_union_table.py`
+
+Joins `vocabulary.json`, `data/meaning_room.json`, and `data/pos_corrections.csv` into a single CSV for cross-system collision review.
+
+```bash
+python3 scripts/build_union_table.py
+```
+
+Outputs `data/vocabulary_union_table.csv` with columns: `symbol_id`, `display_label`, `priority_tier`, `type`, `category_xls`, `ui_tab`, `meaning_room_anchors`, `pre_correction_pos`, `current_pos`, `phrase_pos`, `pos_changed`, `collision_flags`.
+
+**Collision flags detected:**
+- `tab-anchor-mismatch` — symbol's `ui_tab` doesn't align with its Meaning Room anchor's expected tabs
+- `pos-type-mismatch` — symbol has `type: phrase` but POS is not `phrase`
+- `orphan-tier-1-2` — tier 1 or 2 symbol not in any Meaning Room anchor
+
+### `scripts/apply_pos_corrections.py`
+
+Applies POS corrections from `data/pos_corrections.csv` to `vocabulary.json`.
+
+```bash
+python3 scripts/apply_pos_corrections.py           # dry-run
+python3 scripts/apply_pos_corrections.py --apply    # write changes
+```
+
+### `scripts/update_expansion_packet.py`
+
+Updates the canonical expansion packet CSV to match `vocabulary.json`: applies POS corrections, adds new symbols, removes annotation rows, normalizes curly quotes, adds `phrase_pos` and `ui_tab` columns.
+
+```bash
+python3 scripts/update_expansion_packet.py          # dry-run
+python3 scripts/update_expansion_packet.py --apply   # write updated CSV
+```
+
 ---
 
 ## Data quality notes
 
-The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 424 symbols and documented corrections in `data/vocabulary_category_corrections.csv`.
+The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 431 symbols across three independent category systems and documented corrections in `data/pos_corrections.csv` and `data/vocabulary_union_table.csv`.
 
-**Two types of changes:**
-1. **UI tab assignments** (124 symbols) — runtime display decisions mapping spreadsheet categories to our 6-tab UI; original spreadsheet categories are preserved in the corrected CSV for future tab expansion
-2. **Genuine source corrections** (29 category + 37 POS fixes) — objectively wrong assignments in the spreadsheet (e.g., `dog` in "Actions", `airplane` in "People/Pronouns")
+**Changes applied:**
+1. **UI tab assignments** (139 symbols) — runtime display decisions mapping spreadsheet categories to our 6-tab UI; original spreadsheet categories preserved in `category_xls`
+2. **POS corrections** (121 symbols) — the Tier 3 bulk import had assigned `pronoun/person` to everything from "People/Pronouns/Possessives" and `word` to everything from "Uncategorized"/"Social"; these are now linguistically accurate
+3. **Phrase normalization** (30 symbols) — all `type: phrase` symbols now have `part_of_speech: "phrase"` with head-word POS in `phrase_pos`
+4. **Compound noun fixes** (4 symbols) — play_doh, toygame, tummystomach, waterjuice reclassified from phrase to word/noun
+5. **Curly quote normalization** (19 occurrences) — Unicode curly quotes normalized to straight apostrophes
 
-The corrected CSV (`AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv`) is **pending team review** before being merged back to the source spreadsheet.
+**Dual source of truth:** The canonical CSV (`data/AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv`) is the team-facing review artifact. `vocabulary.json` is the app-facing artifact. Use `scripts/vocab_sync.py` to keep them in sync.
 
 ---
 

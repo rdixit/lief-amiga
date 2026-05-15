@@ -1,0 +1,24 @@
+category_xls,ui_tab,meaning_room_anchors,notes
+Actions,actions,"actions, toys, outside",verbs and action phrases
+Body Parts,things,,no dedicated anchor yet
+Clothing,things,"clothing",
+Descriptors,more,"colors_descriptors",adjectives and colors
+Feelings,feelings,"feelings",
+Food/Drink,things,"food_drink",
+Function/Core,more,,articles/conjunctions/etc
+Negation/Repair,core,"stop_refusal",no/stop/don't want
+People/Pronouns/Possessives,people,"self, other_people",I/me/you/he/she/they
+Places,things,"outside",
+Preferred Items,things,"toys",
+Question Words,more,,who/what/where/why
+Regulation/Safety,core,"calm_corner",break/breathe/quiet
+Social,core,"self, other_people",hello/goodbye/please
+Uncategorized,more,,"catch-all from original spreadsheet"
+Vehicles,things,"outside",
+,actions,"calm_corner","cross-cutting: calm actions like breathe"
+,actions,"food_drink","cross-cutting: eat/drink are actions in food context"
+,actions,"stop_refusal","cross-cutting: refusal phrases"
+,actions,"time","cross-cutting: one_more_minute"
+,core,"actions","cross-cutting: core phrases like help_me"
+,core,"colors_descriptors","cross-cutting: bad"
+,core,"food_drink","cross-cutting: i_want_water"
