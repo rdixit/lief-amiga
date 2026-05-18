@@ -23,11 +23,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-EXPANSION_PATH = Path(
-    "/Users/mpesavento/src/lief-amiga/data/"
-    "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary.csv"
-)
-OUT_PATH = REPO / "data" / "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv"
+EXPANSION_PATH = REPO / "data" / "_archive" / "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_orig.csv"
+OUT_PATH = REPO / "data" / "canonical_vocabulary.csv"
 
 ANNOTATION_PREFIXES = [
     "could be specific to use quiet space",

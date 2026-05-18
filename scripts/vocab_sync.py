@@ -24,7 +24,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-CSV_PATH = REPO / "data" / "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv"
+CSV_PATH = REPO / "data" / "canonical_vocabulary.csv"
 
 CSV_COLUMNS = [
     "canonical_term", "display_label", "type", "category", "source",

@@ -27,7 +27,7 @@ async function loadVocabulary() {
 }
 
 async function loadRoomConfig() {
-  const res = await fetch(`./data/meaning_room.json?_=${Date.now()}`);
+  const res = await fetch(`./meaning_room.json?_=${Date.now()}`);
   ROOM_CONFIG = await res.json();
 }
 

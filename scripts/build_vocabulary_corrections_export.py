@@ -16,13 +16,11 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-OUT_PATH = REPO / "data" / "vocabulary_category_corrections.csv"
+OUT_PATH = REPO / "data" / "_archive" / "vocabulary_category_corrections.csv"
 DEFAULT_CANONICAL = Path(
     os.environ.get(
         "CANONICAL_CSV",
-        "/Users/mpesavento/Library/CloudStorage/GoogleDrive-mjpesavento@gmail.com/"
-        "My Drive/work/Lief-AMIGA-AAC/data/"
-        "AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv",
+        str(REPO / "data" / "_archive" / "AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv"),
     )
 )
 

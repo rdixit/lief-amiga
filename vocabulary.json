@@ -12376,7 +12376,8 @@
       "synonyms_or_variants": "Not that / I don't want that / Different",
       "phrase_templates": [],
       "notes": "Key repair/refusal expression per Validation D/F report",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "negation/repair"
     },
     {
       "id": "try_again",
@@ -12405,7 +12406,8 @@
       "synonyms_or_variants": "Try again / Different / I meant something else",
       "phrase_templates": [],
       "notes": "Repair pathway per Validation D/F report",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "negation/repair"
     },
     {
       "id": "i_meant_something_else",
@@ -12434,7 +12436,8 @@
       "synonyms_or_variants": "I meant something else / Different / Try again",
       "phrase_templates": [],
       "notes": "Repair pathway per Validation D/F report",
-      "svg_key": null
+      "svg_key": null,
+      "phrase_pos": "negation/repair"
     }
   ],
   "phrase_templates": [

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Build a union table joining vocabulary.json, meaning_room.json, and
-pos_corrections.csv into a single CSV for cross-system collision review.
+pos_corrections.csv (archived) into a single CSV for cross-system collision review.
 
 Usage:  python3 scripts/build_union_table.py
 
@@ -14,8 +14,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-ROOM_PATH = REPO / "data" / "meaning_room.json"
-CORRECTIONS_PATH = REPO / "data" / "pos_corrections.csv"
+ROOM_PATH = REPO / "meaning_room.json"
+CORRECTIONS_PATH = REPO / "data" / "_archive" / "pos_corrections.csv"
 OUT_PATH = REPO / "data" / "vocabulary_union_table.csv"
 
 ANCHOR_TO_EXPECTED_TABS = {

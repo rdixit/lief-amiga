@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Apply POS corrections from data/pos_corrections.csv to vocabulary.json.
+Apply POS corrections from data/_archive/pos_corrections.csv to vocabulary.json.
 
 Usage:
   python3 scripts/apply_pos_corrections.py          # dry-run (print changes)
@@ -14,7 +14,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-CORRECTIONS_PATH = REPO / "data" / "pos_corrections.csv"
+CORRECTIONS_PATH = REPO / "data" / "_archive" / "pos_corrections.csv"
 
 COMPOUND_NOUNS = {"play_doh", "toygame", "tummystomach", "waterjuice"}
 

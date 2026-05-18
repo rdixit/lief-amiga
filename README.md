@@ -29,7 +29,7 @@ Then open [http://localhost:8001](http://localhost:8001) in your browser.
 | File | Purpose |
 |---|---|
 | `vocabulary.json` | Source of truth — all symbols, tabs, tiers, POS, Meaning Room config |
-| `data/meaning_room.json` | Meaning Room scene config — image, anchor hotspots, symbol mappings, glow curves |
+| `meaning_room.json` | Meaning Room scene config — image, anchor hotspots, symbol mappings, glow curves |
 | `symbols.js` | ES module mapping `symbol_id` → SVG string |
 | `app.js` | Application logic — view state machine, glow engine, sentence builder |
 | `style.css` | All styles including iPad frame, hotspot glow, and pulse animation |
@@ -47,7 +47,7 @@ The app has three views, controlled by a toggle button (bottom-left) and persist
 ### Meaning Room (default)
 A spatial scene showing a child's room. Each object is a tappable anchor leading to a focused symbol grid for that category. Anchors glow softly at all times; stress-sensitive anchors (Feelings, Stop, Calm) escalate and pulse at high stress zones.
 
-- **Stress glow** — driven by the Lief HRV device (or the simulated slider); only anchors with a `stress_glow_curve` in `data/meaning_room.json` escalate at high stress
+- **Stress glow** — driven by the Lief HRV device (or the simulated slider); only anchors with a `stress_glow_curve` in `meaning_room.json` escalate at high stress
 - **Anchor tap** — opens a grid of symbols associated with that anchor; tapping a symbol adds it to the sentence bar and returns to the scene
 - **Back to scene** — available at any time while browsing an anchor grid
 
@@ -67,7 +67,7 @@ The original grid view with 6 tabs: Core · Actions · Feelings · People · Thi
 
 ## Meaning Room configuration
 
-`data/meaning_room.json` controls the entire Meaning Room layout. Edit this file to adjust anchor positions, symbol mappings, or glow curves without touching code.
+`meaning_room.json` controls the entire Meaning Room layout. Edit this file to adjust anchor positions, symbol mappings, or glow curves without touching code.
 
 ```jsonc
 {
@@ -178,8 +178,8 @@ python3 scripts/generate_symbols.py
 ### `scripts/build_vocabulary_corrections_export.py`
 
 Diffs `vocabulary.json` against the original canonical spreadsheet CSV and writes:
-- `data/vocabulary_category_corrections.csv` — every tab and POS change, with reason
-- `data/AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv` — proposed corrected CSV for team review
+- `data/_archive/vocabulary_category_corrections.csv` — every tab and POS change, with reason
+- `data/_archive/AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv` — proposed corrected CSV for team review
 
 ```bash
 python3 scripts/build_vocabulary_corrections_export.py
@@ -198,11 +198,11 @@ python3 scripts/vocab_sync.py import --apply        # write CSV changes back to 
 
 **Synced fields:** `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`. After an `export` + `diff`, there should be zero differences. If the team edits the CSV, `import --apply` writes those changes back.
 
-The canonical CSV lives at `data/AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv`.
+The canonical CSV lives at `data/canonical_vocabulary.csv`.
 
 ### `scripts/build_union_table.py`
 
-Joins `vocabulary.json`, `data/meaning_room.json`, and `data/pos_corrections.csv` into a single CSV for cross-system collision review.
+Joins `vocabulary.json`, `meaning_room.json`, and `data/_archive/pos_corrections.csv` into a single CSV for cross-system collision review.
 
 ```bash
 python3 scripts/build_union_table.py
@@ -217,7 +217,7 @@ Outputs `data/vocabulary_union_table.csv` with columns: `symbol_id`, `display_la
 
 ### `scripts/apply_pos_corrections.py`
 
-Applies POS corrections from `data/pos_corrections.csv` to `vocabulary.json`.
+Applies POS corrections from `data/_archive/pos_corrections.csv` to `vocabulary.json`.
 
 ```bash
 python3 scripts/apply_pos_corrections.py           # dry-run
@@ -237,7 +237,7 @@ python3 scripts/update_expansion_packet.py --apply   # write updated CSV
 
 ## Data quality notes
 
-The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 431 symbols across three independent category systems and documented corrections in `data/pos_corrections.csv` and `data/vocabulary_union_table.csv`.
+The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 431 symbols across three independent category systems and documented corrections in `data/_archive/pos_corrections.csv` and `data/vocabulary_union_table.csv`.
 
 **Changes applied:**
 1. **UI tab assignments** (139 symbols) — runtime display decisions mapping spreadsheet categories to our 6-tab UI; original spreadsheet categories preserved in `category_xls`
@@ -246,7 +246,7 @@ The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad 
 4. **Compound noun fixes** (4 symbols) — play_doh, toygame, tummystomach, waterjuice reclassified from phrase to word/noun
 5. **Curly quote normalization** (19 occurrences) — Unicode curly quotes normalized to straight apostrophes
 
-**Dual source of truth:** The canonical CSV (`data/AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv`) is the team-facing review artifact. `vocabulary.json` is the app-facing artifact. Use `scripts/vocab_sync.py` to keep them in sync.
+**Dual source of truth:** The canonical CSV (`data/canonical_vocabulary.csv`) is the team-facing review artifact. `vocabulary.json` is the app-facing artifact. Use `scripts/vocab_sync.py` to keep them in sync.
 
 ---
 
