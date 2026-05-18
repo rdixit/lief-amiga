@@ -10,12 +10,12 @@
       "LAMP WFL 84 100 Frequently Used Core Words"
     ],
     "tier_counts": {
-      "tier1_phase_i_mvp": 56,
-      "tier2_faison_expansion": 115,
-      "tier3_reference_expansion": 253,
-      "total": 424
+      "tier1_phase_i_mvp": 60,
+      "tier2_faison_expansion": 124,
+      "tier3_reference_expansion": 252,
+      "total": 436
     },
-    "quick_phrase_count": 13,
+    "quick_phrase_count": 14,
     "notes": "SVG icons for symbols with svg_key are defined in symbols.js. Symbols without svg_key need new SVGs generated. Orphan symbols restored: feel, school, food, thank_you, he_she. he/she promoted to tier 1."
   },
   "app_config": {
@@ -163,6 +163,22 @@
       ],
       "scenario_tags": [
         "Rejecting"
+      ],
+      "affect_priority": "stressed"
+    },
+    {
+      "id": "not_that",
+      "display_label": "Not that",
+      "utterance": "Not that.",
+      "emoji": "✋",
+      "bar_label": "Not that",
+      "intent_tags": [
+        "refusal/protest",
+        "repair"
+      ],
+      "scenario_tags": [
+        "Rejecting",
+        "Repair"
       ],
       "affect_priority": "stressed"
     },
@@ -6572,20 +6588,23 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "category_xls": "Negation/Repair",
+      "ui_tab": "core",
       "sources": [
         "Marvin 330 preschool words"
       ],
-      "priority_tier": 3,
-      "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "descriptor/adjective",
+      "priority_tier": 1,
+      "core_or_fringe": "core",
+      "part_of_speech": "negation/repair",
       "intent_tags": [
-        "description/labeling"
+        "refusal/protest",
+        "repair"
       ],
-      "scenario_tags": [],
+      "scenario_tags": [
+        "Repair"
+      ],
       "allowed_for_generation": true,
-      "allowed_for_grid": false,
+      "allowed_for_grid": true,
       "requires_personalization": false,
       "synonyms_or_variants": null,
       "phrase_templates": [
@@ -6593,7 +6612,7 @@
         "All done",
         "Different"
       ],
-      "notes": "Reference expansion from Marvin et al. 330 preschool words",
+      "notes": "Promoted from Tier 3 Descriptors per Validation D/F report: core repair word",
       "svg_key": null
     },
     {
@@ -12327,6 +12346,95 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Reference expansion from Marvin et al. 330 preschool words"
+    },
+    {
+      "id": "not_that",
+      "canonical_term": "not that",
+      "display_label": "Not that",
+      "type": "phrase",
+      "is_phrase": true,
+      "is_quick_phrase": true,
+      "category_xls": "Negation/Repair",
+      "ui_tab": "core",
+      "sources": [
+        "Validation D/F report"
+      ],
+      "priority_tier": 1,
+      "core_or_fringe": "core",
+      "part_of_speech": "negation/repair",
+      "intent_tags": [
+        "refusal/protest",
+        "repair"
+      ],
+      "scenario_tags": [
+        "Rejecting",
+        "Repair"
+      ],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": "Not that / I don't want that / Different",
+      "phrase_templates": [],
+      "notes": "Key repair/refusal expression per Validation D/F report",
+      "svg_key": null
+    },
+    {
+      "id": "try_again",
+      "canonical_term": "try again",
+      "display_label": "Try again",
+      "type": "phrase",
+      "is_phrase": true,
+      "is_quick_phrase": false,
+      "category_xls": "Negation/Repair",
+      "ui_tab": "core",
+      "sources": [
+        "Validation D/F report"
+      ],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "negation/repair",
+      "intent_tags": [
+        "repair"
+      ],
+      "scenario_tags": [
+        "Repair"
+      ],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": "Try again / Different / I meant something else",
+      "phrase_templates": [],
+      "notes": "Repair pathway per Validation D/F report",
+      "svg_key": null
+    },
+    {
+      "id": "i_meant_something_else",
+      "canonical_term": "i meant something else",
+      "display_label": "I meant something else",
+      "type": "phrase",
+      "is_phrase": true,
+      "is_quick_phrase": false,
+      "category_xls": "Negation/Repair",
+      "ui_tab": "core",
+      "sources": [
+        "Validation D/F report"
+      ],
+      "priority_tier": 2,
+      "core_or_fringe": "core",
+      "part_of_speech": "negation/repair",
+      "intent_tags": [
+        "repair"
+      ],
+      "scenario_tags": [
+        "Repair"
+      ],
+      "allowed_for_generation": true,
+      "allowed_for_grid": true,
+      "requires_personalization": false,
+      "synonyms_or_variants": "I meant something else / Different / Try again",
+      "phrase_templates": [],
+      "notes": "Repair pathway per Validation D/F report",
+      "svg_key": null
     }
   ],
   "phrase_templates": [

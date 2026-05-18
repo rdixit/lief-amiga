@@ -63,7 +63,7 @@
       "label": "Stop",
       "icon": null,
       "hotspot": { "x": 0.15, "y": 0.02, "w": 0.13, "h": 0.24 },
-      "symbol_ids": ["stop", "no", "not", "cant", "wont", "arent", "couldnt", "havent", "i_dont_want_that", "no_i_dont_want_that"],
+      "symbol_ids": ["stop", "no", "not", "not_that", "different", "cant", "wont", "arent", "couldnt", "havent", "i_dont_want_that", "no_i_dont_want_that", "try_again", "i_meant_something_else"],
       "stress_glow_curve": [0.50, 0.62, 0.78, 0.92, 1.00]
     },
     {
