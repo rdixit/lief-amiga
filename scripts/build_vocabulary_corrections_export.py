@@ -12,6 +12,7 @@ Default canonical path matches the project's Google Drive export; override with 
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -24,24 +25,10 @@ DEFAULT_CANONICAL = Path(
     )
 )
 
-CAT_TO_TAB = {
-    "Actions": "actions",
-    "Social": "core",
-    "Feelings": "feelings",
-    "People/Pronouns/Possessives": "people",
-    "Places": "things",
-    "Preferred Items": "things",
-    "Body Parts": "things",
-    "Food/Drink": "things",
-    "Clothing": "things",
-    "Vehicles": "things",
-    "Descriptors": "more",
-    "Negation/Repair": "more",
-    "Function/Core": "more",
-    "Question Words": "more",
-    "Regulation/Safety": "core",
-    "Uncategorized": "more",
-}
+sys.path.insert(0, str(REPO / "scripts"))
+from category_utils import cat_to_tab as _load_cat_to_tab
+
+CAT_TO_TAB = _load_cat_to_tab()
 
 
 def main():

@@ -9330,7 +9330,7 @@
       "svg_key": "we"
     },
     {
-      "id": "well",
+      "id": "we_ll",
       "canonical_term": "we'll",
       "display_label": "we'll",
       "type": "word",
@@ -9357,7 +9357,7 @@
       "svg_key": null
     },
     {
-      "id": "were",
+      "id": "we_re",
       "canonical_term": "we're",
       "display_label": "we're",
       "type": "word",

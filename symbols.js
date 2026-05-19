@@ -3035,6 +3035,12 @@ export const SYMBOL_SVGS = {
   "well": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
   <circle cx="50" cy="50" r="32" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">well</text>
+</svg>`,
+
+  "we_ll": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">we'll</text>
 </svg>`,
 
@@ -3045,6 +3051,12 @@ export const SYMBOL_SVGS = {
 </svg>`,
 
   "were": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
+  <circle cx="50" cy="50" r="32" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
+  <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">were</text>
+</svg>`,
+
+  "we_re": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="38" fill="#f59e0b" opacity="0.18"/>
   <circle cx="50" cy="50" r="32" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="6,3"/>
   <text x="50" y="58" text-anchor="middle" font-size="12" font-weight="bold" fill="#b45309" font-family="Arial, sans-serif">we're</text>

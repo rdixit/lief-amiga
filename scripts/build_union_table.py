@@ -10,6 +10,7 @@ Output: data/vocabulary_union_table.csv
 
 import csv
 import json
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -18,20 +19,10 @@ ROOM_PATH = REPO / "meaning_room.json"
 CORRECTIONS_PATH = REPO / "data" / "_archive" / "pos_corrections.csv"
 OUT_PATH = REPO / "data" / "vocabulary_union_table.csv"
 
-ANCHOR_TO_EXPECTED_TABS = {
-    "self": {"people", "things", "core"},
-    "feelings": {"feelings"},
-    "actions": {"actions", "core"},
-    "other_people": {"people", "core"},
-    "time": {"more"},
-    "stop_refusal": {"core", "more"},
-    "outside": {"things"},
-    "calm_corner": {"core", "actions"},
-    "toys": {"things", "actions"},
-    "food_drink": {"things"},
-    "clothing": {"things", "more"},
-    "colors_descriptors": {"more", "feelings"},
-}
+sys.path.insert(0, str(REPO / "scripts"))
+from category_utils import anchor_to_expected_tabs as _load_anchor_tabs
+
+ANCHOR_TO_EXPECTED_TABS = _load_anchor_tabs()
 
 
 def main():
