@@ -81,7 +81,8 @@
         "im_frustrated",
         "fine",
         "great",
-        "mean"
+        "mean",
+        "bad"
       ],
       "stress_glow_curve": [
         0.5,
@@ -444,7 +445,6 @@
         "fast",
         "slow",
         "that",
-        "bad",
         "in",
         "out",
         "up",

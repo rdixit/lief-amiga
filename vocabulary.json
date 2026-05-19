@@ -335,7 +335,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "v1 app.js (orphan restore)"
       ],
@@ -457,7 +457,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -515,7 +515,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -543,7 +543,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -1137,7 +1137,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -1572,8 +1572,8 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -2010,7 +2010,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -2038,7 +2038,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -2096,7 +2096,7 @@
       "is_phrase": true,
       "is_quick_phrase": true,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -2157,7 +2157,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -2218,7 +2218,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "things",
       "sources": [
         "Validation scenarios"
       ],
@@ -2248,7 +2248,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "food",
       "sources": [
         "Validation scenarios"
       ],
@@ -2278,7 +2278,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "food",
       "sources": [
         "Validation scenarios"
       ],
@@ -2933,7 +2933,7 @@
       "is_phrase": true,
       "is_quick_phrase": false,
       "category_xls": "Regulation/Safety",
-      "ui_tab": "actions",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -3448,7 +3448,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3476,7 +3476,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3504,7 +3504,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3532,7 +3532,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3559,7 +3559,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3618,7 +3618,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3646,7 +3646,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3673,7 +3673,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3700,7 +3700,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3728,7 +3728,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3755,7 +3755,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3782,7 +3782,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3813,7 +3813,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3843,7 +3843,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3873,7 +3873,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -3904,7 +3904,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3934,7 +3934,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3964,7 +3964,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -3994,7 +3994,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -4470,7 +4470,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -4525,7 +4525,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Places",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -4581,7 +4581,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -4609,7 +4609,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -4690,7 +4690,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -5046,7 +5046,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -5073,7 +5073,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Faison SLP collected words",
         "Marvin 330 preschool words"
@@ -5158,7 +5158,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -6794,7 +6794,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -6824,7 +6824,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -7420,7 +7420,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -7474,7 +7474,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -8641,7 +8641,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -9694,7 +9694,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Food/Drink",
-      "ui_tab": "things",
+      "ui_tab": "food",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -11902,7 +11902,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -12399,7 +12399,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "negation/repair",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "repair"
       ],
@@ -12429,7 +12429,7 @@
       ],
       "priority_tier": 2,
       "core_or_fringe": "core",
-      "part_of_speech": "negation/repair",
+      "part_of_speech": "phrase",
       "intent_tags": [
         "repair"
       ],

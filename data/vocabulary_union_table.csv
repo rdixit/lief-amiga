@@ -1,8 +1,8 @@
-symbol_id,display_label,priority_tier,type,category_xls,ui_tab,meaning_room_anchors,pre_correction_pos,current_pos,phrase_pos,pos_changed,collision_flags
-break,Break,1,word,Actions,actions,calm_corner,verb/action,verb/action,,,tab-anchor-mismatch(calm_corner→expects:core)
+﻿symbol_id,display_label,priority_tier,type,category_xls,ui_tab,meaning_room_anchors,pre_correction_pos,current_pos,phrase_pos,pos_changed,collision_flags
+break,Break,1,word,Actions,core,calm_corner,verb/action,verb/action,,,
 close,Close,1,word,Actions,actions,actions,verb/action,verb/action,,,
-drink,Drink,1,word,Actions,actions,actions;food_drink,verb/action,verb/action,,,tab-anchor-mismatch(food_drink→expects:food)
-eat,Eat,1,word,Actions,actions,actions;food_drink,verb/action,verb/action,,,tab-anchor-mismatch(food_drink→expects:food)
+drink,Drink,1,word,Actions,food,actions;food_drink,verb/action,verb/action,,,
+eat,Eat,1,word,Actions,food,actions;food_drink,verb/action,verb/action,,,
 feel,Feel,1,word,Actions,actions,actions,verb/action,verb/action,,,
 go,Go,1,word,Actions,actions,actions;outside,verb/action,verb/action,,,
 know,know,1,word,Negation/Repair,actions,actions,verb/action,verb/action,,,
@@ -32,7 +32,7 @@ thank_you,Thank You,1,phrase,Social,core,actions,word,phrase,word,Y,
 too_loud,Too loud,1,phrase,Regulation/Safety,core,calm_corner,phrase,phrase,descriptor/adjective,,
 want,Want,1,word,Actions,core,actions,verb/action,verb/action,,,
 yes,Yes,1,word,Actions,core,actions,word,word,,,
-bad,Bad,1,word,Feelings,feelings,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
+bad,Bad,1,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 frustrated,Frustrated,1,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 happy,Happy,1,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 mad,Mad,1,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
@@ -45,7 +45,7 @@ cant,can't,1,word,Negation/Repair,more,stop_refusal,negation/repair,negation/rep
 couldnt,couldn't,1,word,Negation/Repair,more,stop_refusal,negation/repair,negation/repair,,,tab-anchor-mismatch(stop_refusal→expects:core)
 havent,haven't,1,word,Negation/Repair,more,stop_refusal,negation/repair,negation/repair,,,tab-anchor-mismatch(stop_refusal→expects:core)
 not,not,1,word,Negation/Repair,more,stop_refusal,negation/repair,negation/repair,,,tab-anchor-mismatch(stop_refusal→expects:core)
-that,That,1,word,People/Pronouns/Possessives,more,colors_descriptors,word,word,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
+that,That,1,word,Descriptors,describe,colors_descriptors,word,word,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
 wont,won't,1,word,Negation/Repair,more,stop_refusal,negation/repair,negation/repair,,,tab-anchor-mismatch(stop_refusal→expects:core)
 he,He,1,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
 he_she,He/She,1,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
@@ -56,20 +56,20 @@ my,My,1,word,People/Pronouns/Possessives,people,self,pronoun/person,pronoun/pers
 she,She,1,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
 you,You,1,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
 bathroom,Bathroom,1,word,Places,things,outside,noun,noun,,,
-food,Food,1,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+food,Food,1,word,Food/Drink,food,food_drink,noun,noun,,,
 school,School,1,word,Places,things,outside,noun,noun,,,
-water,Water,1,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+water,Water,1,word,Food/Drink,food,food_drink,noun,noun,,,
 do,Do,2,word,Actions,actions,actions,verb/action,verb/action,,,
-help_me_im_frustrated,Help me / I'm frustrated,2,phrase,Actions,actions,calm_corner,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(calm_corner→expects:core)
+help_me_im_frustrated,Help me / I'm frustrated,2,phrase,Actions,core,calm_corner,verb/action,phrase,verb/action,Y,
 hug,Hug,2,word,Actions,actions,actions;toys,verb/action,verb/action,,,
-i_dont_want_that,I don't want that,2,phrase,Actions,actions,stop_refusal,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(stop_refusal→expects:core)
+i_dont_want_that,I don't want that,2,phrase,Actions,core,stop_refusal,verb/action,phrase,verb/action,Y,
 i_found_something,I found something,2,phrase,Places,actions,actions,location/preposition,phrase,verb/action,Y,
 i_like_this,I like this,2,phrase,Actions,actions,actions,verb/action,phrase,verb/action,Y,
-i_need_help,I need help,2,phrase,Actions,actions,calm_corner,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(calm_corner→expects:core)
+i_need_help,I need help,2,phrase,Actions,core,calm_corner,verb/action,phrase,verb/action,Y,
 i_need_help_stop,I need help / stop,2,phrase,Actions,actions,calm_corner,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(calm_corner→expects:core)
-i_want_a_jacket,I want a jacket,2,phrase,Actions,actions,clothing,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(clothing→expects:things)
-i_want_apple,I want apple,2,phrase,Actions,actions,food_drink,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(food_drink→expects:food)
-i_want_food,I want food,2,phrase,Actions,actions,food_drink,verb/action,phrase,verb/action,Y,tab-anchor-mismatch(food_drink→expects:food)
+i_want_a_jacket,I want a jacket,2,phrase,Actions,things,clothing,verb/action,phrase,verb/action,Y,
+i_want_apple,I want apple,2,phrase,Actions,food,food_drink,verb/action,phrase,verb/action,Y,
+i_want_food,I want food,2,phrase,Actions,food,food_drink,verb/action,phrase,verb/action,Y,
 jump,Jump,2,word,Actions,actions,actions;toys,verb/action,verb/action,,,
 like,Like,2,word,Actions,actions,actions,verb/action,verb/action,,,
 look_at_me,Look at me,2,phrase,Actions,actions,actions,verb/action,phrase,verb/action,Y,
@@ -86,19 +86,19 @@ squeeze,squeeze,2,word,Actions,actions,toys,verb/action,verb/action,,,
 take,Take,2,word,Actions,actions,actions,verb/action,verb/action,,,
 tickle,Tickle,2,word,Actions,actions,actions;toys,verb/action,verb/action,,,
 ticklesqueeze,Tickle/squeeze,2,phrase,Actions,actions,toys,verb/action,phrase,verb/action,Y,
-too_loud_i_need_a_break,Too loud / I need a break,2,phrase,Regulation/Safety,actions,calm_corner,verb/action,phrase,descriptor/adjective,Y,tab-anchor-mismatch(calm_corner→expects:core)
+too_loud_i_need_a_break,Too loud / I need a break,2,phrase,Regulation/Safety,core,calm_corner,verb/action,phrase,descriptor/adjective,Y,
 walk,Walk,2,word,Actions,actions,actions;outside,verb/action,verb/action,,,
 want_help,Want help,2,phrase,Actions,actions,actions,verb/action,phrase,verb/action,Y,
 want_help_want_item,Want help / want item,2,phrase,Actions,actions,actions,verb/action,phrase,verb/action,Y,
 want_item,want item,2,phrase,Actions,actions,actions,verb/action,phrase,verb/action,Y,
 work,Work,2,word,Actions,actions,actions,verb/action,verb/action,,,
 hi_hello,Hi / Hello,2,phrase,Social,core,other_people,phrase,phrase,word,,
-i_meant_something_else,I meant something else,2,phrase,Negation/Repair,core,stop_refusal,negation/repair,negation/repair,negation/repair,,"pos-type-mismatch(type=phrase,pos=negation/repair)"
+i_meant_something_else,I meant something else,2,phrase,Negation/Repair,core,stop_refusal,negation/repair,phrase,negation/repair,,
 no_i_dont_want_that,No / I don't want that,2,phrase,Regulation/Safety,core,stop_refusal,verb/action,phrase,negation/repair,Y,
 okfine,OK/Fine,2,phrase,Actions,core,actions,location/preposition,phrase,word,Y,
 one_more_minute,One more minute,2,phrase,Regulation/Safety,core,time,verb/action,phrase,noun,Y,
 thats_funny,That's funny,2,phrase,Function/Core,core,actions,pronoun/person,phrase,descriptor/adjective,Y,
-try_again,Try again,2,phrase,Negation/Repair,core,stop_refusal,negation/repair,negation/repair,negation/repair,,"pos-type-mismatch(type=phrase,pos=negation/repair)"
+try_again,Try again,2,phrase,Negation/Repair,core,stop_refusal,negation/repair,phrase,negation/repair,,
 bored,Bored,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 calm,Calm,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 confused,Confused,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
@@ -109,24 +109,24 @@ im_frustrated,I'm frustrated,2,phrase,Feelings,feelings,feelings,pronoun/person,
 scared,Scared,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 surprised,Surprised,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
 worried,Worried,2,word,Feelings,feelings,feelings,descriptor/adjective,descriptor/adjective,,,
-big,Big,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-black,Black,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-blue,Blue,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-down,Down,2,word,Descriptors,more,colors_descriptors,location/preposition,location/preposition,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-fast,Fast,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-green,Green,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-in,In,2,word,Descriptors,more,colors_descriptors,location/preposition,location/preposition,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-little,Little,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-off,Off,2,word,Places,more,colors_descriptors,location/preposition,location/preposition,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-orange,Orange,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-out,Out,2,word,Descriptors,more,colors_descriptors,location/preposition,location/preposition,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-pink,Pink,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-purple,Purple,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-red,Red,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-slow,Slow,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-up,Up,2,word,Descriptors,more,colors_descriptors,location/preposition,location/preposition,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-white,White,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
-yellow,Yellow,2,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
+big,Big,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+black,Black,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+blue,Blue,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+down,Down,2,word,Descriptors,describe,colors_descriptors,location/preposition,location/preposition,,,
+fast,Fast,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+green,Green,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+in,In,2,word,Descriptors,describe,colors_descriptors,location/preposition,location/preposition,,,
+little,Little,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+off,Off,2,word,Places,describe,colors_descriptors,location/preposition,location/preposition,,,
+orange,Orange,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+out,Out,2,word,Descriptors,describe,colors_descriptors,location/preposition,location/preposition,,,
+pink,Pink,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+purple,Purple,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+red,Red,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+slow,Slow,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+up,Up,2,word,Descriptors,describe,colors_descriptors,location/preposition,location/preposition,,,
+white,White,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
+yellow,Yellow,2,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
 dad,Dad,2,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
 mom,Mom,2,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
 their,Their,2,word,People/Pronouns/Possessives,people,other_people,pronoun/person,pronoun/person,,,
@@ -138,18 +138,18 @@ boat,Boat,2,word,Vehicles,things,toys,noun,noun,,,
 books,Books,2,word,Social,things,toys,noun,noun,,,
 bubbles,Bubbles,2,word,Preferred Items,things,toys,noun,noun,,,
 bus,Bus,2,word,Vehicles,things,toys,noun,noun,,,
-candy,Candy,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+candy,Candy,2,word,Food/Drink,food,food_drink,noun,noun,,,
 car,Car,2,word,Vehicles,things,toys,noun,noun,,,
-carrot,Carrot,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
-chips,Chips,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+carrot,Carrot,2,word,Food/Drink,food,food_drink,noun,noun,,,
+chips,Chips,2,word,Food/Drink,food,food_drink,noun,noun,,,
 classroom,Classroom,2,word,Places,things,outside,noun,noun,,,
 coat,Coat,2,word,Clothing,things,clothing,noun,noun,,,
-cookie,Cookie,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+cookie,Cookie,2,word,Food/Drink,food,food_drink,noun,noun,,,
 dog,Dog,2,word,Preferred Items,things,toys,noun,noun,,,
 doll,Doll,2,word,Preferred Items,things,toys,noun,noun,,,
 ear,Ear,2,word,Body Parts,things,self,noun,noun,,,
 eye,Eye,2,word,Body Parts,things,self,noun,noun,,,
-fruit,Fruit,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+fruit,Fruit,2,word,Food/Drink,food,food_drink,noun,noun,,,
 game,Game,2,word,Preferred Items,things,toys,noun,noun,,,
 gym,Gym,2,word,Places,things,outside,noun,noun,,,
 hand,Hand,2,word,Body Parts,things,self,noun,noun,,,
@@ -157,7 +157,7 @@ hat,Hat,2,word,Clothing,things,clothing,noun,noun,,,
 home,Home,2,word,Places,things,outside,noun,noun,,,
 ipad,iPad,2,word,Preferred Items,things,toys,noun,noun,,,
 jacket,Jacket,2,word,Clothing,things,clothing,noun,noun,,,
-juice,juice,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+juice,juice,2,word,Food/Drink,food,food_drink,noun,noun,,,
 leg,Leg,2,word,Body Parts,things,self,noun,noun,,,
 mouth,Mouth,2,word,Body Parts,things,self,noun,noun,,,
 music,Music,2,word,Preferred Items,things,toys,noun,noun,,,
@@ -165,28 +165,28 @@ nose,Nose,2,word,Body Parts,things,self,noun,noun,,,
 pants,Pants,2,word,Clothing,things,clothing,noun,noun,,,
 play_doh,Play doh,2,word,Preferred Items,things,toys,verb/action,noun,,Y,
 playground,Playground,2,word,Places,things,outside,noun,noun,,,
-popcorn,Popcorn,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
-pretzel,Pretzel,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+popcorn,Popcorn,2,word,Food/Drink,food,food_drink,noun,noun,,,
+pretzel,Pretzel,2,word,Food/Drink,food,food_drink,noun,noun,,,
 puzzle,Puzzle,2,word,Preferred Items,things,toys,noun,noun,,,
-rice,Rice,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+rice,Rice,2,word,Food/Drink,food,food_drink,noun,noun,,,
 sand,Sand,2,word,Preferred Items,things,outside,noun,noun,,,
 shirt,Shirt,2,word,Clothing,things,clothing,noun,noun,,,
 shoe,Shoe,2,word,Clothing,things,clothing,noun,noun,,,
-slide,Slide,2,word,Actions,things,toys,verb/action,verb/action,,,
+slide,Slide,2,word,Actions,things;actions,toys,verb/action,verb/action,,,
 sock,Sock,2,word,Clothing,things,clothing,noun,noun,,,
 stomach,stomach,2,word,Body Parts,things,self,noun,noun,,,
-swing,Swing,2,word,Actions,things,toys,verb/action,verb/action,,,
+swing,Swing,2,word,Actions,things;actions,toys,verb/action,verb/action,,,
 toy,Toy,2,word,Preferred Items,things,toys,noun,noun,,,
 toygame,Toy/Game,2,word,Preferred Items,things,toys,noun,noun,,,
 train,Train,2,word,Vehicles,things,toys,noun,noun,,,
 trampoline,Trampoline,2,word,Preferred Items,things,toys,noun,noun,,,
 tummy,Tummy,2,word,Body Parts,things,self,noun,noun,,,
 tummystomach,Tummy/stomach,2,word,Body Parts,things,self,pronoun/person,noun,,Y,
-waterjuice,Water/juice,2,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
-bite,bite,3,word,People/Pronouns/Possessives,actions,,pronoun/person,verb/action,,Y,
+waterjuice,Water/juice,2,word,Food/Drink,food,food_drink,noun,noun,,,
+bite,bite,3,word,Actions,actions,,pronoun/person,verb/action,,Y,
 buy,buy,3,word,Actions,actions,,verb/action,verb/action,,,
 call,call,3,word,Actions,actions,,verb/action,verb/action,,,
-came,came,3,word,People/Pronouns/Possessives,actions,,pronoun/person,verb/action,,Y,
+came,came,3,word,Actions,actions,,pronoun/person,verb/action,,Y,
 catch,catch,3,word,Actions,actions,,verb/action,verb/action,,,
 cause,cause,3,word,Actions,actions,,verb/action,verb/action,,,
 come,come,3,word,Actions,actions,,verb/action,verb/action,,,
@@ -216,7 +216,7 @@ lift,lift,3,word,Actions,actions,,pronoun/person,verb/action,,Y,
 look,look,3,word,Actions,actions,,verb/action,verb/action,,,
 looking,looking,3,word,Actions,actions,,verb/action,verb/action,,,
 move,move,3,word,Actions,actions,,word,verb/action,,Y,
-named,named,3,word,Actions,actions,other_people,verb/action,verb/action,,,"tab-anchor-mismatch(other_people→expects:core,people)"
+named,named,3,word,Actions,people,other_people,verb/action,verb/action,,,
 pick,pick,3,word,Actions,actions,,pronoun/person,verb/action,,Y,
 remember,remember,3,word,Actions,actions,,pronoun/person,verb/action,,Y,
 ride,ride,3,word,Actions,actions,,verb/action,verb/action,,,
@@ -338,7 +338,7 @@ theres,there's,3,word,Uncategorized,more,,pronoun/person,word,,Y,
 these,these,3,word,Uncategorized,more,,pronoun/person,word,,Y,
 this,this,3,word,Function/Core,more,,word,word,,,
 those,those,3,word,Function/Core,more,,word,word,,,
-three,three,3,word,Descriptors,more,colors_descriptors,descriptor/adjective,descriptor/adjective,,,tab-anchor-mismatch(colors_descriptors→expects:describe)
+three,three,3,word,Descriptors,describe,colors_descriptors,descriptor/adjective,descriptor/adjective,,,
 through,through,3,word,Descriptors,more,,word,location/preposition,,Y,
 time,time,3,word,Function/Core,more,,pronoun/person,word,,Y,
 to,to,3,word,Function/Core,more,,word,location/preposition,,Y,
@@ -410,8 +410,8 @@ birds,birds,3,word,Preferred Items,things,outside,pronoun/person,noun,,Y,
 box,box,3,word,Preferred Items,things,toys,noun,noun,,,
 bugs,bugs,3,word,Preferred Items,things,outside,word,noun,,Y,
 chair,chair,3,word,Preferred Items,things,toys,noun,noun,,,
-corn,corn,3,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
-cup,cup,3,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+corn,corn,3,word,Food/Drink,food,food_drink,noun,noun,,,
+cup,cup,3,word,Food/Drink,food,food_drink,noun,noun,,,
 door,door,3,word,Preferred Items,things,outside,noun,noun,,,
 duck,duck,3,word,Preferred Items,things,toys,noun,noun,,,
 face,face,3,word,Body Parts,things,self,noun,noun,,,
@@ -425,7 +425,7 @@ hill,hill,3,word,Places,things,outside,word,noun,,Y,
 horse,horse,3,word,Preferred Items,things,outside,noun,noun,,,
 house,house,3,word,Places,things,outside,noun,noun,,,
 leaves,leaves,3,word,Preferred Items,things,outside,word,noun,,Y,
-lunch,lunch,3,word,Food/Drink,things,food_drink,noun,noun,,,tab-anchor-mismatch(food_drink→expects:food)
+lunch,lunch,3,word,Food/Drink,food,food_drink,noun,noun,,,
 paint,paint,3,word,Preferred Items,things,toys,noun,noun,,,
 pet,pet,3,word,Preferred Items,things,toys,word,noun,,Y,
 piece,piece,3,word,Preferred Items,things,toys,pronoun/person,noun,,Y,
