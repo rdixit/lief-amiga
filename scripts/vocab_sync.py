@@ -159,6 +159,17 @@ def cmd_diff():
 
         for field in SYNC_FIELDS:
             json_field = CSV_TO_JSON_FIELD.get(field, field)
+
+            if field == "secondary_tabs":
+                csv_raw = normalize_quotes(csv_row.get(field, "").strip())
+                csv_list = [t.strip() for t in csv_raw.split(";") if t.strip()] if csv_raw else []
+                live_val = sym.get(json_field, [])
+                if not isinstance(live_val, list):
+                    live_val = [live_val] if live_val else []
+                if csv_list != live_val:
+                    field_diffs.append((field, str(csv_list), str(live_val)))
+                continue
+
             csv_val = normalize_quotes(csv_row.get(field, "").strip())
             live_val = sym.get(json_field, "")
             live_val = normalize_quotes(str(live_val)).strip() if live_val else ""

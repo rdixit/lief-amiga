@@ -1081,7 +1081,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Feelings",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -1395,7 +1395,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words"
@@ -1510,7 +1510,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words"
@@ -1541,7 +1541,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words"
@@ -1717,7 +1717,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Regulation/Safety",
+      "category_xls": "Negation/Repair",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
@@ -1774,7 +1774,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words",
@@ -1899,7 +1899,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "core",
       "sources": [
         "Marvin 330 preschool words"
@@ -1954,7 +1954,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words",
@@ -1982,7 +1982,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -2009,7 +2009,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words",
@@ -2455,8 +2455,8 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
-      "ui_tab": "actions",
+      "category_xls": "Regulation/Safety",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -2486,8 +2486,8 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
-      "category_xls": "Actions",
-      "ui_tab": "more",
+      "category_xls": "Regulation/Safety",
+      "ui_tab": "core",
       "sources": [
         "Validation scenarios"
       ],
@@ -2516,8 +2516,8 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
-      "ui_tab": "actions",
+      "category_xls": "Preferred Items",
+      "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -2543,7 +2543,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Places",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -2737,7 +2737,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -2754,7 +2754,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "spin",
@@ -2818,7 +2821,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Actions",
-      "ui_tab": "actions",
+      "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
       ],
@@ -2835,7 +2838,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "take",
@@ -2926,7 +2932,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Regulation/Safety",
       "ui_tab": "actions",
       "sources": [
         "Validation scenarios"
@@ -3580,7 +3586,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Descriptors",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Validation scenarios"
@@ -4017,7 +4023,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Vehicles",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4044,7 +4050,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Vehicles",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4098,7 +4104,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Validation scenarios"
@@ -4156,7 +4162,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "core",
       "sources": [
         "Validation scenarios"
@@ -4242,7 +4248,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4269,7 +4275,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4351,7 +4357,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words"
@@ -4463,7 +4469,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words",
@@ -4491,7 +4497,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4546,7 +4552,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Actions",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
@@ -4574,7 +4580,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words",
@@ -4602,7 +4608,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words"
@@ -4629,7 +4635,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Vehicles",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4656,7 +4662,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -4683,7 +4689,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words",
@@ -4771,7 +4777,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Preferred Items",
+      "category_xls": "Vehicles",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words",
@@ -5039,7 +5045,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Food/Drink",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -5066,7 +5072,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Food/Drink",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words",
@@ -5124,7 +5130,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Clothing",
       "ui_tab": "things",
       "sources": [
         "Faison SLP collected words"
@@ -5151,7 +5157,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Faison SLP collected words"
@@ -5205,7 +5211,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -5232,7 +5238,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -5448,14 +5454,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -5610,14 +5616,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -5880,7 +5886,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Marvin 330 preschool words"
@@ -5934,14 +5940,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Places",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -6231,14 +6237,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -6528,14 +6534,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Clothing",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "noun",
+      "part_of_speech": "question word",
       "intent_tags": [
         "description/labeling"
       ],
@@ -6558,14 +6564,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Clothing",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "noun",
+      "part_of_speech": "question word",
       "intent_tags": [
         "description/labeling"
       ],
@@ -6623,7 +6629,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -6650,7 +6656,7 @@
       "is_phrase": false,
       "is_quick_phrase": false,
       "category_xls": "Descriptors",
-      "ui_tab": "more",
+      "ui_tab": "feelings",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -6757,7 +6763,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Food/Drink",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7333,7 +7339,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7360,7 +7366,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7387,7 +7393,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7495,7 +7501,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7522,7 +7528,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7576,7 +7582,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7603,7 +7609,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7630,7 +7636,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7657,7 +7663,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -7765,7 +7771,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7846,7 +7852,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -7873,7 +7879,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -7927,7 +7933,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7954,7 +7960,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8035,7 +8041,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8062,14 +8068,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8089,14 +8095,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8170,7 +8176,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8197,7 +8203,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -8224,7 +8230,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Marvin 330 preschool words"
@@ -8472,7 +8478,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8499,14 +8505,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8553,7 +8559,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8634,14 +8640,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
-      "ui_tab": "people",
+      "category_xls": "Actions",
+      "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "pronoun/person",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -8742,7 +8748,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -8769,7 +8775,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -8796,7 +8802,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -8823,7 +8829,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -8904,7 +8910,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8931,7 +8937,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9012,7 +9018,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9039,7 +9045,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9066,7 +9072,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9093,7 +9099,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9120,7 +9126,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9147,7 +9153,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9255,14 +9261,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "noun",
+      "part_of_speech": "word",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9390,7 +9396,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -9417,7 +9423,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9444,7 +9450,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9471,7 +9477,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9498,14 +9504,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9687,14 +9693,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Food/Drink",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9741,14 +9747,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Body Parts",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9795,14 +9801,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "feelings",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9822,14 +9828,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9876,14 +9882,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "word",
       "intent_tags": [
         "social"
       ],
@@ -9903,14 +9909,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -9930,14 +9936,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "location/preposition",
+      "part_of_speech": "noun",
       "intent_tags": [
         "social"
       ],
@@ -10302,7 +10308,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Places",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -10329,7 +10335,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
@@ -10356,7 +10362,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
@@ -10410,7 +10416,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10437,14 +10443,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Question Words",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "word",
+      "part_of_speech": "question word",
       "intent_tags": [
         "social"
       ],
@@ -10464,7 +10470,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
+      "category_xls": "Uncategorized",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10599,7 +10605,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -10626,7 +10632,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10707,14 +10713,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "noun",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10768,7 +10774,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -10815,7 +10821,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10869,7 +10875,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -10896,7 +10902,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10923,7 +10929,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11031,7 +11037,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11058,7 +11064,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11085,7 +11091,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11112,7 +11118,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11139,7 +11145,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11166,7 +11172,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11220,14 +11226,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "verb/action",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11254,7 +11260,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11274,7 +11280,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -11301,7 +11307,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11328,7 +11334,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11355,7 +11361,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11382,14 +11388,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11409,14 +11415,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "noun",
+      "part_of_speech": "pronoun/person",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11436,14 +11442,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11463,7 +11469,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11524,7 +11530,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "noun",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11544,7 +11550,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11571,14 +11577,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11598,14 +11604,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11625,7 +11631,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11652,14 +11658,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11706,7 +11712,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11787,7 +11793,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -11841,7 +11847,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11895,14 +11901,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -11922,7 +11928,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11949,7 +11955,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11976,7 +11982,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -12037,7 +12043,7 @@
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "noun",
+      "part_of_speech": "location/preposition",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12057,7 +12063,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Preferred Items",
       "ui_tab": "things",
       "sources": [
         "Marvin 330 preschool words"
@@ -12084,14 +12090,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12219,7 +12225,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -12273,14 +12279,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "fringe/personalizable",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -12298,9 +12304,9 @@
       "canonical_term": "well",
       "display_label": "well",
       "type": "word",
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
-      "part_of_speech": "word",
+      "part_of_speech": "descriptor/adjective",
       "priority_tier": 3,
       "core_or_fringe": "core",
       "sources": [
@@ -12325,7 +12331,7 @@
       "canonical_term": "were",
       "display_label": "were",
       "type": "word",
-      "category_xls": "People/Pronouns/Possessives",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "part_of_speech": "verb/action",
       "priority_tier": 3,
