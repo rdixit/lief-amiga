@@ -12,38 +12,23 @@ Default canonical path matches the project's Google Drive export; override with 
 import csv
 import json
 import os
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-OUT_PATH = REPO / "data" / "vocabulary_category_corrections.csv"
+OUT_PATH = REPO / "data" / "_archive" / "vocabulary_category_corrections.csv"
 DEFAULT_CANONICAL = Path(
     os.environ.get(
         "CANONICAL_CSV",
-        "/Users/mpesavento/Library/CloudStorage/GoogleDrive-mjpesavento@gmail.com/"
-        "My Drive/work/Lief-AMIGA-AAC/data/"
-        "AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv",
+        str(REPO / "data" / "_archive" / "AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv"),
     )
 )
 
-CAT_TO_TAB = {
-    "Actions": "actions",
-    "Social": "core",
-    "Feelings": "feelings",
-    "People/Pronouns/Possessives": "people",
-    "Places": "things",
-    "Preferred Items": "things",
-    "Body Parts": "things",
-    "Food/Drink": "things",
-    "Clothing": "things",
-    "Vehicles": "things",
-    "Descriptors": "more",
-    "Negation/Repair": "more",
-    "Function/Core": "more",
-    "Question Words": "more",
-    "Regulation/Safety": "core",
-    "Uncategorized": "more",
-}
+sys.path.insert(0, str(REPO / "scripts"))
+from category_utils import cat_to_tab as _load_cat_to_tab
+
+CAT_TO_TAB = _load_cat_to_tab()
 
 
 def main():

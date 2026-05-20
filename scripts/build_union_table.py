@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Build a union table joining vocabulary.json, meaning_room.json, and
-pos_corrections.csv into a single CSV for cross-system collision review.
+Build a union table joining vocabulary.json and meaning_room.json into a single
+CSV for cross-system collision review.
 
 Usage:  python3 scripts/build_union_table.py
 
@@ -10,28 +10,18 @@ Output: data/vocabulary_union_table.csv
 
 import csv
 import json
+import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-ROOM_PATH = REPO / "data" / "meaning_room.json"
-CORRECTIONS_PATH = REPO / "data" / "pos_corrections.csv"
+ROOM_PATH = REPO / "meaning_room.json"
 OUT_PATH = REPO / "data" / "vocabulary_union_table.csv"
 
-ANCHOR_TO_EXPECTED_TABS = {
-    "self": {"people", "things", "core"},
-    "feelings": {"feelings"},
-    "actions": {"actions", "core"},
-    "other_people": {"people", "core"},
-    "time": {"more"},
-    "stop_refusal": {"core", "more"},
-    "outside": {"things"},
-    "calm_corner": {"core", "actions"},
-    "toys": {"things", "actions"},
-    "food_drink": {"things"},
-    "clothing": {"things", "more"},
-    "colors_descriptors": {"more", "feelings"},
-}
+sys.path.insert(0, str(REPO / "scripts"))
+from category_utils import anchor_to_expected_tabs as _load_anchor_tabs
+
+ANCHOR_TO_EXPECTED_TABS = _load_anchor_tabs()
 
 
 def main():
@@ -39,12 +29,6 @@ def main():
         vocab = json.load(f)
     with open(ROOM_PATH) as f:
         room = json.load(f)
-
-    corrections = {}
-    if CORRECTIONS_PATH.exists():
-        with open(CORRECTIONS_PATH, newline="") as f:
-            for row in csv.DictReader(f):
-                corrections[row["symbol_id"]] = row
 
     anchor_membership: dict[str, list[str]] = {}
     for a in room["anchors"]:
@@ -55,21 +39,23 @@ def main():
     for sym in vocab["symbols"]:
         sid = sym["id"]
         tier = sym.get("priority_tier", 99)
-        ui_tab = sym.get("ui_tab", "")
+        primary_tab = sym.get("ui_tab", "")
+        additional_tabs = sym.get("additional_tabs", [])
+        if not isinstance(additional_tabs, list):
+            additional_tabs = [additional_tabs] if additional_tabs else []
+        all_tabs = [primary_tab] + additional_tabs
+        ui_tab = ";".join(all_tabs) if additional_tabs else primary_tab
         pos = sym.get("part_of_speech", "")
         sym_type = sym.get("type", "")
         anchors = anchor_membership.get(sid, [])
-        corr = corrections.get(sid, {})
-        pre_correction_pos = corr.get("current_pos", pos)
-        phrase_pos = sym.get("phrase_pos", corr.get("phrase_pos", ""))
-        pos_changed = pre_correction_pos != pos
+        phrase_pos = sym.get("phrase_pos", "")
 
         flags = []
 
-        # 1. tab-anchor mismatch
+        # 1. tab-anchor mismatch (check primary tab and all secondary tabs)
         for anchor_id in anchors:
             expected_tabs = ANCHOR_TO_EXPECTED_TABS.get(anchor_id, set())
-            if expected_tabs and ui_tab not in expected_tabs:
+            if expected_tabs and not any(t in expected_tabs for t in all_tabs):
                 flags.append(f"tab-anchor-mismatch({anchor_id}→expects:{','.join(sorted(expected_tabs))})")
 
         # 2. pos-type mismatch: phrase type but POS not phrase
@@ -87,11 +73,10 @@ def main():
             "type": sym_type,
             "category_xls": sym.get("category_xls", ""),
             "ui_tab": ui_tab,
+            "subtab": sym.get("subtab", ""),
             "meaning_room_anchors": ";".join(anchors),
-            "pre_correction_pos": pre_correction_pos,
             "current_pos": pos,
             "phrase_pos": phrase_pos,
-            "pos_changed": "Y" if pos_changed else "",
             "collision_flags": "; ".join(flags),
         })
 
@@ -99,9 +84,9 @@ def main():
 
     fieldnames = [
         "symbol_id", "display_label", "priority_tier", "type",
-        "category_xls", "ui_tab", "meaning_room_anchors",
-        "pre_correction_pos", "current_pos", "phrase_pos",
-        "pos_changed", "collision_flags",
+        "category_xls", "ui_tab", "subtab", "meaning_room_anchors",
+        "current_pos", "phrase_pos",
+        "collision_flags",
     ]
     with open(OUT_PATH, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -110,14 +95,12 @@ def main():
 
     total = len(rows)
     flagged = sum(1 for r in rows if r["collision_flags"])
-    pos_changed = sum(1 for r in rows if r["pos_changed"])
     orphans = sum(1 for r in rows if "orphan" in r["collision_flags"])
     tab_anchor = sum(1 for r in rows if "tab-anchor" in r["collision_flags"])
     pos_type = sum(1 for r in rows if "pos-type" in r["collision_flags"])
 
     print(f"Union table written to {OUT_PATH}")
     print(f"  Total symbols:       {total}")
-    print(f"  POS changed:         {pos_changed}")
     print(f"  Collision flags:     {flagged}")
     print(f"    tab-anchor:        {tab_anchor}")
     print(f"    pos-type:          {pos_type}")

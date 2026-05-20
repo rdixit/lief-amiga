@@ -14,7 +14,7 @@ import { resolve, dirname } from 'node:path';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 const vocab = JSON.parse(readFileSync(resolve(ROOT, 'vocabulary.json'), 'utf8'));
-const room  = JSON.parse(readFileSync(resolve(ROOT, 'data', 'meaning_room.json'), 'utf8'));
+const room  = JSON.parse(readFileSync(resolve(ROOT, 'meaning_room.json'), 'utf8'));
 
 // Build a lookup map: symbol id -> symbol object
 const symById = Object.fromEntries(

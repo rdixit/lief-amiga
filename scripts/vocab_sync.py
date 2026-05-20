@@ -24,12 +24,13 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
-CSV_PATH = REPO / "data" / "AMIGA_AAC_Vocabulary_Expansion_Packet_4.5.2026_canonical_vocabulary_updated.csv"
+CSV_PATH = REPO / "data" / "canonical_vocabulary.csv"
+CONFIG_PATH = REPO / "data" / "category_config.csv"
 
 CSV_COLUMNS = [
     "canonical_term", "display_label", "type", "category", "source",
     "source_detail", "priority_tier", "core_or_fringe", "part_of_speech",
-    "phrase_pos", "ui_tab", "intent_tags", "scenario_tags",
+    "phrase_pos", "ui_tab", "secondary_tabs", "intent_tags", "scenario_tags",
     "allowed_for_generation", "allowed_for_grid", "requires_personalization",
     "synonyms_or_variants", "phrase_templates", "notes",
 ]
@@ -41,7 +42,33 @@ TIER_TO_INT = {
 }
 INT_TO_TIER = {v: k for k, v in TIER_TO_INT.items()}
 
-SYNC_FIELDS = ["display_label", "part_of_speech", "phrase_pos", "ui_tab"]
+SYNC_FIELDS = ["display_label", "part_of_speech", "phrase_pos", "ui_tab", "category", "secondary_tabs"]
+
+# CSV column name → JSON field name when they differ
+CSV_TO_JSON_FIELD = {
+    "category": "category_xls",
+    "secondary_tabs": "additional_tabs",
+}
+
+
+def load_category_config():
+    """Load category_config.csv and return {category: subtab_label} mapping."""
+    config = {}
+    with open(CONFIG_PATH) as f:
+        for row in csv.DictReader(f):
+            label = row.get("subtab_label", "").strip()
+            if label:
+                config[row["category"]] = label
+    return config
+
+
+def resolve_subtab(csv_row, category_subtabs):
+    """Resolve effective subtab: subtab_override takes precedence over category default."""
+    override = csv_row.get("subtab_override", "").strip()
+    if override:
+        return override
+    cat = csv_row.get("category", "").strip()
+    return category_subtabs.get(cat, "")
 
 
 def normalize_quotes(s: str) -> str:
@@ -94,6 +121,7 @@ def sym_to_csv_row(sym):
             else (sym.get("phrase_templates") or "")
         ),
         "notes": sym.get("notes") or "",
+        "secondary_tabs": "; ".join(sym["additional_tabs"]) if isinstance(sym.get("additional_tabs"), list) else (sym.get("additional_tabs") or ""),
     }
 
 
@@ -151,11 +179,20 @@ def cmd_diff():
         field_diffs = []
 
         for field in SYNC_FIELDS:
+            json_field = CSV_TO_JSON_FIELD.get(field, field)
+
+            if field == "secondary_tabs":
+                csv_raw = normalize_quotes(csv_row.get(field, "").strip())
+                csv_list = [t.strip() for t in csv_raw.split(";") if t.strip()] if csv_raw else []
+                live_val = sym.get(json_field, [])
+                if not isinstance(live_val, list):
+                    live_val = [live_val] if live_val else []
+                if csv_list != live_val:
+                    field_diffs.append((field, str(csv_list), str(live_val)))
+                continue
+
             csv_val = normalize_quotes(csv_row.get(field, "").strip())
-            if field == "phrase_pos":
-                live_val = sym.get("phrase_pos", "")
-            else:
-                live_val = sym.get(field, "")
+            live_val = sym.get(json_field, "")
             live_val = normalize_quotes(str(live_val)).strip() if live_val else ""
 
             if csv_val != live_val:
@@ -180,6 +217,7 @@ def cmd_diff():
 def cmd_import(apply=False):
     vocab = load_vocab()
     csv_rows = load_csv()
+    category_subtabs = load_category_config()
 
     live_by_term = {}
     for s in vocab["symbols"]:
@@ -194,20 +232,37 @@ def cmd_import(apply=False):
             continue
 
         for field in SYNC_FIELDS:
-            csv_val = normalize_quotes(csv_row.get(field, "").strip())
-            if field == "phrase_pos":
-                live_val = sym.get("phrase_pos", "")
-            else:
-                live_val = sym.get(field, "")
+            json_field = CSV_TO_JSON_FIELD.get(field, field)
+            csv_raw = normalize_quotes(csv_row.get(field, "").strip())
+
+            # secondary_tabs is stored as "tab1; tab2" in CSV, list in JSON
+            if field == "secondary_tabs":
+                csv_list = [t.strip() for t in csv_raw.split(";") if t.strip()] if csv_raw else []
+                live_val = sym.get(json_field, [])
+                if not isinstance(live_val, list):
+                    live_val = [live_val] if live_val else []
+                if csv_list != live_val:
+                    changes.append((ct, sym["id"], field, str(live_val), str(csv_list)))
+                    if apply:
+                        sym[json_field] = csv_list
+                continue
+
+            csv_val = csv_raw
+            live_val = sym.get(json_field, "")
             live_val = normalize_quotes(str(live_val)).strip() if live_val else ""
 
             if csv_val != live_val:
                 changes.append((ct, sym["id"], field, live_val, csv_val))
                 if apply:
-                    if field == "phrase_pos":
-                        sym["phrase_pos"] = csv_val
-                    else:
-                        sym[field] = csv_val
+                    sym[json_field] = csv_val
+
+        # Resolve and sync subtab
+        resolved = resolve_subtab(csv_row, category_subtabs)
+        current = sym.get("subtab", "")
+        if resolved != current:
+            changes.append((ct, sym["id"], "subtab", current, resolved))
+            if apply:
+                sym["subtab"] = resolved
 
     if changes:
         print(f"Changes to apply ({len(changes)}):")

@@ -39,7 +39,7 @@ Example:
 }
 ```
 
-Apply to both `vocabulary.json` (runtime) and `data/amiga-aac-vocabulary_20260507.json` (source snapshot).
+Apply to `vocabulary.json` (the single runtime source of truth).
 
 ---
 
@@ -179,7 +179,7 @@ Fallback SVGs embed English text as `<text>` elements inside the icon. Two optio
 | File | Change |
 |------|--------|
 | `vocabulary.json` | Add `_es` fields; add `sentence_templates_es` top-level key |
-| `data/amiga-aac-vocabulary_20260507.json` | Same (keep in sync as source snapshot) |
+| `data/canonical_vocabulary.csv` | Keep in sync via `scripts/vocab_sync.py export` |
 | `app.js` | Language state, `UI_STRINGS`, resolver functions, toggle handler, update all render calls |
 | `index.html` | Add toggle button; move static text to JS-driven updates |
 | `style.css` | Toggle button styling |

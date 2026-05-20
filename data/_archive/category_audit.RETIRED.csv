@@ -1,0 +1,189 @@
+﻿canonical_term,tier,type,current_category,part_of_speech,phrase_pos,ui_tab,bucket,proposed_category,rationale,secondary_tabs,approved
+all done,Tier 1 - Phase I MVP,phrase,Actions,phrase,verb/action,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+aren't,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+bad,Tier 1 - Phase I MVP,word,Social,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,y
+can't,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+couldn't,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+food,Tier 1 - Phase I MVP,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,y
+frustrated,Tier 1 - Phase I MVP,word,People/Pronouns/Possessives,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,y
+good,Tier 1 - Phase I MVP,word,Actions,descriptor/adjective,,core,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",describe,y
+goodbye,Tier 1 - Phase I MVP,word,Actions,word,,core,review,Actions,POS='word' with cat='Actions' is ambiguous; manual review needed,actions,y
+haven't,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+help,Tier 1 - Phase I MVP,word,Actions,verb/action,,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+help me,Tier 1 - Phase I MVP,phrase,Actions,phrase,verb/action,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+i need a break,Tier 1 - Phase I MVP,phrase,Actions,phrase,verb/action,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+i need the bathroom,Tier 1 - Phase I MVP,phrase,Places,phrase,verb/action,core,error,Actions,POS='verb/action' requires category='Actions',actions,y
+i want water,Tier 1 - Phase I MVP,phrase,Actions,phrase,verb/action,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+know,Tier 1 - Phase I MVP,word,Negation/Repair,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,y
+made,Tier 1 - Phase I MVP,word,Feelings,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,y
+mine,Tier 1 - Phase I MVP,word,Places,pronoun/person,,people,error,People/Pronouns/Possessives,POS='pronoun/person' requires category='People/Pronouns/Possessives',,y
+more,Tier 1 - Phase I MVP,word,Actions,word,,core,review,Actions,POS='word' with cat='Actions' is ambiguous; manual review needed,actions,y
+need,Tier 1 - Phase I MVP,word,Uncategorized,verb/action,,core,error,Actions,POS='verb/action' requires category='Actions',actions,y
+nervous,Tier 1 - Phase I MVP,word,People/Pronouns/Possessives,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,y
+not,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+sick,Tier 1 - Phase I MVP,word,People/Pronouns/Possessives,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,y
+stop,Tier 1 - Phase I MVP,word,Actions,negation/repair,,core,error,Negation/Repair,POS='negation/repair' requires category='Negation/Repair',,y
+that,Tier 1 - Phase I MVP,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,y
+tired,Tier 1 - Phase I MVP,word,Descriptors,descriptor/adjective,,feelings,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='feelings',,y
+want,Tier 1 - Phase I MVP,word,Actions,verb/action,,core,override,Actions,category='Actions' default_tab='actions' but current ui_tab='core',actions,y
+water,Tier 1 - Phase I MVP,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,y
+won't,Tier 1 - Phase I MVP,word,Negation/Repair,negation/repair,,more,override,Negation/Repair,category='Negation/Repair' default_tab='core' but current ui_tab='more',,y
+yes,Tier 1 - Phase I MVP,word,Actions,word,,core,review,Actions,POS='word' with cat='Actions' is ambiguous; manual review needed,actions,y
+airplane,Tier 2 - Faison expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,y
+big,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,y
+black,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,y
+blue,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,y
+books,Tier 2 - Faison expansion,word,Social,noun,,things,override,Preferred Items,category='Social' default_tab='core' but current ui_tab='things',,y
+bus,Tier 2 - Faison expansion,word,People/Pronouns/Possessives,noun,,things,override,Vehicles,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,y
+candy,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,y
+carrot,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,y
+chips,Tier 2 - Faison expansion,word,Social,noun,,things,override,Food/Drink,category='Social' default_tab='core' but current ui_tab='things',,y
+cookie,Tier 2 - Faison expansion,word,Social,noun,,things,override,Food/Drink,category='Social' default_tab='core' but current ui_tab='things',,y
+dog,Tier 2 - Faison expansion,word,Actions,noun,,things,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+doll,Tier 2 - Faison expansion,word,Actions,noun,,things,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+down,Tier 2 - Faison expansion,word,Actions,location/preposition,,more,review,,POS='location/preposition' with cat='Actions' is ambiguous; manual review needed,,
+fast,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,y
+fine,Tier 2 - Faison expansion,word,Places,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,y
+fruit,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+green,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+i am tired,Tier 2 - Faison expansion,phrase,Descriptors,phrase,descriptor/adjective,feelings,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='feelings',,
+i found something,Tier 2 - Faison expansion,phrase,Places,phrase,verb/action,actions,error,Actions,POS='verb/action' requires category='Actions',,
+i'm frustrated,Tier 2 - Faison expansion,phrase,People/Pronouns/Possessives,phrase,descriptor/adjective,feelings,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='feelings',,
+in,Tier 2 - Faison expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+juice,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+little,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+my turn,Tier 2 - Faison expansion,phrase,Actions,phrase,noun,actions,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+no / i don't want that,Tier 2 - Faison expansion,phrase,Actions,phrase,negation/repair,actions,error,Negation/Repair,POS='negation/repair' requires category='Negation/Repair',,
+off,Tier 2 - Faison expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+ok/fine,Tier 2 - Faison expansion,phrase,Places,phrase,word,core,override,Places,category='Places' default_tab='things' but current ui_tab='core',things,
+one more minute,Tier 2 - Faison expansion,phrase,Actions,phrase,noun,more,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+orange,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+out,Tier 2 - Faison expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+pink,Tier 2 - Faison expansion,word,Places,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+play doh,Tier 2 - Faison expansion,word,Actions,noun,,actions,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+playground,Tier 2 - Faison expansion,word,Actions,noun,,things,review,,POS='noun' with cat='Actions' is ambiguous; manual review needed,,
+popcorn,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+pretzel,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+purple,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+red,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+rice,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+shirt,Tier 2 - Faison expansion,word,Social,noun,,things,override,Social,category='Social' default_tab='core' but current ui_tab='things',,
+slow,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+that's funny,Tier 2 - Faison expansion,phrase,People/Pronouns/Possessives,phrase,descriptor/adjective,core,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='core',people,
+tummy,Tier 2 - Faison expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+tummy/stomach,Tier 2 - Faison expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+up,Tier 2 - Faison expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+water/juice,Tier 2 - Faison expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+white,Tier 2 - Faison expansion,word,Social,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+yellow,Tier 2 - Faison expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+about,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+again,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+already,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+another,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+ant,Tier 3 - Reference expansion,word,Uncategorized,noun,,things,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='things',,
+around,Tier 3 - Reference expansion,word,Uncategorized,location/preposition,,more,review,,POS='location/preposition' with cat='Uncategorized' is ambiguous; manual review needed,,
+away,Tier 3 - Reference expansion,word,Uncategorized,location/preposition,,more,review,,POS='location/preposition' with cat='Uncategorized' is ambiguous; manual review needed,,
+baby,Tier 3 - Reference expansion,word,Uncategorized,noun,,people,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='people',,
+back,Tier 3 - Reference expansion,word,Uncategorized,location/preposition,,more,review,,POS='location/preposition' with cat='Uncategorized' is ambiguous; manual review needed,,
+bean,Tier 3 - Reference expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+because,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+being,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+better,Tier 3 - Reference expansion,word,Uncategorized,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+bird,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+birds,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+bite,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+bugs,Tier 3 - Reference expansion,word,Uncategorized,noun,,things,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='things',,
+came,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+can,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+corn,Tier 3 - Reference expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+could,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+did,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+didn't,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+doctor,Tier 3 - Reference expansion,word,Actions,verb/action,,people,override,Actions,category='Actions' default_tab='actions' but current ui_tab='people',,
+doesn't,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+don't,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+done,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+door,Tier 3 - Reference expansion,word,Actions,verb/action,,things,override,Actions,category='Actions' default_tab='actions' but current ui_tab='things',,
+everything,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+fall,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+fire,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+first,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+five,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+fixed,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+fly,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+found,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+gonna,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+great,Tier 3 - Reference expansion,word,Actions,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+had,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+hair,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+has,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+have,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+head,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+hear,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+here,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+here's,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+high,Tier 3 - Reference expansion,word,Social,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+hill,Tier 3 - Reference expansion,word,Social,noun,,things,override,Social,category='Social' default_tab='core' but current ui_tab='things',,
+him,Tier 3 - Reference expansion,word,Social,pronoun/person,,people,error,People/Pronouns/Possessives,POS='pronoun/person' requires category='People/Pronouns/Possessives',,
+his,Tier 3 - Reference expansion,word,Social,pronoun/person,,people,error,People/Pronouns/Possessives,POS='pronoun/person' requires category='People/Pronouns/Possessives',,
+hot,Tier 3 - Reference expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+house,Tier 3 - Reference expansion,word,Actions,verb/action,,things,override,Actions,category='Actions' default_tab='actions' but current ui_tab='things',,
+if,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+inside,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+is,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+isn't,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+just,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+kind,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+leaves,Tier 3 - Reference expansion,word,Uncategorized,noun,,things,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='things',,
+let,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+let's,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+lift,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+long,Tier 3 - Reference expansion,word,Uncategorized,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+lunch,Tier 3 - Reference expansion,word,Food/Drink,noun,,things,override,Food/Drink,category='Food/Drink' default_tab='food' but current ui_tab='things',,
+man,Tier 3 - Reference expansion,word,Uncategorized,noun,,people,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='people',,
+may,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+mean,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,descriptor/adjective,,feelings,error,Feelings,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+messy,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+middle,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+move,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+must,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+new,Tier 3 - Reference expansion,word,Uncategorized,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+nice,Tier 3 - Reference expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+old,Tier 3 - Reference expansion,word,Uncategorized,descriptor/adjective,,more,error,Descriptors,"POS='descriptor/adjective' requires category in ['Descriptors', 'Feelings']",,
+pet,Tier 3 - Reference expansion,word,Uncategorized,noun,,things,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='things',,
+pick,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+piece,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,things,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='things',,
+ready,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+remember,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+right,Tier 3 - Reference expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+said,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+same,Tier 3 - Reference expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+saw,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+side,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+some,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+something,Tier 3 - Reference expansion,word,Places,location/preposition,,more,override,Places,category='Places' default_tab='things' but current ui_tab='more',,
+sometimes,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+still,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+then,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+there,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+there's,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+these,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+this,Tier 3 - Reference expansion,word,Social,word,,more,override,Social,category='Social' default_tab='core' but current ui_tab='more',,
+threw,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+through,Tier 3 - Reference expansion,word,Uncategorized,location/preposition,,more,review,,POS='location/preposition' with cat='Uncategorized' is ambiguous; manual review needed,,
+time,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,noun,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+together,Tier 3 - Reference expansion,word,Actions,verb/action,,more,override,Actions,category='Actions' default_tab='actions' but current ui_tab='more',,
+trees,Tier 3 - Reference expansion,word,Uncategorized,noun,,things,override,Uncategorized,category='Uncategorized' default_tab='more' but current ui_tab='things',,
+well,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+went,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,actions,error,Actions,POS='verb/action' requires category='Actions',,
+were,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
+what,Tier 3 - Reference expansion,word,Clothing,noun,,more,override,Clothing,category='Clothing' default_tab='things' but current ui_tab='more',,
+what's,Tier 3 - Reference expansion,word,Clothing,noun,,more,override,Clothing,category='Clothing' default_tab='things' but current ui_tab='more',,
+when,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,question word,,more,error,Question Words,POS='question word' requires category='Question Words',,
+where,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,question word,,more,error,Question Words,POS='question word' requires category='Question Words',,
+where's,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,question word,,more,error,Question Words,POS='question word' requires category='Question Words',,
+which,Tier 3 - Reference expansion,word,Social,word,,more,override,Social,category='Social' default_tab='core' but current ui_tab='more',,
+while,Tier 3 - Reference expansion,word,Social,word,,more,override,Social,category='Social' default_tab='core' but current ui_tab='more',,
+whole,Tier 3 - Reference expansion,word,Descriptors,descriptor/adjective,,more,override,Descriptors,category='Descriptors' default_tab='describe' but current ui_tab='more',,
+with,Tier 3 - Reference expansion,word,People/Pronouns/Possessives,word,,more,override,People/Pronouns/Possessives,category='People/Pronouns/Possessives' default_tab='people' but current ui_tab='more',,
+would,Tier 3 - Reference expansion,word,Uncategorized,verb/action,,more,error,Actions,POS='verb/action' requires category='Actions',,
