@@ -1163,13 +1163,17 @@ body.show-anchor-labels .mr-hotspot-label {
 }
 
 .mr-hotspot-icon {
-  font-size: 28px;
+  font-size: 48px;
   line-height: 1;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
   pointer-events: none;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   border-radius: 50%;
-  padding: 4px 6px;
+  padding: 6px 8px;
+}
+.mr-hotspot-icon svg {
+  width: 48px;
+  height: 48px;
 }
 
 /* === Anchor grid header === */
@@ -1260,7 +1264,8 @@ body.show-anchor-labels .mr-hotspot-label {
   .lief-connect-btn { font-size: 12px; padding: 6px 10px; }
   .btn-break { padding: 4px 8px; font-size: 10px; }
   .btn-view-toggle { padding: 4px 8px; font-size: 10px; }
-  .mr-hotspot-icon { font-size: 22px; }
+  .mr-hotspot-icon { font-size: 36px; }
+  .mr-hotspot-icon svg { width: 36px; height: 36px; }
   .anchor-back-btn { font-size: 11px; padding: 5px 8px; }
   .anchor-grid-label { font-size: 13px; }
   .break-modal-icon { font-size: 48px; }

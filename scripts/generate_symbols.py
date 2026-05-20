@@ -556,6 +556,28 @@ SVGS["couldnt"] = SVGS["not"]
 SVGS["havent"] = SVGS["not"]
 SVGS["wont"] = SVGS["not"]
 
+SVGS["not_that"] = svg(f"""
+  <circle cx="50" cy="50" r="34" fill="{C_GRAY_L}" stroke="{C_GRAY}" stroke-width="3"/>
+  <line x1="32" y1="32" x2="68" y2="68" stroke="{C_RED}" stroke-width="7" stroke-linecap="round"/>
+  <path d="M56 44 L80 44 L68 56 L80 68" stroke="{C_RED}" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+""")
+
+SVGS["try_again"] = svg(f"""
+  <circle cx="50" cy="50" r="34" fill="{C_GREEN}" opacity="0.15"/>
+  <path d="M30 50 A25 25 0 1 1 50 75" stroke="{C_GREEN}" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M50 75 L42 65 M50 75 L58 65" stroke="{C_GREEN}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="42" r="8" fill="{C_GREEN}" opacity="0.5"/>
+  <path d="M46 42 L50 46 L54 42" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+""")
+
+SVGS["i_meant_something_else"] = svg(f"""
+  <circle cx="50" cy="50" r="34" fill="{C_BLUE}" opacity="0.15"/>
+  <circle cx="50" cy="50" r="34" fill="none" stroke="{C_BLUE}" stroke-width="3"/>
+  <path d="M34 42 L46 50 L34 58" stroke="{C_BLUE}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M54 42 L66 50 L54 58" stroke="{C_BLUE}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="30" y1="68" x2="70" y2="68" stroke="{C_BLUE_D}" stroke-width="3" stroke-linecap="round" stroke-dasharray="5,4"/>
+""")
+
 SVGS["know"] = svg(f"""
   {face(50, 32, 15)}
   <circle cx="50" cy="32" r="20" fill="none" stroke="{C_PURPLE}" stroke-width="3" stroke-dasharray="5,3" opacity="0.7"/>
@@ -1040,6 +1062,84 @@ SVGS["sick"] = svg(f"""
 SVGS["i_am_tired"] = SVGS["tired"]
 SVGS["im_frustrated"] = SVGS["frustrated"]
 
+SVGS["scared"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_PURPLE_L}" stroke="{C_PURPLE}" stroke-width="2.5"/>
+  <circle cx="37" cy="42" r="6" fill="white" stroke="{C_DARK}" stroke-width="2"/>
+  <circle cx="63" cy="42" r="6" fill="white" stroke="{C_DARK}" stroke-width="2"/>
+  <circle cx="37" cy="43" r="3" fill="{C_DARK}"/>
+  <circle cx="63" cy="43" r="3" fill="{C_DARK}"/>
+  <ellipse cx="50" cy="65" rx="8" ry="6" fill="{C_DARK}" opacity="0.8"/>
+  <line x1="30" y1="32" x2="38" y2="36" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="32" x2="62" y2="36" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+""")
+
+SVGS["excited"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_YELLOW}" stroke="{C_AMBER}" stroke-width="2.5"/>
+  <circle cx="37" cy="42" r="5" fill="{C_DARK}"/>
+  <circle cx="63" cy="42" r="5" fill="{C_DARK}"/>
+  <circle cx="38.5" cy="40.5" r="2" fill="white"/>
+  <circle cx="64.5" cy="40.5" r="2" fill="white"/>
+  <path d="M32 58 Q50 78 68 58" stroke="{C_DARK}" stroke-width="4" fill="{C_ORANGE}" opacity="0.7"/>
+  <circle cx="30" cy="52" r="5" fill="{C_ROSE}" opacity="0.4"/>
+  <circle cx="70" cy="52" r="5" fill="{C_ROSE}" opacity="0.4"/>
+  <path d="M30 20 L34 28 M70 20 L66 28 M50 14 L50 22" stroke="{C_AMBER}" stroke-width="3" stroke-linecap="round"/>
+""")
+
+SVGS["calm"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_TEAL_L}" stroke="{C_TEAL}" stroke-width="2.5"/>
+  <path d="M34 44 Q40 40 46 44" stroke="{C_DARK}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M54 44 Q60 40 66 44" stroke="{C_DARK}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M38 62 Q50 68 62 62" stroke="{C_DARK}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M20 78 Q35 72 50 78 Q65 84 80 78" stroke="{C_TEAL}" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+  <path d="M16 86 Q35 80 50 86 Q65 92 84 86" stroke="{C_TEAL}" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.3"/>
+""")
+
+SVGS["worried"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_YELLOW_L}" stroke="{C_AMBER}" stroke-width="2.5"/>
+  <circle cx="37" cy="44" r="5" fill="{C_DARK}"/>
+  <circle cx="63" cy="44" r="5" fill="{C_DARK}"/>
+  <circle cx="38.5" cy="42.5" r="2" fill="white"/>
+  <circle cx="64.5" cy="42.5" r="2" fill="white"/>
+  <path d="M38 64 Q50 58 62 64" stroke="{C_DARK}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <line x1="28" y1="34" x2="42" y2="38" stroke="{C_DARK}" stroke-width="3" stroke-linecap="round"/>
+  <line x1="72" y1="34" x2="58" y2="38" stroke="{C_DARK}" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 24 Q22 18 26 24 M74 24 Q78 18 82 24" stroke="{C_AMBER}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+""")
+
+SVGS["bored"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_GRAY_L}" stroke="{C_GRAY}" stroke-width="2.5"/>
+  <circle cx="37" cy="44" r="5" fill="{C_DARK}"/>
+  <circle cx="63" cy="44" r="5" fill="{C_DARK}"/>
+  <path d="M32 42 Q38 46 44 42" stroke="{C_DARK}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M56 42 Q62 38 68 42" stroke="{C_DARK}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <line x1="38" y1="64" x2="62" y2="64" stroke="{C_DARK}" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="50" y1="22" x2="46" y2="14" stroke="{C_GRAY}" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="46" cy="12" r="2.5" fill="{C_GRAY}"/>
+""")
+
+SVGS["confused"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_YELLOW_L}" stroke="{C_PURPLE}" stroke-width="2.5"/>
+  <circle cx="37" cy="44" r="5" fill="{C_DARK}"/>
+  <circle cx="63" cy="44" r="5" fill="{C_DARK}"/>
+  <circle cx="38.5" cy="42.5" r="2" fill="white"/>
+  <circle cx="64.5" cy="42.5" r="2" fill="white"/>
+  <path d="M38 64 Q44 60 50 64 Q56 68 62 64" stroke="{C_DARK}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <line x1="32" y1="34" x2="42" y2="38" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="68" y1="38" x2="58" y2="34" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="78" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="{C_PURPLE}">?</text>
+""")
+
+SVGS["surprised"] = svg(f"""
+  <circle cx="50" cy="50" r="38" fill="{C_YELLOW}" stroke="{C_AMBER}" stroke-width="2.5"/>
+  <circle cx="37" cy="42" r="6" fill="white" stroke="{C_DARK}" stroke-width="2"/>
+  <circle cx="63" cy="42" r="6" fill="white" stroke="{C_DARK}" stroke-width="2"/>
+  <circle cx="37" cy="42" r="3" fill="{C_DARK}"/>
+  <circle cx="63" cy="42" r="3" fill="{C_DARK}"/>
+  <ellipse cx="50" cy="66" rx="9" ry="7" fill="{C_DARK}" opacity="0.8"/>
+  <line x1="30" y1="30" x2="36" y2="35" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="70" y1="30" x2="64" y2="35" stroke="{C_DARK}" stroke-width="2.5" stroke-linecap="round"/>
+""")
+
 # ════════════════════════════════════════════════════════════════
 # PLACES / THINGS
 # ════════════════════════════════════════════════════════════════
@@ -1102,6 +1202,16 @@ SVGS["toy"] = svg(f"""
 """)
 
 SVGS["book"] = svg(f"""
+  <rect x="25" y="14" width="50" height="72" rx="4" fill="{C_BLUE}" stroke="{C_BLUE_D}" stroke-width="2.5"/>
+  <rect x="28" y="14" width="47" height="72" rx="4" fill="{C_BLUE_L}"/>
+  <rect x="34" y="22" width="32" height="5" rx="2.5" fill="white" opacity="0.7"/>
+  <rect x="34" y="32" width="26" height="4" rx="2" fill="white" opacity="0.4"/>
+  <rect x="34" y="40" width="30" height="4" rx="2" fill="white" opacity="0.4"/>
+  <rect x="34" y="48" width="22" height="4" rx="2" fill="white" opacity="0.4"/>
+  <line x1="28" y1="14" x2="28" y2="86" stroke="{C_BLUE_D}" stroke-width="4"/>
+""")
+
+SVGS["books"] = svg(f"""
   <rect x="16" y="18" width="32" height="64" rx="3" fill="{C_BLUE}" stroke="{C_BLUE_D}" stroke-width="2"/>
   <rect x="18" y="18" width="30" height="64" rx="3" fill="{C_BLUE_L}"/>
   <rect x="21" y="24" width="22" height="4" rx="2" fill="white" opacity="0.7"/>
@@ -1117,8 +1227,6 @@ SVGS["book"] = svg(f"""
   <line x1="82" y1="18" x2="82" y2="82" stroke="{C_BLUE_D}" stroke-width="3"/>
   <path d="M48 22 Q50 18 52 22" stroke="{C_BLUE_D}" stroke-width="2" fill="none"/>
 """)
-
-SVGS["books"] = SVGS["book"]
 
 SVGS["car"] = svg(f"""
   <rect x="12" y="44" width="76" height="30" rx="8" fill="{C_BLUE}" stroke="{C_BLUE_D}" stroke-width="2.5"/>
@@ -1637,6 +1745,8 @@ def make_fallback(display_label, tab):
         "people": (C_AMBER, C_AMBER_D),
         "things": (C_BLUE, C_BLUE_D),
         "more": (C_PURPLE, "#6d28d9"),
+        "food": (C_ORANGE, "#c2410c"),
+        "describe": (C_PURPLE, "#6d28d9"),
     }
     fill, stroke = tab_colors.get(tab, (C_GRAY, C_DARK))
     words = display_label.split()[:3]

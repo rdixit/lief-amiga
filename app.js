@@ -1,7 +1,7 @@
 // ============================================================
 // LiefAAC - AI-Powered AAC Prototype
 // ============================================================
-import { SYMBOL_SVGS } from './symbols.js';
+import { SYMBOL_SVGS } from './symbols.js?v=20260519';
 
 // --- Vocabulary (loaded async from vocabulary.json) ---
 let VOCAB = null;
@@ -931,7 +931,19 @@ function renderMeaningRoom() {
     if (anchor.icon) {
       const iconEl = document.createElement('span');
       iconEl.className = 'mr-hotspot-icon';
-      if (anchor.icon.length <= 2 || /\p{Emoji}/u.test(anchor.icon)) {
+      if (anchor.icon === 'plus-bold') {
+        iconEl.textContent = '+';
+        iconEl.style.fontSize = '52px';
+        iconEl.style.fontWeight = '800';
+        iconEl.style.color = 'white';
+        iconEl.style.background = 'rgba(60,60,80,0.6)';
+        iconEl.style.width = '56px';
+        iconEl.style.height = '56px';
+        iconEl.style.display = 'flex';
+        iconEl.style.alignItems = 'center';
+        iconEl.style.justifyContent = 'center';
+        iconEl.style.lineHeight = '0.85';
+      } else if (anchor.icon.length <= 2 || /\p{Emoji}/u.test(anchor.icon)) {
         iconEl.textContent = anchor.icon;
       } else {
         const svg = document.createElement('i');

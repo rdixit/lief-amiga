@@ -415,6 +415,7 @@
         "toygame",
         "music",
         "ipad",
+        "book",
         "books",
         "read",
         "car",
@@ -691,10 +692,10 @@
       "label": "Questions",
       "icon": "message-circle-question",
       "hotspot": {
-        "x": 0.28,
-        "y": 0.02,
-        "w": 0.1,
-        "h": 0.1
+        "x": 0.33,
+        "y": 0.0,
+        "w": 0.12,
+        "h": 0.12
       },
       "symbol_ids": [
         "what",
@@ -715,7 +716,7 @@
     {
       "id": "more_scene",
       "label": "More",
-      "icon": "plus",
+      "icon": "plus-bold",
       "hotspot": {
         "x": 0.49,
         "y": 0.78,
