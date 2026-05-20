@@ -1,17 +1,17 @@
 category,default_tab,default_anchors,subtab_label,notes
-Actions,actions,"actions; toys; outside",,verbs and action phrases
+Actions,actions,actions,Verbs,verbs and action phrases
 Body Parts,things,self,Body,
 Clothing,things,clothing,Clothes,
-Descriptors,describe,colors_descriptors,,adjectives and colors
-Feelings,feelings,feelings,,
-Food/Drink,food,food_drink,,
-Function/Core,more,more_scene,,articles/conjunctions/prepositions
-Negation/Repair,core,stop_refusal,,no/stop/don't want
-People/Pronouns/Possessives,people,"self; other_people",,
+Descriptors,describe,colors_descriptors,Descriptors,adjectives and colors
+Feelings,feelings,feelings,Feelings,
+Food/Drink,food,food_drink,Food,
+Function/Core,more,more_scene,Grammar,articles/conjunctions/prepositions
+Negation/Repair,core,stop_refusal,Negation,no/stop/don't want
+People/Pronouns/Possessives,people,"self; other_people",Pronouns,
 Places,things,outside,Places,
 Preferred Items,things,toys,Toys,
-Question Words,more,cognition,,who/what/where/when/why/how
+Question Words,more,cognition,Questions,who/what/where/when/why/how
 Regulation/Safety,core,"calm_corner; time",,break/breathe/quiet/time-delay
-Social,core,"other_people; actions",,hello/goodbye/please
-Uncategorized,more,more_scene,,catch-all
-Vehicles,things,toys,Toys,merged with Preferred Items for display
+Social,core,"other_people; actions",Social,hello/goodbye/please
+Uncategorized,more,more_scene,Other,catch-all
+Vehicles,things,toys,Vehicles,merged with Preferred Items for display

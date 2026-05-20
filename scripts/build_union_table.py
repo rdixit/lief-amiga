@@ -73,6 +73,7 @@ def main():
             "type": sym_type,
             "category_xls": sym.get("category_xls", ""),
             "ui_tab": ui_tab,
+            "subtab": sym.get("subtab", ""),
             "meaning_room_anchors": ";".join(anchors),
             "current_pos": pos,
             "phrase_pos": phrase_pos,
@@ -83,7 +84,7 @@ def main():
 
     fieldnames = [
         "symbol_id", "display_label", "priority_tier", "type",
-        "category_xls", "ui_tab", "meaning_room_anchors",
+        "category_xls", "ui_tab", "subtab", "meaning_room_anchors",
         "current_pos", "phrase_pos",
         "collision_flags",
     ]

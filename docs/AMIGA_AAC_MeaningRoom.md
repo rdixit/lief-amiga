@@ -142,6 +142,15 @@ Floating near the head.
 - Combine with others:
   - *"I don't understand"*
   - *"I want to explain"*
+- **Implementation (Phase 2):** Active as anchor `cognition`, label "Questions", icon 🧠. Contains 11 question/cognitive words (what, whats, when, where, wheres, which, who, why, how, remember, hear). Hotspot: top-center area (x:0.28, y:0.02).
+
+---
+
+### 📦 10. More Scene → Overflow / Toolbox
+A catch-all anchor for function words and grammar that don't fit a semantic scene object.
+- Contains articles, prepositions, conjunctions, and uncategorized words
+- Subtabs: "Grammar" (43 function words) and "Other" (29 uncategorized)
+- **Implementation (Phase 2):** Active as anchor `more_scene`, label "More", icon 📦. Contains 72 symbols. Hotspot: top-center area (x:0.48, y:0.02).
 
 ---
 

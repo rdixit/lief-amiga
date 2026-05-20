@@ -25,6 +25,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 VOCAB_PATH = REPO / "vocabulary.json"
 CSV_PATH = REPO / "data" / "canonical_vocabulary.csv"
+CONFIG_PATH = REPO / "data" / "category_config.csv"
 
 CSV_COLUMNS = [
     "canonical_term", "display_label", "type", "category", "source",
@@ -48,6 +49,26 @@ CSV_TO_JSON_FIELD = {
     "category": "category_xls",
     "secondary_tabs": "additional_tabs",
 }
+
+
+def load_category_config():
+    """Load category_config.csv and return {category: subtab_label} mapping."""
+    config = {}
+    with open(CONFIG_PATH) as f:
+        for row in csv.DictReader(f):
+            label = row.get("subtab_label", "").strip()
+            if label:
+                config[row["category"]] = label
+    return config
+
+
+def resolve_subtab(csv_row, category_subtabs):
+    """Resolve effective subtab: subtab_override takes precedence over category default."""
+    override = csv_row.get("subtab_override", "").strip()
+    if override:
+        return override
+    cat = csv_row.get("category", "").strip()
+    return category_subtabs.get(cat, "")
 
 
 def normalize_quotes(s: str) -> str:
@@ -196,6 +217,7 @@ def cmd_diff():
 def cmd_import(apply=False):
     vocab = load_vocab()
     csv_rows = load_csv()
+    category_subtabs = load_category_config()
 
     live_by_term = {}
     for s in vocab["symbols"]:
@@ -233,6 +255,14 @@ def cmd_import(apply=False):
                 changes.append((ct, sym["id"], field, live_val, csv_val))
                 if apply:
                     sym[json_field] = csv_val
+
+        # Resolve and sync subtab
+        resolved = resolve_subtab(csv_row, category_subtabs)
+        current = sym.get("subtab", "")
+        if resolved != current:
+            changes.append((ct, sym["id"], "subtab", current, resolved))
+            if apply:
+                sym["subtab"] = resolved
 
     if changes:
         print(f"Changes to apply ({len(changes)}):")

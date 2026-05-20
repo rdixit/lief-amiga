@@ -94,6 +94,7 @@ function getAffectAwareSuggestions(key, baseSuggestions) {
 // --- App State ---
 let selectedSymbols = [];
 let activeTab = 'core';
+let activeSubtabs = JSON.parse(localStorage.getItem('activeSubtabs') || '{}');
 let currentView = 'meaning_room';
 let currentAnchor = null;
 
@@ -107,6 +108,7 @@ const quickPhraseBar = document.getElementById('quickPhraseBar');
 const qpArrowLeft    = document.getElementById('qpArrowLeft');
 const qpArrowRight   = document.getElementById('qpArrowRight');
 const tabBar = document.getElementById('tabBar');
+const subtabBar = document.getElementById('subtabBar');
 const grid = document.getElementById('symbolGrid');
 const sentenceDisplay = document.getElementById('sentenceDisplay');
 const selectedStrip = document.getElementById('selectedStrip');
@@ -293,6 +295,51 @@ function renderTabs() {
     btn.addEventListener('click', () => {
       activeTab = btn.dataset.tab;
       renderTabs();
+      renderSubtabs();
+      renderGrid();
+    });
+  });
+
+  renderSubtabs();
+}
+
+function getSubtabLabels(tabId) {
+  const TABS_WITH_SUBTABS = ['more', 'actions', 'things'];
+  if (!TABS_WITH_SUBTABS.includes(tabId)) return [];
+  const syms = SYMBOLS.filter(s => s.ui_tab === tabId || (s.additional_tabs && s.additional_tabs.includes(tabId)));
+  const labels = new Set();
+  syms.forEach(s => { if (s.subtab) labels.add(s.subtab); });
+  return [...labels].sort();
+}
+
+function renderSubtabs() {
+  const labels = getSubtabLabels(activeTab);
+  if (labels.length < 2) {
+    subtabBar.innerHTML = '';
+    subtabBar.classList.add('hidden');
+    return;
+  }
+
+  subtabBar.classList.remove('hidden');
+  let current = activeSubtabs[activeTab] || 'All';
+  if (current !== 'All' && !labels.includes(current)) {
+    current = 'All';
+    activeSubtabs[activeTab] = current;
+    localStorage.setItem('activeSubtabs', JSON.stringify(activeSubtabs));
+  }
+
+  subtabBar.innerHTML = ['All', ...labels].map(label => `
+    <button class="subtab-pill${current === label ? ' active' : ''}" data-subtab="${label}">
+      ${label}
+    </button>
+  `).join('');
+
+  subtabBar.querySelectorAll('.subtab-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = btn.dataset.subtab;
+      activeSubtabs[activeTab] = val;
+      localStorage.setItem('activeSubtabs', JSON.stringify(activeSubtabs));
+      renderSubtabs();
       renderGrid();
     });
   });
@@ -300,7 +347,13 @@ function renderTabs() {
 
 function getGridSymbols() {
   const sortByFreq = document.getElementById('sortByFrequency').checked;
-  let syms = SYMBOLS.filter(s => s.ui_tab === activeTab);
+  let syms = SYMBOLS.filter(s => s.ui_tab === activeTab || (s.additional_tabs && s.additional_tabs.includes(activeTab)));
+
+  const activeSubtab = activeSubtabs[activeTab] || 'All';
+  if (activeSubtab !== 'All') {
+    syms = syms.filter(s => s.subtab === activeSubtab);
+  }
+
   syms.sort((a, b) => {
     if (a.priority_tier !== b.priority_tier) return a.priority_tier - b.priority_tier;
     if (sortByFreq) {
@@ -878,7 +931,14 @@ function renderMeaningRoom() {
     if (anchor.icon) {
       const iconEl = document.createElement('span');
       iconEl.className = 'mr-hotspot-icon';
-      iconEl.textContent = anchor.icon;
+      if (anchor.icon.length <= 2 || /\p{Emoji}/u.test(anchor.icon)) {
+        iconEl.textContent = anchor.icon;
+      } else {
+        const svg = document.createElement('i');
+        svg.dataset.lucide = anchor.icon;
+        if (anchor.icon_color) svg.style.color = anchor.icon_color;
+        iconEl.appendChild(svg);
+      }
       btn.appendChild(iconEl);
     }
 
@@ -890,6 +950,8 @@ function renderMeaningRoom() {
     btn.addEventListener('click', () => setView('anchor_grid', anchor));
     meaningRoomStage.appendChild(btn);
   });
+
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 function effectiveGlow(anchor, stressZone) {
@@ -923,15 +985,63 @@ function updateMeaningRoomGlow() {
 // Anchor grid rendering
 // ============================================================
 
+let activeAnchorSubtabs = JSON.parse(localStorage.getItem('activeAnchorSubtabs') || '{}');
+const anchorSubtabBar = document.getElementById('anchorSubtabBar');
+
+function getAnchorSubtabForSymbol(anchor, sym) {
+  if (!anchor.subtabs) return null;
+  for (const st of anchor.subtabs) {
+    if (st.symbol_ids && st.symbol_ids.includes(sym.id)) return st.label;
+    if (st.match) {
+      if (st.match.type && sym.type === st.match.type) return st.label;
+      if (st.match.category && sym.category_xls === st.match.category) return st.label;
+    }
+  }
+  return anchor.subtabs.length > 0 ? anchor.subtabs[anchor.subtabs.length - 1].label : null;
+}
+
+function renderAnchorSubtabs(anchor) {
+  if (!anchor.subtabs || anchor.subtabs.length < 2) {
+    anchorSubtabBar.innerHTML = '';
+    anchorSubtabBar.classList.add('hidden');
+    return;
+  }
+
+  anchorSubtabBar.classList.remove('hidden');
+  const current = activeAnchorSubtabs[anchor.id] || 'All';
+  const labels = anchor.subtabs.map(st => st.label);
+
+  anchorSubtabBar.innerHTML = ['All', ...labels].map(label => `
+    <button class="subtab-pill${current === label ? ' active' : ''}" data-subtab="${label}">
+      ${label}
+    </button>
+  `).join('');
+
+  anchorSubtabBar.querySelectorAll('.subtab-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeAnchorSubtabs[anchor.id] = btn.dataset.subtab;
+      localStorage.setItem('activeAnchorSubtabs', JSON.stringify(activeAnchorSubtabs));
+      renderAnchorGrid(anchor);
+    });
+  });
+}
+
 function renderAnchorGrid(anchor) {
   anchorGridLabel.textContent = anchor.label;
   anchorGrid.innerHTML = '';
+  renderAnchorSubtabs(anchor);
 
   const symMap = new Map(SYMBOLS.map(s => [s.id, s]));
+  const activeSubtab = activeAnchorSubtabs[anchor.id] || 'All';
 
   anchor.symbol_ids.forEach(id => {
     const sym = symMap.get(id);
     if (!sym) return;
+
+    if (activeSubtab !== 'All' && anchor.subtabs) {
+      const symSubtab = getAnchorSubtabForSymbol(anchor, sym);
+      if (symSubtab !== activeSubtab) return;
+    }
 
     const svgContent = getSymbolSVG(sym);
     const card = document.createElement('button');

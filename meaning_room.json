@@ -14,7 +14,6 @@
   ],
   "deferred_anchors": [
     "body",
-    "cognition",
     "relationships"
   ],
   "anchors": [
@@ -24,9 +23,9 @@
       "icon": null,
       "hotspot": {
         "x": 0.33,
-        "y": 0.08,
+        "y": 0.12,
         "w": 0.13,
-        "h": 0.74
+        "h": 0.6
       },
       "symbol_ids": [
         "i",
@@ -48,7 +47,20 @@
         "hair",
         "hands",
         "head",
-        "myself"
+        "myself",
+        "ill",
+        "im",
+        "it",
+        "its",
+        "our",
+        "ours",
+        "us",
+        "we",
+        "we_ll",
+        "we_re",
+        "youll",
+        "youre",
+        "yours"
       ],
       "stress_glow_curve": null
     },
@@ -144,9 +156,71 @@
         "push",
         "read",
         "sleep",
-        "tickle"
+        "tickle",
+        "buy",
+        "call",
+        "came",
+        "cause",
+        "come",
+        "comes",
+        "cut",
+        "does",
+        "doesnt",
+        "doing",
+        "done",
+        "dont",
+        "fall",
+        "find",
+        "fixed",
+        "found",
+        "get",
+        "gets",
+        "getting",
+        "give",
+        "goes",
+        "going",
+        "gonna",
+        "hold",
+        "hum",
+        "let",
+        "lets",
+        "lift",
+        "look",
+        "looking",
+        "move",
+        "pick",
+        "ready",
+        "said",
+        "saw",
+        "say",
+        "show",
+        "shut",
+        "sit",
+        "threw",
+        "try",
+        "trying",
+        "use",
+        "used",
+        "wait",
+        "wanted",
+        "watch",
+        "went"
       ],
-      "stress_glow_curve": null
+      "stress_glow_curve": null,
+      "subtabs": [
+        {
+          "label": "Verbs",
+          "match": {
+            "type": "word"
+          }
+        },
+        {
+          "label": "Phrases",
+          "match": {
+            "type": "phrase"
+          }
+        }
+      ]
     },
     {
       "id": "other_people",
@@ -186,7 +260,16 @@
         "man",
         "mommy",
         "name",
-        "named"
+        "named",
+        "bye",
+        "people",
+        "please",
+        "shes",
+        "somebody",
+        "someone",
+        "they",
+        "theyll",
+        "theyre"
       ],
       "stress_glow_curve": null
     },
@@ -271,7 +354,10 @@
         "leaves",
         "room",
         "trees",
-        "turtles"
+        "turtles",
+        "jumped",
+        "jumping",
+        "ride"
       ],
       "stress_glow_curve": null
     },
@@ -359,18 +445,39 @@
         "thing",
         "things",
         "toys",
-        "sand"
+        "sand",
+        "catch"
       ],
-      "stress_glow_curve": null
+      "stress_glow_curve": null,
+      "subtabs": [
+        {
+          "label": "Toys",
+          "match": {
+            "category": "Preferred Items"
+          }
+        },
+        {
+          "label": "Active Play",
+          "match": {
+            "category": "Actions"
+          }
+        },
+        {
+          "label": "Vehicles",
+          "match": {
+            "category": "Vehicles"
+          }
+        }
+      ]
     },
     {
       "id": "food_drink",
       "label": "Food",
       "icon": null,
       "hotspot": {
-        "x": 0.65,
+        "x": 0.7,
         "y": 0.76,
-        "w": 0.29,
+        "w": 0.24,
         "h": 0.22
       },
       "symbol_ids": [
@@ -393,7 +500,9 @@
         "i_want_apple",
         "corn",
         "cup",
-        "lunch"
+        "lunch",
+        "bite",
+        "eating"
       ],
       "stress_glow_curve": null
     },
@@ -454,9 +563,255 @@
         "about",
         "high",
         "inside",
-        "top"
+        "top",
+        "around",
+        "back",
+        "before",
+        "better",
+        "first",
+        "five",
+        "here",
+        "heres",
+        "hot",
+        "if",
+        "kind",
+        "long",
+        "lot",
+        "many",
+        "messy",
+        "middle",
+        "much",
+        "must",
+        "never",
+        "new",
+        "next",
+        "nice",
+        "old",
+        "right",
+        "same",
+        "side",
+        "some",
+        "something",
+        "sometimes",
+        "through",
+        "together",
+        "two",
+        "well",
+        "whole",
+        "with",
+        "yet"
       ],
-      "stress_glow_curve": null
+      "stress_glow_curve": null,
+      "subtabs": [
+        {
+          "label": "Colors",
+          "symbol_ids": [
+            "black",
+            "blue",
+            "green",
+            "orange",
+            "pink",
+            "purple",
+            "red",
+            "white",
+            "yellow"
+          ]
+        },
+        {
+          "label": "Position",
+          "symbol_ids": [
+            "about",
+            "around",
+            "back",
+            "down",
+            "here",
+            "heres",
+            "high",
+            "in",
+            "inside",
+            "middle",
+            "out",
+            "right",
+            "side",
+            "through",
+            "up"
+          ]
+        },
+        {
+          "label": "Amount",
+          "symbol_ids": [
+            "before",
+            "five",
+            "first",
+            "lot",
+            "many",
+            "much",
+            "never",
+            "new",
+            "next",
+            "old",
+            "some",
+            "sometimes",
+            "two",
+            "whole",
+            "yet"
+          ]
+        },
+        {
+          "label": "Other",
+          "symbol_ids": [
+            "better",
+            "big",
+            "fast",
+            "good",
+            "hot",
+            "if",
+            "kind",
+            "little",
+            "long",
+            "messy",
+            "must",
+            "nice",
+            "off",
+            "same",
+            "slow",
+            "something",
+            "that",
+            "three",
+            "together",
+            "top",
+            "well",
+            "with"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cognition",
+      "label": "Questions",
+      "icon": "message-circle-question",
+      "hotspot": {
+        "x": 0.28,
+        "y": 0.02,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "symbol_ids": [
+        "what",
+        "whats",
+        "when",
+        "where",
+        "wheres",
+        "which",
+        "who",
+        "why",
+        "how",
+        "hear",
+        "remember"
+      ],
+      "stress_glow_curve": null,
+      "icon_color": null
+    },
+    {
+      "id": "more_scene",
+      "label": "More",
+      "icon": "plus",
+      "hotspot": {
+        "x": 0.49,
+        "y": 0.78,
+        "w": 0.14,
+        "h": 0.2
+      },
+      "symbol_ids": [
+        "a",
+        "after",
+        "again",
+        "all",
+        "almost",
+        "already",
+        "also",
+        "an",
+        "and",
+        "another",
+        "any",
+        "are",
+        "as",
+        "at",
+        "away",
+        "be",
+        "because",
+        "being",
+        "bet",
+        "both",
+        "but",
+        "by",
+        "can",
+        "could",
+        "day",
+        "did",
+        "didnt",
+        "else",
+        "even",
+        "everything",
+        "for",
+        "from",
+        "had",
+        "has",
+        "have",
+        "huh",
+        "is",
+        "isnt",
+        "just",
+        "last",
+        "may",
+        "maybe",
+        "most",
+        "of",
+        "oh",
+        "on",
+        "one",
+        "only",
+        "or",
+        "over",
+        "really",
+        "so",
+        "still",
+        "then",
+        "there",
+        "theres",
+        "these",
+        "this",
+        "those",
+        "time",
+        "to",
+        "today",
+        "too",
+        "um",
+        "very",
+        "was",
+        "wasnt",
+        "way",
+        "were",
+        "while",
+        "would",
+        "ya"
+      ],
+      "stress_glow_curve": null,
+      "subtabs": [
+        {
+          "label": "Grammar",
+          "match": {
+            "category": "Function/Core"
+          }
+        },
+        {
+          "label": "Other",
+          "match": {
+            "category": "Uncategorized"
+          }
+        }
+      ],
+      "icon_color": "#0891b2"
     }
   ]
 }

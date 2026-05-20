@@ -1,5 +1,7 @@
 # Phase 2: Tabs, Subtabs, and Anchors
 
+> **STATUS: SUPERSEDED** — This design document has been implemented. See `docs/superpowers/plans/2026-05-19-phase2-tabs-subtabs-anchors.md` for the executed implementation plan.
+
 **Date:** 2026-05-19
 **Branch:** `mjp/vocab_tier3`
 **Prereq:** Phase 1 is complete — all 436 symbols have validated categories, POS, tabs, and partial anchor assignments. Data is in sync across canonical_vocabulary.csv, vocabulary.json, and meaning_room.json.

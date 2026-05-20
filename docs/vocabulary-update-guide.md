@@ -83,7 +83,7 @@ Writes to:
 python3 scripts/vocab_sync.py import --apply
 ```
 
-Pushes canonical CSV fields into `vocabulary.json`. Synced fields: `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`, `category` (→ `category_xls`), `secondary_tabs` (→ `additional_tabs`).
+Pushes canonical CSV fields into `vocabulary.json`. Synced fields: `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`, `category` (→ `category_xls`), `secondary_tabs` (→ `additional_tabs`), and the resolved `subtab` (computed from `category_config.csv` default + any `subtab_override` in the CSV).
 
 ### 6. Verify the round trip is clean
 
@@ -146,6 +146,16 @@ For anchor changes, edit `meaning_room.json` directly (add/remove symbol_ids fro
 A word can appear in multiple tabs. The `ui_tab` field is the primary tab; `secondary_tabs` lists additional tabs (semicolon-separated in CSV, JSON array in vocabulary.json).
 
 Example: `slide` has `ui_tab=things`, `secondary_tabs=actions` -- it shows in both the things grid and the actions grid.
+
+### Subtabs
+
+Subtabs are filter pills within a tab or anchor grid. They help users navigate large sets without scrolling.
+
+**Tab subtabs** are derived from `category_config.csv`'s `subtab_label` column. The `canonical_vocabulary.csv` has a `subtab_override` column for per-symbol exceptions (empty = inherit category default). During `vocab_sync.py import`, the effective subtab is computed and written to `vocabulary.json`.
+
+Tabs with subtabs: `more` (Grammar/Descriptors/Other/Questions/Negation), `actions` (Verbs/Phrases), `things` (Toys/Body/Places/Clothes/Vehicles).
+
+**Anchor subtabs** are defined in `meaning_room.json` as a `subtabs` array on each anchor. They use either `symbol_ids` lists or `match` rules (by type or category). Anchors with subtabs: `actions`, `more_scene`, `colors_descriptors`, `toys`.
 
 ### Multi-value Fields in the Union Table
 
