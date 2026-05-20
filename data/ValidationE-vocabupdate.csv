@@ -1,0 +1,425 @@
+canonical_term,priority_tier,core_or_fringe OR any other category suggestion?
+all done,Tier 1 - Phase I MVP,Social
+break,Tier 1 - Phase I MVP,core
+close,Tier 1 - Phase I MVP,core
+drink,Tier 1 - Phase I MVP,Drink
+eat,Tier 1 - Phase I MVP,Eat
+go,Tier 1 - Phase I MVP,core
+good,Tier 1 - Phase I MVP,core
+goodbye,Tier 1 - Phase I MVP,Social
+help,Tier 1 - Phase I MVP,core
+help me,Tier 1 - Phase I MVP,core
+i need a break,Tier 1 - Phase I MVP,core
+i want water,Tier 1 - Phase I MVP,core
+more,Tier 1 - Phase I MVP,core
+open,Tier 1 - Phase I MVP,core
+play,Tier 1 - Phase I MVP,Play
+stop,Tier 1 - Phase I MVP,core
+turn,Tier 1 - Phase I MVP,core
+want,Tier 1 - Phase I MVP,core
+yes,Tier 1 - Phase I MVP,core
+tired,Tier 1 - Phase I MVP,fringe/personalizable
+happy,Tier 1 - Phase I MVP,Feelings/emotions
+mad,Tier 1 - Phase I MVP,Feelings/emotions
+made,Tier 1 - Phase I MVP,core
+sad,Tier 1 - Phase I MVP,Feelings/emotions
+water,Tier 1 - Phase I MVP,Drink
+aren't,Tier 1 - Phase I MVP,core
+can't,Tier 1 - Phase I MVP,core
+couldn't,Tier 1 - Phase I MVP,core
+haven't,Tier 1 - Phase I MVP,core
+know,Tier 1 - Phase I MVP,core
+no,Tier 1 - Phase I MVP,core
+not,Tier 1 - Phase I MVP,core
+won't,Tier 1 - Phase I MVP,core
+frustrated,Tier 1 - Phase I MVP,Feelings/emotions
+i,Tier 1 - Phase I MVP,Personal pronouns
+me,Tier 1 - Phase I MVP,Personal pronouns
+my,Tier 1 - Phase I MVP,Personal pronouns
+nervous,Tier 1 - Phase I MVP,Feelings/emotions
+sick,Tier 1 - Phase I MVP,Feelings/emotions
+that,Tier 1 - Phase I MVP,core
+you,Tier 1 - Phase I MVP,core
+bathroom,Tier 1 - Phase I MVP,locations
+i need the bathroom,Tier 1 - Phase I MVP,fringe/personalizable
+mine,Tier 1 - Phase I MVP,Personal pronouns
+space,Tier 1 - Phase I MVP,Nature/Want
+too loud,Tier 1 - Phase I MVP,core
+bad,Tier 1 - Phase I MVP,core
+hello,Tier 1 - Phase I MVP,social
+hi,Tier 1 - Phase I MVP,social
+ok,Tier 1 - Phase I MVP,core
+need,Tier 1 - Phase I MVP,fringe/personalizable
+"could be specific to use quiet space, alone space",Tier 2 - Faison expansion,core
+do,Tier 2 - Faison expansion,core
+dog,Tier 2 - Faison expansion,animals
+doll,Tier 2 - Faison expansion,toys
+down,Tier 2 - Faison expansion,core
+help me / i'm frustrated,Tier 2 - Faison expansion,core
+hug,Tier 2 - Faison expansion,core
+i don't want that,Tier 2 - Faison expansion,core
+i like this,Tier 2 - Faison expansion,core
+i need help,Tier 2 - Faison expansion,core
+i need help / stop,Tier 2 - Faison expansion,core
+i want a jacket,Tier 2 - Faison expansion,core
+i want apple,Tier 2 - Faison expansion,core
+i want food,Tier 2 - Faison expansion,core
+jump,Tier 2 - Faison expansion,action
+like,Tier 2 - Faison expansion,core
+look at me,Tier 2 - Faison expansion,core
+make,Tier 2 - Faison expansion,core
+my turn,Tier 2 - Faison expansion,core
+no / i don't want that,Tier 2 - Faison expansion,core
+one more minute,Tier 2 - Faison expansion,core
+play doh,Tier 2 - Faison expansion,Play/Toy
+playground,Tier 2 - Faison expansion,locations
+preferred items (will vary for user-can be many of the first 50 words),Tier 2 - Faison expansion,core
+push,Tier 2 - Faison expansion,action
+put,Tier 2 - Faison expansion,core
+read,Tier 2 - Faison expansion,core
+run,Tier 2 - Faison expansion,action
+see,Tier 2 - Faison expansion,core
+sleep,Tier 2 - Faison expansion,action
+slide,Tier 2 - Faison expansion,action
+snacks (will vary for user - can be many of the first 50 words),Tier 2 - Faison expansion,Eat/Food
+spin,Tier 2 - Faison expansion,action
+squeeze,Tier 2 - Faison expansion,core
+swing,Tier 2 - Faison expansion,action
+take,Tier 2 - Faison expansion,core
+tickle,Tier 2 - Faison expansion,core
+tickle/squeeze,Tier 2 - Faison expansion,core
+too loud / i need a break,Tier 2 - Faison expansion,core
+walk,Tier 2 - Faison expansion,action
+want help,Tier 2 - Faison expansion,core
+want help / want item,Tier 2 - Faison expansion,core
+want item,Tier 2 - Faison expansion,core
+work,Tier 2 - Faison expansion,core
+ear,Tier 2 - Faison expansion,body parts
+eye,Tier 2 - Faison expansion,body parts
+hand,Tier 2 - Faison expansion,body parts
+leg,Tier 2 - Faison expansion,body parts
+nose,Tier 2 - Faison expansion,body parts
+stomach,Tier 2 - Faison expansion,body parts
+coat,Tier 2 - Faison expansion,clothing
+hat,Tier 2 - Faison expansion,clothing
+jacket,Tier 2 - Faison expansion,clothing
+pants,Tier 2 - Faison expansion,clothing
+shoe,Tier 2 - Faison expansion,clothing
+sock,Tier 2 - Faison expansion,clothing
+big,Tier 2 - Faison expansion,fringe/personalizable
+black,Tier 2 - Faison expansion,colors
+blue,Tier 2 - Faison expansion,colors
+fast,Tier 2 - Faison expansion,fringe/personalizable
+green,Tier 2 - Faison expansion,colors
+i am tired,Tier 2 - Faison expansion,fringe/personalizable
+little,Tier 2 - Faison expansion,fringe/personalizable
+orange,Tier 2 - Faison expansion,colors/fruit
+purple,Tier 2 - Faison expansion,colors
+red,Tier 2 - Faison expansion,colors
+slow,Tier 2 - Faison expansion,fringe/personalizable
+yellow,Tier 2 - Faison expansion,colors
+candy,Tier 2 - Faison expansion,Eat/Food/Snack/Dessert
+carrot,Tier 2 - Faison expansion,Eat/Food/Vegetable
+fruit,Tier 2 - Faison expansion,Eat/Food
+juice,Tier 2 - Faison expansion,drinks
+popcorn,Tier 2 - Faison expansion,Eat/Food/Snacks
+pretzel,Tier 2 - Faison expansion,Eat/Food/Snacks
+rice,Tier 2 - Faison expansion,Eat/Food
+water/juice,Tier 2 - Faison expansion,drinks
+airplane,Tier 2 - Faison expansion,vehicle
+bus,Tier 2 - Faison expansion,vehicle
+dad,Tier 2 - Faison expansion,people
+i'm frustrated,Tier 2 - Faison expansion,core
+mom,Tier 2 - Faison expansion,people
+that's funny,Tier 2 - Faison expansion,core
+their,Tier 2 - Faison expansion,core
+them,Tier 2 - Faison expansion,core
+tummy,Tier 2 - Faison expansion,body parts
+tummy/stomach,Tier 2 - Faison expansion,body parts
+your,Tier 2 - Faison expansion,core
+classroom,Tier 2 - Faison expansion,Locations
+fine,Tier 2 - Faison expansion,fringe/personalizable
+gym,Tier 2 - Faison expansion,Locations
+home,Tier 2 - Faison expansion,Locations
+i found something,Tier 2 - Faison expansion,fringe/personalizable
+in,Tier 2 - Faison expansion,Prepositions
+mouth,Tier 2 - Faison expansion,Body parts
+off,Tier 2 - Faison expansion,Prepositions
+ok/fine,Tier 2 - Faison expansion,fringe/personalizable
+out,Tier 2 - Faison expansion,Prepositions
+pink,Tier 2 - Faison expansion,Colors
+train,Tier 2 - Faison expansion,vehicles
+trampoline,Tier 2 - Faison expansion,toys
+up,Tier 2 - Faison expansion,prepositions
+balloon,Tier 2 - Faison expansion,toys
+bubbles,Tier 2 - Faison expansion,toys
+car,Tier 2 - Faison expansion,vehicles
+game,Tier 2 - Faison expansion,toys/games
+ipad,Tier 2 - Faison expansion,technology
+music,Tier 2 - Faison expansion,fringe/personalizable
+puzzle,Tier 2 - Faison expansion,toys
+sand,Tier 2 - Faison expansion,Nature/Beach/Toys
+toy,Tier 2 - Faison expansion,toys
+toy/game,Tier 2 - Faison expansion,toys/games
+books,Tier 2 - Faison expansion,core
+chips,Tier 2 - Faison expansion,Eat/Food/Snacks
+cookie,Tier 2 - Faison expansion,Eat/Food/Snacks
+hi / hello,Tier 2 - Faison expansion,social
+shirt,Tier 2 - Faison expansion,clothing
+white,Tier 2 - Faison expansion,color
+boat,Tier 2 - Faison expansion,vehicle
+already,Tier 3 - Reference expansion,core
+because,Tier 3 - Reference expansion,core
+buy,Tier 3 - Reference expansion,core
+call,Tier 3 - Reference expansion,core
+catch,Tier 3 - Reference expansion,core
+cause,Tier 3 - Reference expansion,core
+come,Tier 3 - Reference expansion,core
+comes,Tier 3 - Reference expansion,core
+cut,Tier 3 - Reference expansion,core
+doctor,Tier 3 - Reference expansion,core
+does,Tier 3 - Reference expansion,core
+doesn't,Tier 3 - Reference expansion,core
+doing,Tier 3 - Reference expansion,core
+don't,Tier 3 - Reference expansion,core
+done,Tier 3 - Reference expansion,core
+door,Tier 3 - Reference expansion,core
+eating,Tier 3 - Reference expansion,core
+find,Tier 3 - Reference expansion,core
+get,Tier 3 - Reference expansion,core
+gets,Tier 3 - Reference expansion,core
+getting,Tier 3 - Reference expansion,core
+give,Tier 3 - Reference expansion,core
+goes,Tier 3 - Reference expansion,core
+going,Tier 3 - Reference expansion,core
+gonna,Tier 3 - Reference expansion,core
+great,Tier 3 - Reference expansion,core
+hold,Tier 3 - Reference expansion,core
+house,Tier 3 - Reference expansion,Location
+jumped,Tier 3 - Reference expansion,action
+jumping,Tier 3 - Reference expansion,action
+look,Tier 3 - Reference expansion,core
+looking,Tier 3 - Reference expansion,core
+ready,Tier 3 - Reference expansion,core
+ride,Tier 3 - Reference expansion,core
+say,Tier 3 - Reference expansion,core
+show,Tier 3 - Reference expansion,core
+shut,Tier 3 - Reference expansion,core
+sit,Tier 3 - Reference expansion,action
+together,Tier 3 - Reference expansion,core
+try,Tier 3 - Reference expansion,core
+trying,Tier 3 - Reference expansion,core
+use,Tier 3 - Reference expansion,core
+used,Tier 3 - Reference expansion,core
+wait,Tier 3 - Reference expansion,core
+wanted,Tier 3 - Reference expansion,core
+watch,Tier 3 - Reference expansion,core
+face,Tier 3 - Reference expansion,body parts
+foot,Tier 3 - Reference expansion,body parts
+hands,Tier 3 - Reference expansion,Body parts
+what,Tier 3 - Reference expansion,Question words
+what's,Tier 3 - Reference expansion,Question words
+different,Tier 3 - Reference expansion,fringe/personalizable
+hot,Tier 3 - Reference expansion,fringe/personalizable
+nice,Tier 3 - Reference expansion,fringe/personalizable
+right,Tier 3 - Reference expansion,fringe/personalizable
+same,Tier 3 - Reference expansion,fringe/personalizable
+whole,Tier 3 - Reference expansion,fringe/personalizable
+bean,Tier 3 - Reference expansion,Eat/Food
+corn,Tier 3 - Reference expansion,Eat/Food
+lunch,Tier 3 - Reference expansion,Meals
+a,Tier 3 - Reference expansion,core
+an,Tier 3 - Reference expansion,core
+and,Tier 3 - Reference expansion,core
+are,Tier 3 - Reference expansion,core
+as,Tier 3 - Reference expansion,core
+at,Tier 3 - Reference expansion,core
+be,Tier 3 - Reference expansion,core
+but,Tier 3 - Reference expansion,core
+by,Tier 3 - Reference expansion,core
+for,Tier 3 - Reference expansion,core
+from,Tier 3 - Reference expansion,core
+of,Tier 3 - Reference expansion,core
+on,Tier 3 - Reference expansion,core
+or,Tier 3 - Reference expansion,core
+over,Tier 3 - Reference expansion,core
+those,Tier 3 - Reference expansion,core
+to,Tier 3 - Reference expansion,core
+was,Tier 3 - Reference expansion,core
+another,Tier 3 - Reference expansion,core
+bird,Tier 3 - Reference expansion,Animal
+birds,Tier 3 - Reference expansion,core
+bite,Tier 3 - Reference expansion,core
+boy,Tier 3 - Reference expansion,People
+came,Tier 3 - Reference expansion,core
+did,Tier 3 - Reference expansion,core
+didn't,Tier 3 - Reference expansion,core
+everybody,Tier 3 - Reference expansion,core
+fire,Tier 3 - Reference expansion,core
+first,Tier 3 - Reference expansion,core
+five,Tier 3 - Reference expansion,core
+fixed,Tier 3 - Reference expansion,core
+girl,Tier 3 - Reference expansion,People
+girls,Tier 3 - Reference expansion,core
+guys,Tier 3 - Reference expansion,core
+hair,Tier 3 - Reference expansion,Body parts
+he,Tier 3 - Reference expansion,Personal pronouns
+he's,Tier 3 - Reference expansion,core
+head,Tier 3 - Reference expansion,Body parts
+hear,Tier 3 - Reference expansion,core
+her,Tier 3 - Reference expansion,core
+here,Tier 3 - Reference expansion,core
+here's,Tier 3 - Reference expansion,core
+i'll,Tier 3 - Reference expansion,core
+i'm,Tier 3 - Reference expansion,core
+if,Tier 3 - Reference expansion,core
+is,Tier 3 - Reference expansion,core
+isn't,Tier 3 - Reference expansion,core
+it,Tier 3 - Reference expansion,core
+it's,Tier 3 - Reference expansion,core
+just,Tier 3 - Reference expansion,core
+lift,Tier 3 - Reference expansion,core
+mean,Tier 3 - Reference expansion,core
+messy,Tier 3 - Reference expansion,core
+middle,Tier 3 - Reference expansion,core
+mommy,Tier 3 - Reference expansion,core
+must,Tier 3 - Reference expansion,core
+myself,Tier 3 - Reference expansion,core
+name,Tier 3 - Reference expansion,core
+named,Tier 3 - Reference expansion,core
+our,Tier 3 - Reference expansion,core
+ours,Tier 3 - Reference expansion,core
+people,Tier 3 - Reference expansion,core
+pick,Tier 3 - Reference expansion,core
+piece,Tier 3 - Reference expansion,core
+remember,Tier 3 - Reference expansion,core
+said,Tier 3 - Reference expansion,core
+she,Tier 3 - Reference expansion,core
+she's,Tier 3 - Reference expansion,core
+side,Tier 3 - Reference expansion,core
+some,Tier 3 - Reference expansion,core
+somebody,Tier 3 - Reference expansion,core
+someone,Tier 3 - Reference expansion,core
+sometimes,Tier 3 - Reference expansion,core
+still,Tier 3 - Reference expansion,core
+then,Tier 3 - Reference expansion,core
+there,Tier 3 - Reference expansion,core
+there's,Tier 3 - Reference expansion,core
+these,Tier 3 - Reference expansion,core
+they,Tier 3 - Reference expansion,core
+they'll,Tier 3 - Reference expansion,core
+they're,Tier 3 - Reference expansion,core
+time,Tier 3 - Reference expansion,core
+us,Tier 3 - Reference expansion,core
+we,Tier 3 - Reference expansion,core
+we'll,Tier 3 - Reference expansion,core
+we're,Tier 3 - Reference expansion,core
+well,Tier 3 - Reference expansion,core
+went,Tier 3 - Reference expansion,core
+were,Tier 3 - Reference expansion,core
+when,Tier 3 - Reference expansion,core
+where,Tier 3 - Reference expansion,core
+where's,Tier 3 - Reference expansion,core
+with,Tier 3 - Reference expansion,core
+you'll,Tier 3 - Reference expansion,core
+you're,Tier 3 - Reference expansion,core
+yours,Tier 3 - Reference expansion,core
+about,Tier 3 - Reference expansion,fringe/personalizable
+again,Tier 3 - Reference expansion,fringe/personalizable
+being,Tier 3 - Reference expansion,fringe/personalizable
+cup,Tier 3 - Reference expansion,fringe/personalizable
+everything,Tier 3 - Reference expansion,fringe/personalizable
+finger,Tier 3 - Reference expansion,fringe/personalizable
+inside,Tier 3 - Reference expansion,fringe/personalizable
+kind,Tier 3 - Reference expansion,fringe/personalizable
+paint,Tier 3 - Reference expansion,fringe/personalizable
+room,Tier 3 - Reference expansion,fringe/personalizable
+something,Tier 3 - Reference expansion,fringe/personalizable
+thing,Tier 3 - Reference expansion,fringe/personalizable
+things,Tier 3 - Reference expansion,fringe/personalizable
+ball,Tier 3 - Reference expansion,fringe/personalizable
+box,Tier 3 - Reference expansion,fringe/personalizable
+chair,Tier 3 - Reference expansion,fringe/personalizable
+duck,Tier 3 - Reference expansion,fringe/personalizable
+horse,Tier 3 - Reference expansion,fringe/personalizable
+toys,Tier 3 - Reference expansion,fringe/personalizable
+turtles,Tier 3 - Reference expansion,fringe/personalizable
+how,Tier 3 - Reference expansion,core
+who,Tier 3 - Reference expansion,core
+why,Tier 3 - Reference expansion,core
+bye,Tier 3 - Reference expansion,core
+high,Tier 3 - Reference expansion,core
+hill,Tier 3 - Reference expansion,core
+him,Tier 3 - Reference expansion,core
+his,Tier 3 - Reference expansion,core
+please,Tier 3 - Reference expansion,core
+this,Tier 3 - Reference expansion,core
+which,Tier 3 - Reference expansion,core
+while,Tier 3 - Reference expansion,core
+after,Tier 3 - Reference expansion,fringe/personalizable
+all,Tier 3 - Reference expansion,fringe/personalizable
+almost,Tier 3 - Reference expansion,fringe/personalizable
+also,Tier 3 - Reference expansion,fringe/personalizable
+ant,Tier 3 - Reference expansion,fringe/personalizable
+any,Tier 3 - Reference expansion,fringe/personalizable
+around,Tier 3 - Reference expansion,fringe/personalizable
+away,Tier 3 - Reference expansion,fringe/personalizable
+baby,Tier 3 - Reference expansion,fringe/personalizable
+back,Tier 3 - Reference expansion,fringe/personalizable
+before,Tier 3 - Reference expansion,fringe/personalizable
+bet,Tier 3 - Reference expansion,fringe/personalizable
+better,Tier 3 - Reference expansion,fringe/personalizable
+both,Tier 3 - Reference expansion,fringe/personalizable
+bugs,Tier 3 - Reference expansion,fringe/personalizable
+can,Tier 3 - Reference expansion,fringe/personalizable
+could,Tier 3 - Reference expansion,fringe/personalizable
+day,Tier 3 - Reference expansion,fringe/personalizable
+else,Tier 3 - Reference expansion,fringe/personalizable
+even,Tier 3 - Reference expansion,fringe/personalizable
+fall,Tier 3 - Reference expansion,fringe/personalizable
+fly,Tier 3 - Reference expansion,fringe/personalizable
+found,Tier 3 - Reference expansion,fringe/personalizable
+had,Tier 3 - Reference expansion,fringe/personalizable
+has,Tier 3 - Reference expansion,fringe/personalizable
+have,Tier 3 - Reference expansion,fringe/personalizable
+huh,Tier 3 - Reference expansion,fringe/personalizable
+hum,Tier 3 - Reference expansion,fringe/personalizable
+last,Tier 3 - Reference expansion,fringe/personalizable
+leaves,Tier 3 - Reference expansion,fringe/personalizable
+let,Tier 3 - Reference expansion,fringe/personalizable
+let's,Tier 3 - Reference expansion,fringe/personalizable
+long,Tier 3 - Reference expansion,fringe/personalizable
+lot,Tier 3 - Reference expansion,fringe/personalizable
+man,Tier 3 - Reference expansion,fringe/personalizable
+many,Tier 3 - Reference expansion,fringe/personalizable
+may,Tier 3 - Reference expansion,fringe/personalizable
+maybe,Tier 3 - Reference expansion,fringe/personalizable
+most,Tier 3 - Reference expansion,fringe/personalizable
+move,Tier 3 - Reference expansion,fringe/personalizable
+much,Tier 3 - Reference expansion,fringe/personalizable
+never,Tier 3 - Reference expansion,fringe/personalizable
+new,Tier 3 - Reference expansion,fringe/personalizable
+next,Tier 3 - Reference expansion,fringe/personalizable
+oh,Tier 3 - Reference expansion,fringe/personalizable
+old,Tier 3 - Reference expansion,fringe/personalizable
+one,Tier 3 - Reference expansion,fringe/personalizable
+only,Tier 3 - Reference expansion,fringe/personalizable
+pet,Tier 3 - Reference expansion,fringe/personalizable
+really,Tier 3 - Reference expansion,fringe/personalizable
+saw,Tier 3 - Reference expansion,fringe/personalizable
+so,Tier 3 - Reference expansion,fringe/personalizable
+three,Tier 3 - Reference expansion,fringe/personalizable
+threw,Tier 3 - Reference expansion,fringe/personalizable
+through,Tier 3 - Reference expansion,fringe/personalizable
+today,Tier 3 - Reference expansion,fringe/personalizable
+too,Tier 3 - Reference expansion,fringe/personalizable
+top,Tier 3 - Reference expansion,fringe/personalizable
+trees,Tier 3 - Reference expansion,fringe/personalizable
+two,Tier 3 - Reference expansion,fringe/personalizable
+um,Tier 3 - Reference expansion,fringe/personalizable
+very,Tier 3 - Reference expansion,fringe/personalizable
+wasn't,Tier 3 - Reference expansion,fringe/personalizable
+way,Tier 3 - Reference expansion,fringe/personalizable
+would,Tier 3 - Reference expansion,fringe/personalizable
+ya,Tier 3 - Reference expansion,fringe/personalizable
+yet,Tier 3 - Reference expansion,fringe/personalizable

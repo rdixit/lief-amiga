@@ -447,7 +447,10 @@
       ],
       "notes": "Typical 1 word expressions from Faison",
       "svg_key": null,
-      "phrase_pos": "verb/action"
+      "phrase_pos": "verb/action",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "break",
@@ -533,7 +536,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "drink"
+      "svg_key": "drink",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "eat",
@@ -561,7 +567,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "eat"
+      "svg_key": "eat",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "go",
@@ -598,7 +607,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Descriptors",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words",
@@ -617,7 +626,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": null
+      "svg_key": null,
+      "additional_tabs": [
+        "describe"
+      ]
     },
     {
       "id": "goodbye",
@@ -626,7 +638,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Social",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
@@ -648,7 +660,10 @@
         "Hi / Hello"
       ],
       "notes": "Typical 1 word expressions from Faison",
-      "svg_key": null
+      "svg_key": null,
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "help",
@@ -680,7 +695,10 @@
         "I need a break"
       ],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "help"
+      "svg_key": "help",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "help_me",
@@ -711,7 +729,10 @@
       "phrase_templates": [],
       "notes": "Emotional expression; Functional communication",
       "svg_key": null,
-      "phrase_pos": "verb/action"
+      "phrase_pos": "verb/action",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "i_need_a_break",
@@ -741,7 +762,10 @@
       "phrase_templates": [],
       "notes": "Sensory regulation",
       "svg_key": null,
-      "phrase_pos": "verb/action"
+      "phrase_pos": "verb/action",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "i_want_water",
@@ -771,7 +795,10 @@
       "phrase_templates": [],
       "notes": "Basic needs, fast access",
       "svg_key": null,
-      "phrase_pos": "verb/action"
+      "phrase_pos": "verb/action",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "more",
@@ -799,7 +826,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "more"
+      "svg_key": "more",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "open",
@@ -868,7 +898,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Negation/Repair",
       "ui_tab": "core",
       "sources": [
         "Validation scenarios",
@@ -953,7 +983,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "want"
+      "svg_key": "want",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "yes",
@@ -981,7 +1014,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Typical 1 word expressions from Faison; Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "yes"
+      "svg_key": "yes",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "tired",
@@ -990,7 +1026,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Descriptors",
+      "category_xls": "Feelings",
       "ui_tab": "feelings",
       "sources": [
         "Faison SLP collected words"
@@ -1275,7 +1311,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Negation/Repair",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -1689,7 +1725,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "People/Pronouns/Possessives",
       "ui_tab": "people",
       "sources": [
         "Faison SLP collected words",
@@ -1717,7 +1753,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Negation/Repair",
+      "category_xls": "Regulation/Safety",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
@@ -1917,7 +1953,10 @@
       "synonyms_or_variants": null,
       "phrase_templates": [],
       "notes": "Reference expansion from Marvin et al. 330 preschool words",
-      "svg_key": "need"
+      "svg_key": "need",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "do",
@@ -2455,7 +2494,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Regulation/Safety",
+      "category_xls": "Negation/Repair",
       "ui_tab": "core",
       "sources": [
         "Validation scenarios"
@@ -4162,7 +4201,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": true,
-      "category_xls": "Function/Core",
+      "category_xls": "Social",
       "ui_tab": "core",
       "sources": [
         "Validation scenarios"
@@ -4183,7 +4222,10 @@
       "phrase_templates": [],
       "notes": "Social commenting",
       "svg_key": null,
-      "phrase_pos": "descriptor/adjective"
+      "phrase_pos": "descriptor/adjective",
+      "additional_tabs": [
+        "actions"
+      ]
     },
     {
       "id": "their",
@@ -4524,7 +4566,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "describe",
       "sources": [
         "Faison SLP collected words",
@@ -4552,7 +4594,7 @@
       "type": "phrase",
       "is_phrase": true,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Social",
       "ui_tab": "core",
       "sources": [
         "Faison SLP collected words"
@@ -7501,7 +7543,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Descriptors",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -7528,7 +7570,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Descriptors",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -8640,14 +8682,14 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Actions",
+      "category_xls": "Descriptors",
       "ui_tab": "people",
       "sources": [
         "Marvin 330 preschool words"
       ],
       "priority_tier": 3,
       "core_or_fringe": "core",
-      "part_of_speech": "verb/action",
+      "part_of_speech": "descriptor/adjective",
       "intent_tags": [
         "general vocabulary"
       ],
@@ -9612,7 +9654,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9639,7 +9681,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9666,7 +9708,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9720,7 +9762,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -9774,8 +9816,8 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Places",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -10281,8 +10323,8 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Social",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],
@@ -10659,7 +10701,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10686,7 +10728,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10740,7 +10782,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -10767,7 +10809,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Descriptors",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11253,7 +11295,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
+      "category_xls": "Function/Core",
       "ui_tab": "more",
       "sources": [
         "Marvin 330 preschool words"
@@ -11307,7 +11349,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Function/Core",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -11334,7 +11376,7 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Function/Core",
+      "category_xls": "Actions",
       "ui_tab": "actions",
       "sources": [
         "Marvin 330 preschool words"
@@ -12036,8 +12078,8 @@
       "type": "word",
       "is_phrase": false,
       "is_quick_phrase": false,
-      "category_xls": "Uncategorized",
-      "ui_tab": "more",
+      "category_xls": "Descriptors",
+      "ui_tab": "describe",
       "sources": [
         "Marvin 330 preschool words"
       ],

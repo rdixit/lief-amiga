@@ -34,9 +34,12 @@ Then open [http://localhost:8001](http://localhost:8001) in your browser.
 | `app.js` | Application logic — view state machine, glow engine, sentence builder |
 | `style.css` | All styles including iPad frame, hotspot glow, and pulse animation |
 | `scripts/generate_symbols.py` | Regenerate `symbols.js` from `vocabulary.json` |
-| `scripts/build_vocabulary_corrections_export.py` | Diff `vocabulary.json` vs canonical CSV, output correction report |
 | `scripts/vocab_sync.py` | Bidirectional sync between `vocabulary.json` and the canonical CSV |
 | `scripts/build_union_table.py` | Cross-system collision audit joining vocab, tabs, and Meaning Room |
+| `scripts/sanity_check_union.py` | Validate the union table against `data/category_config.csv` rules |
+| `scripts/generate_vocab_review.py` | Curated, decision-oriented subset of sanity findings |
+| `scripts/apply_vocab_review.py` | Apply marked rows from `vocab_review.csv` to canonical + meaning_room |
+| `scripts/backprop_union_table.py` | Alternate writeback: union table → canonical + meaning_room |
 
 ---
 
@@ -175,16 +178,6 @@ Regenerates `symbols.js` from `vocabulary.json`. Backs up existing `vocabulary.j
 python3 scripts/generate_symbols.py
 ```
 
-### `scripts/build_vocabulary_corrections_export.py`
-
-Diffs `vocabulary.json` against the original canonical spreadsheet CSV and writes:
-- `data/_archive/vocabulary_category_corrections.csv` — every tab and POS change, with reason
-- `data/_archive/AMIGA-AAC-4.5.2026-canonical_vocabulary_corrected.csv` — proposed corrected CSV for team review
-
-```bash
-python3 scripts/build_vocabulary_corrections_export.py
-```
-
 ### `scripts/vocab_sync.py`
 
 Bidirectional sync between `vocabulary.json` (app-facing) and the canonical CSV (team-facing). The CSV is the artifact Joannalyn and Gabby review; `vocabulary.json` is what the app loads.
@@ -202,42 +195,62 @@ The canonical CSV lives at `data/canonical_vocabulary.csv`.
 
 ### `scripts/build_union_table.py`
 
-Joins `vocabulary.json`, `meaning_room.json`, and `data/_archive/pos_corrections.csv` into a single CSV for cross-system collision review.
+Joins `vocabulary.json` and `meaning_room.json` into a single CSV for cross-system collision review.
 
 ```bash
 python3 scripts/build_union_table.py
 ```
 
-Outputs `data/vocabulary_union_table.csv` with columns: `symbol_id`, `display_label`, `priority_tier`, `type`, `category_xls`, `ui_tab`, `meaning_room_anchors`, `pre_correction_pos`, `current_pos`, `phrase_pos`, `pos_changed`, `collision_flags`.
+Outputs `data/vocabulary_union_table.csv` with columns: `symbol_id`, `display_label`, `priority_tier`, `type`, `category_xls`, `ui_tab`, `meaning_room_anchors`, `current_pos`, `phrase_pos`, `collision_flags`.
 
 **Collision flags detected:**
 - `tab-anchor-mismatch` — symbol's `ui_tab` doesn't align with its Meaning Room anchor's expected tabs
 - `pos-type-mismatch` — symbol has `type: phrase` but POS is not `phrase`
 - `orphan-tier-1-2` — tier 1 or 2 symbol not in any Meaning Room anchor
 
-### `scripts/apply_pos_corrections.py`
+### `scripts/sanity_check_union.py`
 
-Applies POS corrections from `data/_archive/pos_corrections.csv` to `vocabulary.json`.
-
-```bash
-python3 scripts/apply_pos_corrections.py           # dry-run
-python3 scripts/apply_pos_corrections.py --apply    # write changes
-```
-
-### `scripts/update_expansion_packet.py`
-
-Updates the canonical expansion packet CSV to match `vocabulary.json`: applies POS corrections, adds new symbols, removes annotation rows, normalizes curly quotes, adds `phrase_pos` and `ui_tab` columns.
+Validates `data/vocabulary_union_table.csv` against the rules in `data/category_config.csv`. Writes every flagged row (raw, including known intentional overrides) to `data/union_table_issues.csv`.
 
 ```bash
-python3 scripts/update_expansion_packet.py          # dry-run
-python3 scripts/update_expansion_packet.py --apply   # write updated CSV
+python3 scripts/sanity_check_union.py
 ```
+
+### `scripts/generate_vocab_review.py`
+
+Curated, decision-oriented subset of the sanity check output. Filters known/intentional overrides and pre-fills `proposed_*` columns where the right correction can be inferred from category defaults.
+
+```bash
+python3 scripts/generate_vocab_review.py
+```
+
+Outputs `data/vocab_review.csv`. Edit the `action` column (`apply` / `modify` / `skip`) and any `proposed_*` overrides, then run `apply_vocab_review.py`.
+
+### `scripts/apply_vocab_review.py`
+
+Reads `data/vocab_review.csv` and applies rows marked `apply` or `modify` to `canonical_vocabulary.csv` and `meaning_room.json`.
+
+```bash
+python3 scripts/apply_vocab_review.py             # dry-run
+python3 scripts/apply_vocab_review.py --apply      # write changes
+```
+
+### `scripts/backprop_union_table.py`
+
+Alternate writeback path: if you edit `data/vocabulary_union_table.csv` directly in Excel, this script propagates those edits back to `canonical_vocabulary.csv` and `meaning_room.json`.
+
+```bash
+python3 scripts/backprop_union_table.py            # dry-run
+python3 scripts/backprop_union_table.py --apply     # write changes
+```
+
+See `docs/vocabulary-update-guide.md` for the full validation-sweep workflow combining all of the above.
 
 ---
 
 ## Data quality notes
 
-The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 431 symbols across three independent category systems and documented corrections in `data/_archive/pos_corrections.csv` and `data/vocabulary_union_table.csv`.
+The source AMIGA AAC spreadsheet grouped vocabulary alphabetically within broad categories, leading to miscategorizations. We audited all 431 symbols across three independent category systems and documented corrections in `data/canonical_vocabulary.csv` (live) and `data/vocabulary_union_table.csv` (review artifact). The original migration trail lives in `data/_archive/` with `.RETIRED.csv` suffixes.
 
 **Changes applied:**
 1. **UI tab assignments** (139 symbols) — runtime display decisions mapping spreadsheet categories to our 6-tab UI; original spreadsheet categories preserved in `category_xls`

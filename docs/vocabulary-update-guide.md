@@ -5,39 +5,100 @@ How to add, correct, or reclassify vocabulary in the AMIGA-AAC system.
 ## Architecture: Three Canonical Stores
 
 ```
-data/vocabulary_union_table.csv   ← validation/review artifact (editable)
-        │
-        ▼  backprop_union_table.py --apply
 data/canonical_vocabulary.csv     ← team-facing source of truth (flat CSV)
 meaning_room.json                 ← anchor membership (spatial layout)
         │
-        ▼  vocab_sync.py import --apply
+        │  vocab_sync.py import --apply
+        ▼
 vocabulary.json                   ← app-facing runtime data
+        │
+        │  build_union_table.py
+        ▼
+data/vocabulary_union_table.csv   ← joined review/validation artifact
+        │
+        ├──→ sanity_check_union.py   → data/union_table_issues.csv  (raw flags)
+        ├──→ generate_vocab_review.py → data/vocab_review.csv       (curated decisions)
+        ├──→ apply_vocab_review.py    → writes back to canonical + meaning_room
+        └──→ backprop_union_table.py  → alternate writeback path
 ```
 
 **`data/canonical_vocabulary.csv`** is the authoritative flat file. All category, POS, tab, and metadata changes land here first, then sync to `vocabulary.json`.
 
 **`vocabulary.json`** is what the app loads. Never edit it directly for category/tab/POS changes -- use the sync pipeline.
 
-**`meaning_room.json`** defines anchor hotspots and which symbols appear in each anchor. Updated by the backprop script when you change `meaning_room_anchors` in the union table.
+**`meaning_room.json`** defines anchor hotspots and which symbols appear in each anchor. Updated by either `apply_vocab_review.py` or `backprop_union_table.py` when anchor membership changes.
 
 **`data/category_config.csv`** defines the 16 categories and their default tab, anchor, and subtab mappings. All scripts read from this instead of hardcoding.
 
-## Workflow: Full Validation Sweep
+## Workflow: Full Validation Sweep (recommended)
 
-Use this when doing a bulk review of categories, tabs, POS, or anchors.
+Use this when doing a bulk audit of categories, tabs, POS, or anchors. Output is a single CSV (`vocab_review.csv`) of *only* the items that need a decision, with proposed corrections pre-filled.
 
-### 1. Generate the union table
+### 1. Build the union table and run the sanity check
 
 ```bash
-python3 scripts/build_union_table.py
+python3 scripts/build_union_table.py        # vocabulary.json + meaning_room.json → vocabulary_union_table.csv
+python3 scripts/sanity_check_union.py       # → data/union_table_issues.csv (all flagged rows)
 ```
 
-This produces `data/vocabulary_union_table.csv` by joining `vocabulary.json` + `meaning_room.json`. It flags tab-anchor mismatches, POS-type mismatches, and T1-T2 orphans.
+`union_table_issues.csv` is the raw list of every symbol that fails any rule, including known/intentional overrides.
 
-### 2. Edit in Excel
+### 2. Generate the curated review file
 
-Open `data/vocabulary_union_table.xlsx` (or the CSV) and review/correct:
+```bash
+python3 scripts/generate_vocab_review.py    # → data/vocab_review.csv
+```
+
+`vocab_review.csv` is a filtered, decision-oriented subset. It drops symbols on the `INTENTIONAL_OVERRIDES` / `AMBIGUOUS` lists inside `generate_vocab_review.py` and pre-fills `proposed_*` columns where the right correction can be inferred from category defaults.
+
+### 3. Mark and edit the review CSV
+
+Open `data/vocab_review.csv` (Excel or any CSV editor). For each row, set the `action` column:
+
+- `apply` — proposed values are correct as-is
+- `modify` — override at least one `proposed_*` value, then apply
+- `skip` — current placement is intentional; no change
+
+Columns you can override per row:
+- `proposed_category`, `proposed_ui_tab`, `proposed_secondary_tabs`, `proposed_pos`, `proposed_anchors`
+
+Leave a `proposed_*` cell blank to keep the current canonical value.
+
+If a row is a recurring intentional override, add its `symbol_id` to `INTENTIONAL_OVERRIDES` in `scripts/generate_vocab_review.py` so it stops surfacing in future review passes.
+
+### 4. Apply the review
+
+```bash
+python3 scripts/apply_vocab_review.py            # dry run — show exactly what will change
+python3 scripts/apply_vocab_review.py --apply    # write changes
+```
+
+Writes to:
+- `data/canonical_vocabulary.csv` (category, ui_tab, secondary_tabs, part_of_speech)
+- `meaning_room.json` (anchor membership; anchors must already exist)
+
+### 5. Sync canonical to vocabulary.json
+
+```bash
+python3 scripts/vocab_sync.py import --apply
+```
+
+Pushes canonical CSV fields into `vocabulary.json`. Synced fields: `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`, `category` (→ `category_xls`), `secondary_tabs` (→ `additional_tabs`).
+
+### 6. Verify the round trip is clean
+
+```bash
+python3 scripts/build_union_table.py        # rebuild union table from updated JSON
+python3 scripts/sanity_check_union.py       # confirm only known/accepted issues remain
+python3 scripts/backprop_union_table.py     # dry run — should report "Nothing to do"
+python3 scripts/vocab_sync.py diff          # should report zero diffs
+```
+
+If `backprop_union_table.py` and `vocab_sync.py diff` both report empty, `canonical_vocabulary.csv ↔ vocabulary.json ↔ vocabulary_union_table.csv ↔ meaning_room.json` are all in sync.
+
+## Workflow: Edit the Union Table Directly (alternate path)
+
+If you'd rather edit `data/vocabulary_union_table.csv` in Excel directly (older flow), the legacy backprop pipeline still works:
 
 | Column | What to edit | Notes |
 |--------|-------------|-------|
@@ -47,45 +108,12 @@ Open `data/vocabulary_union_table.xlsx` (or the CSV) and review/correct:
 | `phrase_pos` | Semantic POS for phrases | Only for `type=phrase`; the grammatical POS of the phrase's intent |
 | `meaning_room_anchors` | Anchor membership | Semicolon-separated anchor IDs; leave blank for T3 without anchors |
 
-Export the xlsx back to CSV when done.
-
-### 3. Sanity check
+Then:
 
 ```bash
-python3 scripts/sanity_check_union.py
-```
-
-Generates `data/union_table_issues.csv` with all questionable rows. Fix issues in the xlsx and re-export until clean.
-
-### 4. Backprop to canonical stores
-
-```bash
-# Dry run -- see all changes before writing
-python3 scripts/backprop_union_table.py
-
-# Apply -- writes to canonical_vocabulary.csv + meaning_room.json
-python3 scripts/backprop_union_table.py --apply
-```
-
-This propagates:
-- `category_xls` → `category` column in canonical CSV
-- `ui_tab` with `;` → `ui_tab` (primary) + `secondary_tabs` (rest)
-- `current_pos` → `part_of_speech`
-- `phrase_pos` → `phrase_pos`
-- `meaning_room_anchors` → symbol_ids arrays in `meaning_room.json`
-
-### 5. Sync to vocabulary.json
-
-```bash
-python3 scripts/vocab_sync.py import --apply
-```
-
-Pushes canonical CSV fields into `vocabulary.json`. Synced fields: `display_label`, `part_of_speech`, `phrase_pos`, `ui_tab`, `category` (→ `category_xls`), `secondary_tabs` (→ `additional_tabs`).
-
-### 6. Verify
-
-```bash
-python3 scripts/vocab_sync.py diff    # should report zero diffs
+python3 scripts/backprop_union_table.py             # dry run
+python3 scripts/backprop_union_table.py --apply     # writes canonical_vocabulary.csv + meaning_room.json
+python3 scripts/vocab_sync.py import --apply        # syncs canonical to vocabulary.json
 ```
 
 ## Workflow: Quick Single-Word Fix
@@ -133,12 +161,22 @@ Words with the same spelling but different meanings need distinct symbol_ids. Ex
 
 | Script | Purpose | Modifies |
 |--------|---------|----------|
-| `scripts/build_union_table.py` | Generate union table for review | `data/vocabulary_union_table.csv` |
-| `scripts/sanity_check_union.py` | Validate edited union table | `data/union_table_issues.csv` |
-| `scripts/backprop_union_table.py` | Push union table edits to canonical stores | `data/canonical_vocabulary.csv`, `meaning_room.json` |
+| `scripts/build_union_table.py` | Generate union table by joining `vocabulary.json` + `meaning_room.json` | `data/vocabulary_union_table.csv` |
+| `scripts/sanity_check_union.py` | Validate union table; flag every rule violation | `data/union_table_issues.csv` |
+| `scripts/generate_vocab_review.py` | Curated, decision-oriented subset of sanity findings (filters known overrides) | `data/vocab_review.csv` |
+| `scripts/apply_vocab_review.py` | Apply marked `apply`/`modify` rows from `vocab_review.csv` to canonical stores | `data/canonical_vocabulary.csv`, `meaning_room.json` |
+| `scripts/backprop_union_table.py` | Alternate writeback: push union table edits directly to canonical stores | `data/canonical_vocabulary.csv`, `meaning_room.json` |
 | `scripts/vocab_sync.py export` | vocabulary.json → canonical CSV | `data/canonical_vocabulary.csv` |
 | `scripts/vocab_sync.py import` | canonical CSV → vocabulary.json | `vocabulary.json` |
 | `scripts/vocab_sync.py diff` | Show differences between CSV and JSON | (read-only) |
-| `scripts/audit_categories.py` | Cross-validate category × tab × POS | `data/category_audit.csv` |
 | `scripts/category_utils.py` | Shared config loader (imported by other scripts) | (library) |
 | `scripts/generate_symbols.py` | Generate SVG icons for all symbols | `symbols.js` |
+
+### Archived (no longer in active use)
+
+These scripts were one-shot migrations/bootstraps used to bring the system to its current shape; they live in `scripts/_archive/` for reference. The data they produced (e.g. `data/_archive/pos_corrections.RETIRED.csv`, `data/_archive/category_audit.RETIRED.csv`) is also retired.
+
+- `scripts/_archive/apply_pos_corrections.py` — applied historical POS fixes from `pos_corrections.csv`
+- `scripts/_archive/audit_categories.py` — older cross-validator; superseded by `sanity_check_union.py` + `generate_vocab_review.py`
+- `scripts/_archive/build_vocabulary_corrections_export.py` — diffed `vocabulary.json` against a legacy spreadsheet
+- `scripts/_archive/update_expansion_packet.py` — original bootstrap of `canonical_vocabulary.csv` from the expansion packet

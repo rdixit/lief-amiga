@@ -1,55 +1,26 @@
 symbol_id,display_label,priority_tier,type,category_xls,current_pos,phrase_pos,ui_tab,meaning_room_anchors,issues
-know,know,1,word,Negation/Repair,verb/action,,actions,actions,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'Negation/Repair' | TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'actions' | ANCHOR mismatch: cat='Negation/Repair' expects anchor in ['stop_refusal'] but has ['actions']"
-good,Good,1,word,Actions,descriptor/adjective,,core,actions,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Actions'"
-goodbye,Goodbye,1,word,Actions,word,,core,other_people,"ANCHOR mismatch: cat='Actions' expects anchor in ['actions', 'outside', 'toys'] but has ['other_people']"
 i_need_the_bathroom,I need the bathroom,1,phrase,Places,phrase,verb/action,core,calm_corner,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'Places' | ANCHOR mismatch: cat='Places' expects anchor in ['outside'] but has ['calm_corner']"
 not_that,Not that,1,phrase,Negation/Repair,negation/repair,negation/repair,core,stop_refusal,type=phrase but POS='negation/repair' (expected 'phrase')
-space,Space,1,word,Negation/Repair,noun,,core,calm_corner,ANCHOR mismatch: cat='Negation/Repair' expects anchor in ['stop_refusal'] but has ['calm_corner']
-stop,stop,1,word,Actions,negation/repair,,core,stop_refusal,"POS='negation/repair' expects category in ['Negation/Repair'] but got 'Actions' | ANCHOR mismatch: cat='Actions' expects anchor in ['actions', 'outside', 'toys'] but has ['stop_refusal']"
 too_loud,Too loud,1,phrase,Regulation/Safety,phrase,descriptor/adjective,core,calm_corner,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Regulation/Safety'"
-bad,Bad,1,word,Feelings,descriptor/adjective,,feelings,colors_descriptors,ANCHOR mismatch: cat='Feelings' expects anchor in ['feelings'] but has ['colors_descriptors']
-tired,Tired,1,word,Descriptors,descriptor/adjective,,feelings,feelings,ANCHOR mismatch: cat='Descriptors' expects anchor in ['colors_descriptors'] but has ['feelings']
 arent,aren't,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
 cant,can't,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
 couldnt,couldn't,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
 havent,haven't,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
 not,not,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
-that,That,1,word,People/Pronouns/Possessives,word,,more,colors_descriptors,"TAB mismatch: cat='People/Pronouns/Possessives' expects tab='people' but got 'more' | ANCHOR mismatch: cat='People/Pronouns/Possessives' expects anchor in ['other_people', 'self'] but has ['colors_descriptors']"
 wont,won't,1,word,Negation/Repair,negation/repair,,more,stop_refusal,TAB mismatch: cat='Negation/Repair' expects tab='core' but got 'more'
-mine,Mine,1,word,Places,pronoun/person,,people,self,POS='pronoun/person' expects category in ['People/Pronouns/Possessives'] but got 'Places' | TAB mismatch: cat='Places' expects tab='things' but got 'people' | ANCHOR mismatch: cat='Places' expects anchor in ['outside'] but has ['self']
 i_found_something,I found something,2,phrase,Places,phrase,verb/action,actions,actions,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'Places' | TAB mismatch: cat='Places' expects tab='things' but got 'actions' | ANCHOR mismatch: cat='Places' expects anchor in ['outside'] but has ['actions']"
-no_i_dont_want_that,No / I don't want that,2,phrase,Regulation/Safety,phrase,negation/repair,core,stop_refusal,POS='negation/repair' expects category in ['Negation/Repair'] but got 'Regulation/Safety' | ANCHOR mismatch: cat='Regulation/Safety' expects anchor in ['calm_corner'] but has ['stop_refusal']
+too_loud_i_need_a_break,Too loud / I need a break,2,phrase,Regulation/Safety,phrase,descriptor/adjective,core,calm_corner,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Regulation/Safety'"
+thats_funny,That's funny,2,phrase,Social,phrase,descriptor/adjective,core;actions,actions,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Social'"
+i_want_apple,I want apple,2,phrase,Actions,phrase,verb/action,food,food_drink,TAB mismatch: cat='Actions' expects tab='actions' but got 'food'
+i_want_food,I want food,2,phrase,Actions,phrase,verb/action,food,food_drink,TAB mismatch: cat='Actions' expects tab='actions' but got 'food'
+books,Books,2,word,Social,noun,,things,toys,"TAB mismatch: cat='Social' expects tab='core' but got 'things' | ANCHOR mismatch: cat='Social' expects anchor in ['actions', 'other_people'] but has ['toys']"
+i_want_a_jacket,I want a jacket,2,phrase,Actions,phrase,verb/action,things,clothing,TAB mismatch: cat='Actions' expects tab='actions' but got 'things'
 slide,Slide,2,word,Actions,verb/action,,things;actions,toys,VERB in 'things' tab — POS might be wrong (should be noun?)
 swing,Swing,2,word,Actions,verb/action,,things;actions,toys,VERB in 'things' tab — POS might be wrong (should be noun?)
-too_loud_i_need_a_break,Too loud / I need a break,2,phrase,Regulation/Safety,phrase,descriptor/adjective,actions,calm_corner,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Regulation/Safety' | TAB mismatch: cat='Regulation/Safety' expects tab='core' but got 'actions'"
-i_meant_something_else,I meant something else,2,phrase,Negation/Repair,negation/repair,negation/repair,core,stop_refusal,type=phrase but POS='negation/repair' (expected 'phrase')
-thats_funny,That's funny,2,phrase,Function/Core,phrase,descriptor/adjective,core,actions,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Function/Core' | ANCHOR mismatch: cat='Function/Core' expects anchor in ['more_scene'] but has ['actions']"
-try_again,Try again,2,phrase,Negation/Repair,negation/repair,negation/repair,core,stop_refusal,type=phrase but POS='negation/repair' (expected 'phrase')
-off,Off,2,word,Places,location/preposition,,more,colors_descriptors,TAB mismatch: cat='Places' expects tab='things' but got 'more' | ANCHOR mismatch: cat='Places' expects anchor in ['outside'] but has ['colors_descriptors']
-one_more_minute,One more minute,2,phrase,Regulation/Safety,phrase,noun,core,time,ANCHOR mismatch: cat='Regulation/Safety' expects anchor in ['calm_corner'] but has ['time']
-books,Books,2,word,Social,noun,,things,toys,"TAB mismatch: cat='Social' expects tab='core' but got 'things' | ANCHOR mismatch: cat='Social' expects anchor in ['actions', 'other_people'] but has ['toys']"
-sand,Sand,2,word,Preferred Items,noun,,things,outside,ANCHOR mismatch: cat='Preferred Items' expects anchor in ['toys'] but has ['outside']
-bite,bite,3,word,People/Pronouns/Possessives,verb/action,,actions,,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'People/Pronouns/Possessives' | TAB mismatch: cat='People/Pronouns/Possessives' expects tab='people' but got 'actions'"
-came,came,3,word,People/Pronouns/Possessives,verb/action,,actions,,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'People/Pronouns/Possessives' | TAB mismatch: cat='People/Pronouns/Possessives' expects tab='people' but got 'actions'"
-let,let,3,word,Function/Core,verb/action,,actions,,TAB mismatch: cat='Function/Core' expects tab='more' but got 'actions'
-lets,let's,3,word,Function/Core,verb/action,,actions,,TAB mismatch: cat='Function/Core' expects tab='more' but got 'actions'
-about,about,3,word,Places,location/preposition,,more,more,TAB mismatch: cat='Places' expects tab='things' but got 'more'
-again,again,3,word,Places,location/preposition,,more,more,TAB mismatch: cat='Places' expects tab='things' but got 'more'
-around,around,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
-away,away,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
-back,back,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
-before,before,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
-being,being,3,word,Places,location/preposition,,more,,TAB mismatch: cat='Places' expects tab='things' but got 'more'
-did,did,3,word,Descriptors,verb/action,,more,,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'Descriptors'"
-didnt,didn't,3,word,Descriptors,verb/action,,more,,"POS='verb/action' expects category in ['Actions', 'Function/Core'] but got 'Descriptors'"
 doesnt,doesn't,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
 done,done,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
 dont,don't,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
-everything,everything,3,word,Places,location/preposition,,more,,TAB mismatch: cat='Places' expects tab='things' but got 'more'
 gonna,gonna,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
-high,high,3,word,Social,descriptor/adjective,,more,,"POS='descriptor/adjective' expects category in ['Descriptors', 'Feelings'] but got 'Social' | TAB mismatch: cat='Social' expects tab='core' but got 'more'"
 hum,hum,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
-inside,inside,3,word,Places,location/preposition,,more,,TAB mismatch: cat='Places' expects tab='things' but got 'more'
-last,last,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
 ready,ready,3,word,Actions,verb/action,,more,,TAB mismatch: cat='Actions' expects tab='actions' but got 'more'
-top,top,3,word,Uncategorized,location/preposition,,more,,"location/preposition POS with cat='Uncategorized' — should be Function/Core, Places, or Descriptors"
+named,named,3,word,Descriptors,descriptor/adjective,,people,other_people,TAB mismatch: cat='Descriptors' expects tab='describe' but got 'people'

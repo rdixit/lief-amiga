@@ -120,7 +120,6 @@
         "know",
         "more",
         "all_done",
-        "good",
         "yes",
         "ok",
         "okfine",
@@ -259,7 +258,6 @@
         "classroom",
         "school",
         "bathroom",
-        "sand",
         "ant",
         "bird",
         "birds",
@@ -360,7 +358,8 @@
         "piece",
         "thing",
         "things",
-        "toys"
+        "toys",
+        "sand"
       ],
       "stress_glow_curve": null
     },
@@ -450,7 +449,12 @@
         "up",
         "down",
         "off",
-        "three"
+        "three",
+        "good",
+        "about",
+        "high",
+        "inside",
+        "top"
       ],
       "stress_glow_curve": null
     }
